@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "purpose": "Operational auditor package built on v1.8.0",
+  "scope": {
+    "asset_families": 23,
+    "assets": 406,
+    "vapt_phases": 8,
+    "knowledge_units": 474
+  },
+  "artifacts": [
+    "MFG-MANUFACTURING-VAPT-ASSESSMENT-WORKBOOK.xlsx",
+    "MFG-FINDING-REPORT-TEMPLATE.md",
+    "MFG-AUDITOR-OPERATING-PROCEDURE.md",
+    "MFG-ENGAGEMENT-CLOSEOUT-CHECKLIST.md",
+    "MFG-VAPT-REPORT-FRAMEWORK.md",
+    "README.md",
+    "MFG-AUDITOR-OPERATING-WORKFLOW.md"
+  ]
+}

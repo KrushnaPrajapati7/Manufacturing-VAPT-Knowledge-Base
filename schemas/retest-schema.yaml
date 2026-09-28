@@ -1,0 +1,28 @@
+retestId: MFG-RXXX
+originalFindingId:
+dateTime:
+assessor:
+reviewer:
+owner:
+remediationClaim:
+changeReference:
+deploymentEnvironment:
+assetId:
+assetTechnology:
+environment: production|test|lab|unknown
+knowledgeUnits: []
+originalMethod:
+retestMethod:
+result: Fixed|Partially Fixed|Not Fixed|Unable to Verify|Not Retested
+whatWasRetested:
+whatChanged:
+whatRemains:
+evidenceIds: []
+residualRisk:
+compensatingControls: []
+limitations: []
+statusRecommendation: Close|Keep Open|Risk Accept|Further Remediation Required
+safetyGate:
+operationalImpact:
+recoveryRollbackVerified:
+approvals: []

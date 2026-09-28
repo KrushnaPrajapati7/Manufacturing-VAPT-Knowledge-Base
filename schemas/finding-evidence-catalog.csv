@@ -1,0 +1,5 @@
+record_type,record_id,required_scope_linkage,required_traceability,primary_quality_gate
+observation,MFG-OXXX,"asset;phase;knowledge_unit;checklist_item","evidence_ids;timestamp;assessor","expected_vs_observed must be factual"
+evidence,MFG-EXXX,"asset;environment","source;timestamp;storage_reference;integrity","evidence must support the stated observation"
+finding,MFG-FXXX,"asset;phase;knowledge_unit;environment","observation_ids;evidence_ids;reviewer","risk and impact must be supported"
+retest,MFG-RXXX,"original_finding;asset;environment","evidence_ids;remediation_reference;reviewer","retest must verify the original weakness"

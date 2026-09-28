@@ -1,0 +1,75 @@
+Technique ID,Technique,Tactic Area,Manufacturing Relevance
+T0819,Exploit Public-Facing Application,Initial Access,Internet-facing applications and services.
+T0822,External Remote Services,Initial Access,VPN and other externally reachable remote access.
+T0883,Internet Accessible Device,Initial Access,Industrial or supporting device directly exposed to the internet.
+T0866,Exploitation of Remote Services,Initial Access / Lateral Movement,Exploitation of remotely reachable services.
+T0862,Supply Chain Compromise,Initial Access,"Compromise through products, software, workflows, or delivery mechanisms."
+T0847,Replication Through Removable Media,Initial Access,Movement through removable media into isolated environments.
+T0860,Wireless Compromise,Initial Access,Unauthorized access through wireless communications.
+T0865,Spearphishing Attachment,Initial Access,Targeted malicious attachment delivery.
+T0863,User Execution,Execution,User interaction leading to execution.
+T0807,Command-Line Interface,Execution,Use of command-line interfaces.
+T0853,Scripting,Execution,Use of scripting/interpreters.
+T0871,Execution through API,Execution,Use of APIs to invoke functions.
+T0849,Masquerading,Defense Evasion,Disguise malicious files or applications.
+T0820,Exploitation for Evasion,Defense Evasion,Exploit weaknesses to bypass detection/security.
+T0872,Indicator Removal on Host,Defense Evasion,Remove or obscure indicators.
+T0851,Rootkit,Defense Evasion,Hide malicious components at OS level.
+T0894,System Binary Proxy Execution,Defense Evasion,Abuse trusted binaries to execute content.
+T0890,Exploitation for Privilege Escalation,Privilege Escalation,Exploit vulnerabilities to elevate privilege.
+T1694,Insecure Credentials,Credential/Access,Default or hardcoded credentials.
+T0892,Change Credential,Persistence / Defense,Modify credentials to retain access or impede responders.
+T0859,Valid Accounts,Persistence / Lateral Movement,Use valid credentials to access systems or devices.
+T0886,Remote Services,Lateral Movement,"RDP, SMB, SSH and similar remote services."
+T0867,Lateral Tool Transfer,Lateral Movement,Transfer tools/files between systems.
+T0884,Connection Proxy,Lateral Movement / C2,Proxy traffic through an intermediate system.
+T0846,Remote System Discovery,Discovery,Identify other systems; includes port/broadcast/multicast discovery sub-techniques.
+T0888,Remote System Information Discovery,Discovery,Gather make/model/role/configuration information.
+T0840,Network Connection Enumeration,Discovery,Identify communications and network relationships.
+T0842,Network Sniffing,Collection / Discovery,Capture network communications.
+T0802,Automated Collection,Collection,Automate collection of industrial environment information.
+T0811,Data from Information Repositories,Collection,Collect information from repositories such as engineering/control databases.
+T0893,Data from Local System,Collection,"Collect local files, configurations, and databases."
+T0852,Screen Capture,Collection,Capture operator/HMI/workstation displays.
+T0861,Point & Tag Identification,Discovery / Collection,Identify industrial points and tags.
+T0801,Monitor Process State,Discovery / Collection,Observe physical process state.
+T0882,Theft of Operational Information,Collection,Steal operational information.
+T0869,Standard Application Layer Protocol,C2,Use common application/industrial protocols for communications.
+T0830,Adversary-in-the-Middle,Collection / Evasion / Process,"Intercept, modify, block, or inject traffic."
+T1692,Unauthorized Message,Evasion / Process,Send unauthorized reporting or command messages.
+T0848,Rogue Master,C2 / Process,Impersonate a control master to communicate with outstations.
+T0858,Change Operating Mode,Process Control,Change controller operating mode.
+T0843,Program Download,Process Control,Download programs to controllers; includes download all/online edit/program append.
+T0845,Program Upload,Collection,Upload controller programs for analysis.
+T0873,Project File Infection,Execution / Persistence,Infect engineering/controller project files.
+T0889,Modify Program,Process Control,Modify controller programs.
+T0836,Modify Parameter,Process Control,Modify industrial device parameters.
+T0831,Manipulation of Control,Process Control,"Manipulate setpoints, tags, or control behavior."
+T0835,Manipulate I/O Image,Process Control,Manipulate controller I/O image/overrides.
+T0832,Manipulation of View,Evasion / Process,Manipulate reported process information.
+T0838,Modify Alarm Settings,Inhibit Response,Modify alarms to prevent useful operator notification.
+T0878,Alarm Suppression,Inhibit Response,Suppress protection/function alarms.
+T0813,Denial of Control,Impact,Prevent operators/engineers from interacting with process controls.
+T0815,Denial of View,Impact,Prevent operator visibility of ICS status.
+T0814,Denial of Service,Impact,Disrupt expected device/service functionality.
+T0816,Device Restart/Shutdown,Impact,Restart or shut down devices.
+T0826,Loss of Availability,Impact,Disrupt essential systems/services.
+T0827,Loss of Control,Impact,Cause sustained loss of process control.
+T0829,Loss of View,Impact,Cause sustained loss of operator visibility.
+T0837,Loss of Protection,Impact,Compromise protective system functions.
+T0880,Loss of Safety,Impact,Compromise safety-system functions.
+T0828,Loss of Productivity and Revenue,Impact,Disrupt production and revenue.
+T0879,Damage to Property,Impact,Cause physical/equipment/environmental damage.
+T0809,Data Destruction,Impact,Destroy data or system files.
+T0864,Transient Cyber Asset,Initial Access / Persistence,Target transient assets brought into ICS environments.
+T0887,Wireless Sniffing,Collection,Capture wireless/RF communications.
+T1695,Block Communications,Impact / Inhibit,"Block serial, Ethernet, Wi-Fi or other OT communications."
+T1691,Block Operational Technology Message,Inhibit / Process,Block reporting or command messages.
+T0800,Activate Firmware Update Mode,Inhibit / Process,Place devices into firmware-update mode affecting expected response.
+T1693,Modify Firmware,Persistence / Process,Modify system or module firmware.
+T0885,Commonly Used Port,C2 / Discovery,Use common ports/protocols to blend into traffic.
+T0823,Graphical User Interface,Execution,Interact through GUI.
+T0834,Native API,Execution,Use native OS APIs.
+T0874,Hooking,Execution / Privilege,Hook application/API functions.
+T0877,I/O Image,Collection,Capture PLC I/O image information.
+T0868,Detect Operating Mode,Discovery,Determine controller operating mode.

@@ -1,0 +1,52 @@
+findingId: MFG-FXXX
+title:
+dateIdentified:
+assessor:
+reviewer:
+status: Open|Remediation In Progress|Retest Pending|Fixed|Partially Fixed|Risk Accepted|Closed
+assetId:
+affectedAsset:
+assetFamily:
+assetType:
+environment: production|test|lab|unknown
+phase:
+knowledgeUnits: []
+checklistItemId:
+businessProcess:
+trustZone:
+category:
+cwe:
+owasp:
+mitreAttackICS: []
+isaIec62443:
+otherMappings: []
+observationIds: []
+evidenceIds: []
+preconditions: []
+validationSummary:
+limitations: []
+technicalImpact:
+confidentialityImpact:
+integrityImpact:
+availabilityImpact:
+operationalImpact:
+qualityTraceabilityImpact:
+engineeringIpImpact:
+recoveryResilienceImpact:
+safetyImpact:
+regulatoryContractualImpact:
+likelihoodRationale:
+severity: Critical|High|Medium|Low|Informational
+cvss:
+businessRiskRationale:
+rootCause:
+contributingFactors: []
+remediation:
+compensatingControls: []
+owner:
+targetDate:
+dependencies: []
+retestId:
+retestStatus: open|fixed|partially_fixed|risk_accepted|not_tested
+residualRisk:
+references: []

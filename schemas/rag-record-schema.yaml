@@ -1,0 +1,27 @@
+docType: rag_record
+recordType: logical_knowledge_unit
+required:
+  - knowledgeId
+  - canonicalSource
+  - sector
+  - phase
+  - safety
+  - sourceHash
+  - assetFamilies
+  - assets
+relationships:
+  - knowledge_unit
+  - asset
+  - tool
+  - test_case
+  - standard_control
+  - attack_path
+  - mitre_ics_technique
+  - observation
+  - evidence
+  - finding
+  - retest
+securityRules:
+  - no_client_specific_data
+  - preserve_ot_safety_guardrails
+  - preserve_unknown_states

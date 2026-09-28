@@ -1,0 +1,48 @@
+Phase,Test_ID,Test_Case,Objective
+Recon,R01,Scope and asset ownership validation,"Confirm authorized asset, owner, environment and scope boundaries."
+Recon,R02,External attack-surface discovery,"Identify domains, subdomains, public services, cloud endpoints and third-party exposure."
+Recon,R03,Technology fingerprinting,"Record server, framework, platform, protocol and version context without treating fingerprints as proof of vulnerability."
+Recon,R04,Trust-boundary and dependency mapping,"Map IT/OT, cloud/plant, vendor, engineering and third-party paths."
+Recon,R05,Public data exposure review,"Review authorized public sources for sensitive technical, employee, supplier, customer or IP exposure."
+Scanning/Enumeration,S01,Controlled network/service enumeration,"Enumerate approved hosts, ports, services and protocols."
+Scanning/Enumeration,S02,Web/API endpoint enumeration,"Identify applications, API endpoints, methods, schemas and exposed administration surfaces."
+Scanning/Enumeration,S03,Identity/directory enumeration,"Review authorized directory, group, trust and account metadata."
+Scanning/Enumeration,S04,OT asset/protocol enumeration,"Passively identify controllers, HMIs, servers, gateways and industrial protocols."
+Scanning/Enumeration,S05,Cloud resource enumeration,"Inventory approved cloud resources, public exposure and management planes."
+Scanning/Enumeration,S06,Wireless/mobile inventory,"Identify approved wireless networks, devices and mobile management surfaces."
+Vulnerability Assessment,V01,Known-vulnerability correlation,Correlate observed software/firmware/configuration with authoritative advisories and verify applicability.
+Vulnerability Assessment,V02,Configuration/hardening assessment,Compare approved systems against applicable hardening baselines.
+Vulnerability Assessment,V03,TLS/certificate assessment,"Review protocol versions, ciphers, certificates, trust chains and lifecycle."
+Vulnerability Assessment,V04,Web/API security assessment,Assess common application/API weaknesses using controlled accounts and bounded requests.
+Vulnerability Assessment,V05,Cloud posture assessment,"Review IAM, network, storage, logging, secrets and workload configuration."
+Vulnerability Assessment,V06,Supply-chain/component assessment,"Review SBOM, dependencies, source repositories, CI/CD and signing/update controls."
+Vulnerability Assessment,V07,OT configuration assessment,"Review controller/HMI/SCADA configuration, firmware, remote access and integrity controls without unsafe manipulation."
+Identity/Auth,I01,Authentication control review,"Assess password/authentication policy, MFA, lockout/session behavior and alternate authentication paths."
+Identity/Auth,I02,Authorization/access-control review,"Verify least privilege, role boundaries and object/function access with approved test accounts."
+Identity/Auth,I03,Privileged/service identity review,"Assess privileged, service, machine, API and emergency/break-glass identities."
+Identity/Auth,I04,Remote-access identity review,Assess VPN/RDP/SSH/VNC/jump/vendor authentication and authorization.
+Identity/Auth,I05,Identity logging and lifecycle review,"Assess provisioning, deprovisioning, dormant accounts and auditability."
+Web/API/Application,A01,Application discovery and attack-surface review,"Map application roles, endpoints, workflows and trust boundaries."
+Web/API/Application,A02,Input validation and injection review,Assess controlled input handling for applicable injection classes.
+Web/API/Application,A03,Session and authentication review,"Assess session lifecycle, cookies/tokens, MFA and authentication transitions."
+Web/API/Application,A04,Authorization and business-logic review,Test role/object/function access and critical manufacturing workflows with safe test data.
+Web/API/Application,A05,API security review,"Assess API inventory, object/function authorization, authentication, resource limits and unsafe integrations."
+Web/API/Application,A06,Security configuration and headers review,"Review TLS, headers, error handling, debug interfaces and administrative exposure."
+Web/API/Application,A07,Data exposure review,"Assess sensitive data returned, stored or transmitted by applications/APIs."
+OT/ICS,O01,OT architecture and zone/conduit review,"Validate zones, conduits, industrial DMZ, trust boundaries and remote access paths."
+OT/ICS,O02,Passive OT protocol analysis,"Analyze approved captures for unexpected communications, insecure protocols and unauthorized paths."
+OT/ICS,O03,Controller/HMI/SCADA configuration review,"Review authentication, configuration, firmware, services, backup and integrity controls."
+OT/ICS,O04,Engineering workstation review,"Assess engineering workstation security, removable media, remote access, backups and software."
+OT/ICS,O05,OT monitoring and detection review,"Assess asset visibility, logging, OT IDS/NDR coverage and alert escalation."
+OT/ICS,O06,Safety boundary review,"Confirm safety functions, interlocks and SIS/Safety PLC boundaries are protected without manipulating safety functions."
+OT/ICS,O07,Vendor remote maintenance review,"Assess authorization, time bounds, MFA, jump-host controls, monitoring and offboarding."
+Validation/Business Impact,B01,Control effectiveness validation,Validate whether documented controls operate as intended using safe test evidence.
+Validation/Business Impact,B02,Attack-path analysis,Connect realistic exposure chains without claiming compromise solely from theoretical paths.
+Validation/Business Impact,B03,Business/process impact analysis,"Document effects on production, quality, safety, delivery, recovery and dependent systems."
+Validation/Business Impact,B04,Backup/recovery validation,Review restore evidence and approved recovery tests against RTO/RPO.
+Validation/Business Impact,B05,Detection/response validation,Generate bounded benign events or tabletop scenarios to validate detection and escalation.
+Reporting/Retest,P01,Evidence integrity and traceability,Ensure every observation/finding can be traced to evidence and asset/test context.
+Reporting/Retest,P02,Finding classification and severity,"Map weakness, CVSS where applicable, business/plant context and residual risk."
+Reporting/Retest,P03,Remediation validation,"Re-test the original condition using reproducible, approved methods."
+Reporting/Retest,P04,Coverage and exception reconciliation,"Record tested, not tested, out of scope, not applicable and unknown states."
+Reporting/Retest,P05,Management reporting and risk acceptance,"Present technical, safety, production and recovery implications with ownership and disposition."

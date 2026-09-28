@@ -1,0 +1,25 @@
+observationId: MFG-OXXX
+engagementId:
+dateTime:
+assessor:
+reviewer:
+environment: production|test|lab|unknown
+assetId:
+assetFamily:
+assetTechnology:
+phase:
+knowledgeUnits: []
+checklistItemId:
+businessProcess:
+expectedState:
+observedState:
+method:
+tool:
+testMode: passive|read-only|controlled-active
+preconditions: []
+limitations: []
+evidenceIds: []
+status: Compliant|Deviation|Potential Finding|Unable to Verify|Not Applicable
+safetyGate: Yes|No|N/A
+stopCondition:
+productionImpact: None|Unknown|Observed

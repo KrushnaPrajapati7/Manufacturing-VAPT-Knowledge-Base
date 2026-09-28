@@ -1,0 +1,475 @@
+knowledgeId,phase_or_domain,title,file,assetTags,safety
+MFG-E001,Foundation,"Scope, Authorization & Rules of Engagement",00-Foundation/MFG-E001-Scope-Authorization-Rules-of-Engagement.md,identity,controlled
+MFG-E002,Foundation,Manufacturing Environment Overview,00-Foundation/MFG-E002-Manufacturing-Environment-Overview.md,manufacturing_asset,controlled
+MFG-E003,Foundation,Asset Classification & Ownership,00-Foundation/MFG-E003-Asset-Classification-Ownership.md,manufacturing_asset,controlled
+MFG-E004,Foundation,Manufacturing Business Process Model,00-Foundation/MFG-E004-Manufacturing-Business-Process-Model.md,manufacturing_asset,controlled
+MFG-E005,Foundation,IT/OT Trust Boundaries,00-Foundation/MFG-E005-IT-OT-Trust-Boundaries.md,ot,controlled
+MFG-E006,Foundation,OT Safety Gates,00-Foundation/MFG-E006-OT-Safety-Gates.md,ot,restricted
+MFG-E007,Foundation,Evidence & Data Handling,00-Foundation/MFG-E007-Evidence-Data-Handling.md,data,controlled
+MFG-E008,Foundation,Assessment Preconditions,00-Foundation/MFG-E008-Assessment-Preconditions.md,manufacturing_asset,controlled
+MFG-E009,Foundation,Finding Lifecycle,00-Foundation/MFG-E009-Finding-Lifecycle.md,manufacturing_asset,controlled
+MFG-E010,Foundation,KB Metadata & Retrieval Model,00-Foundation/MFG-E010-KB-Metadata-Retrieval-Model.md,data,controlled
+MFG-E011,Reconnaissance,OSINT Methodology,01-Reconnaissance/MFG-E011-OSINT-Methodology.md,manufacturing_asset,controlled
+MFG-E012,Reconnaissance,Domain Reconnaissance,01-Reconnaissance/MFG-E012-Domain-Reconnaissance.md,manufacturing_asset,controlled
+MFG-E013,Reconnaissance,DNS Reconnaissance,01-Reconnaissance/MFG-E013-DNS-Reconnaissance.md,manufacturing_asset,controlled
+MFG-E014,Reconnaissance,Subdomain Enumeration,01-Reconnaissance/MFG-E014-Subdomain-Enumeration.md,manufacturing_asset,controlled
+MFG-E015,Reconnaissance,External Attack Surface Mapping,01-Reconnaissance/MFG-E015-External-Attack-Surface-Mapping.md,manufacturing_asset,controlled
+MFG-E016,Reconnaissance,Technology Fingerprinting,01-Reconnaissance/MFG-E016-Technology-Fingerprinting.md,erp,controlled
+MFG-E017,Reconnaissance,Certificate & TLS Reconnaissance,01-Reconnaissance/MFG-E017-Certificate-TLS-Reconnaissance.md,data,controlled
+MFG-E018,Reconnaissance,Email & Mail Infrastructure Reconnaissance,01-Reconnaissance/MFG-E018-Email-Mail-Infrastructure-Reconnaissance.md,manufacturing_asset,controlled
+MFG-E019,Reconnaissance,VPN Discovery,01-Reconnaissance/MFG-E019-VPN-Discovery.md,manufacturing_asset,controlled
+MFG-E020,Reconnaissance,Remote Access Discovery,01-Reconnaissance/MFG-E020-Remote-Access-Discovery.md,ot;supply,controlled
+MFG-E021,Reconnaissance,Web Application Discovery,01-Reconnaissance/MFG-E021-Web-Application-Discovery.md,web,controlled
+MFG-E022,Reconnaissance,API Discovery,01-Reconnaissance/MFG-E022-API-Discovery.md,api,controlled
+MFG-E023,Reconnaissance,Cloud Asset Discovery,01-Reconnaissance/MFG-E023-Cloud-Asset-Discovery.md,cloud,controlled
+MFG-E024,Reconnaissance,Public Object Storage Discovery,01-Reconnaissance/MFG-E024-Public-Object-Storage-Discovery.md,cloud,controlled
+MFG-E025,Reconnaissance,Admin Panel Discovery,01-Reconnaissance/MFG-E025-Admin-Panel-Discovery.md,manufacturing_asset,controlled
+MFG-E026,Reconnaissance,cPanel & Hosting Discovery,01-Reconnaissance/MFG-E026-cPanel-Hosting-Discovery.md,web,controlled
+MFG-E027,Reconnaissance,ERP Discovery,01-Reconnaissance/MFG-E027-ERP-Discovery.md,erp,controlled
+MFG-E028,Reconnaissance,MES/MOM Discovery,01-Reconnaissance/MFG-E028-MES-MOM-Discovery.md,mes,controlled
+MFG-E029,Reconnaissance,QMS Discovery,01-Reconnaissance/MFG-E029-QMS-Discovery.md,manufacturing_asset,controlled
+MFG-E030,Reconnaissance,WMS Discovery,01-Reconnaissance/MFG-E030-WMS-Discovery.md,manufacturing_asset,controlled
+MFG-E031,Reconnaissance,CMMS Discovery,01-Reconnaissance/MFG-E031-CMMS-Discovery.md,manufacturing_asset,controlled
+MFG-E032,Reconnaissance,SCM & Supplier Portal Discovery,01-Reconnaissance/MFG-E032-SCM-Supplier-Portal-Discovery.md,web;supply,controlled
+MFG-E033,Reconnaissance,CRM & Customer Portal Discovery,01-Reconnaissance/MFG-E033-CRM-Customer-Portal-Discovery.md,web,controlled
+MFG-E034,Reconnaissance,HRMS Discovery,01-Reconnaissance/MFG-E034-HRMS-Discovery.md,manufacturing_asset,controlled
+MFG-E035,Reconnaissance,CAD/CAM/PLM Discovery,01-Reconnaissance/MFG-E035-CAD-CAM-PLM-Discovery.md,engineering,controlled
+MFG-E036,Reconnaissance,Engineering Workstation Discovery,01-Reconnaissance/MFG-E036-Engineering-Workstation-Discovery.md,engineering,controlled
+MFG-E037,Reconnaissance,OT Asset Reconnaissance,01-Reconnaissance/MFG-E037-OT-Asset-Reconnaissance.md,ot,controlled
+MFG-E038,Reconnaissance,SCADA/DCS Discovery,01-Reconnaissance/MFG-E038-SCADA-DCS-Discovery.md,ot;engineering,restricted
+MFG-E039,Reconnaissance,PLC/HMI Discovery,01-Reconnaissance/MFG-E039-PLC-HMI-Discovery.md,ot,restricted
+MFG-E040,Reconnaissance,Historian Discovery,01-Reconnaissance/MFG-E040-Historian-Discovery.md,ot,controlled
+MFG-E041,Reconnaissance,IIoT/Edge Discovery,01-Reconnaissance/MFG-E041-IIoT-Edge-Discovery.md,ot;iiot,controlled
+MFG-E042,Reconnaissance,Industrial Network Reconnaissance,01-Reconnaissance/MFG-E042-Industrial-Network-Reconnaissance.md,ot;network,controlled
+MFG-E043,Reconnaissance,Third-Party & Supply Chain Reconnaissance,01-Reconnaissance/MFG-E043-Third-Party-Supply-Chain-Reconnaissance.md,supply,controlled
+MFG-E044,Reconnaissance,Technology & Dependency Inventory,01-Reconnaissance/MFG-E044-Technology-Dependency-Inventory.md,manufacturing_asset,controlled
+MFG-E045,Scanning & Enumeration,Network Scanning Methodology,02-Scanning-Enumeration/MFG-E045-Network-Scanning-Methodology.md,network,controlled
+MFG-E046,Scanning & Enumeration,Port & Service Enumeration,02-Scanning-Enumeration/MFG-E046-Port-Service-Enumeration.md,manufacturing_asset,controlled
+MFG-E047,Scanning & Enumeration,Web Service Enumeration,02-Scanning-Enumeration/MFG-E047-Web-Service-Enumeration.md,web,controlled
+MFG-E048,Scanning & Enumeration,API Enumeration,02-Scanning-Enumeration/MFG-E048-API-Enumeration.md,api,controlled
+MFG-E049,Scanning & Enumeration,TLS/Certificate Enumeration,02-Scanning-Enumeration/MFG-E049-TLS-Certificate-Enumeration.md,data,controlled
+MFG-E050,Scanning & Enumeration,VPN Service Enumeration,02-Scanning-Enumeration/MFG-E050-VPN-Service-Enumeration.md,manufacturing_asset,controlled
+MFG-E051,Scanning & Enumeration,Remote Service Enumeration,02-Scanning-Enumeration/MFG-E051-Remote-Service-Enumeration.md,ot,controlled
+MFG-E052,Scanning & Enumeration,DNS Service Enumeration,02-Scanning-Enumeration/MFG-E052-DNS-Service-Enumeration.md,manufacturing_asset,controlled
+MFG-E053,Scanning & Enumeration,Cloud Service Enumeration,02-Scanning-Enumeration/MFG-E053-Cloud-Service-Enumeration.md,cloud,controlled
+MFG-E054,Scanning & Enumeration,Cloud Identity Enumeration,02-Scanning-Enumeration/MFG-E054-Cloud-Identity-Enumeration.md,identity;cloud,controlled
+MFG-E055,Scanning & Enumeration,Object Storage Enumeration,02-Scanning-Enumeration/MFG-E055-Object-Storage-Enumeration.md,cloud,controlled
+MFG-E056,Scanning & Enumeration,Database Enumeration,02-Scanning-Enumeration/MFG-E056-Database-Enumeration.md,data,controlled
+MFG-E057,Scanning & Enumeration,Active Directory Enumeration,02-Scanning-Enumeration/MFG-E057-Active-Directory-Enumeration.md,manufacturing_asset,controlled
+MFG-E058,Scanning & Enumeration,Internal Network Enumeration,02-Scanning-Enumeration/MFG-E058-Internal-Network-Enumeration.md,network,controlled
+MFG-E059,Scanning & Enumeration,Network Device Enumeration,02-Scanning-Enumeration/MFG-E059-Network-Device-Enumeration.md,network,controlled
+MFG-E060,Scanning & Enumeration,Firewall & Security Device Enumeration,02-Scanning-Enumeration/MFG-E060-Firewall-Security-Device-Enumeration.md,network,controlled
+MFG-E061,Scanning & Enumeration,Industrial Network Discovery,02-Scanning-Enumeration/MFG-E061-Industrial-Network-Discovery.md,ot;network,controlled
+MFG-E062,Scanning & Enumeration,OT Passive Discovery,02-Scanning-Enumeration/MFG-E062-OT-Passive-Discovery.md,ot,controlled
+MFG-E063,Scanning & Enumeration,SCADA/DCS Enumeration,02-Scanning-Enumeration/MFG-E063-SCADA-DCS-Enumeration.md,ot;engineering,restricted
+MFG-E064,Scanning & Enumeration,PLC/HMI Enumeration,02-Scanning-Enumeration/MFG-E064-PLC-HMI-Enumeration.md,ot,restricted
+MFG-E065,Scanning & Enumeration,Historian Enumeration,02-Scanning-Enumeration/MFG-E065-Historian-Enumeration.md,ot,controlled
+MFG-E066,Scanning & Enumeration,Industrial Protocol Identification,02-Scanning-Enumeration/MFG-E066-Industrial-Protocol-Identification.md,ot,restricted
+MFG-E067,Scanning & Enumeration,IIoT Device Enumeration,02-Scanning-Enumeration/MFG-E067-IIoT-Device-Enumeration.md,ot;iiot,controlled
+MFG-E068,Scanning & Enumeration,Wireless Enumeration,02-Scanning-Enumeration/MFG-E068-Wireless-Enumeration.md,network,controlled
+MFG-E069,Scanning & Enumeration,Mobile/Handheld Enumeration,02-Scanning-Enumeration/MFG-E069-Mobile-Handheld-Enumeration.md,manufacturing_asset,controlled
+MFG-E070,Scanning & Enumeration,Backup Infrastructure Enumeration,02-Scanning-Enumeration/MFG-E070-Backup-Infrastructure-Enumeration.md,backup,controlled
+MFG-E071,Vulnerability Assessment,Vulnerability Assessment Methodology,03-Vulnerability-Assessment/MFG-E071-Vulnerability-Assessment-Methodology.md,manufacturing_asset,controlled
+MFG-E072,Vulnerability Assessment,External Infrastructure Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E072-External-Infrastructure-Vulnerability-Assessment.md,manufacturing_asset,controlled
+MFG-E073,Vulnerability Assessment,Web Infrastructure Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E073-Web-Infrastructure-Vulnerability-Assessment.md,web,controlled
+MFG-E074,Vulnerability Assessment,API Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E074-API-Vulnerability-Assessment.md,api,controlled
+MFG-E075,Vulnerability Assessment,VPN Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E075-VPN-Vulnerability-Assessment.md,manufacturing_asset,controlled
+MFG-E076,Vulnerability Assessment,Server Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E076-Server-Vulnerability-Assessment.md,manufacturing_asset,controlled
+MFG-E077,Vulnerability Assessment,Database Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E077-Database-Vulnerability-Assessment.md,data,controlled
+MFG-E078,Vulnerability Assessment,Network Device Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E078-Network-Device-Vulnerability-Assessment.md,network,controlled
+MFG-E079,Vulnerability Assessment,Cloud Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E079-Cloud-Vulnerability-Assessment.md,cloud,controlled
+MFG-E080,Vulnerability Assessment,Object Storage Security Assessment,03-Vulnerability-Assessment/MFG-E080-Object-Storage-Security-Assessment.md,cloud,controlled
+MFG-E081,Vulnerability Assessment,Identity Infrastructure Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E081-Identity-Infrastructure-Vulnerability-Assessment.md,identity,controlled
+MFG-E082,Vulnerability Assessment,Active Directory Security Assessment,03-Vulnerability-Assessment/MFG-E082-Active-Directory-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E083,Vulnerability Assessment,Configuration & Hardening Assessment,03-Vulnerability-Assessment/MFG-E083-Configuration-Hardening-Assessment.md,manufacturing_asset,controlled
+MFG-E084,Vulnerability Assessment,Patch & Version Assessment,03-Vulnerability-Assessment/MFG-E084-Patch-Version-Assessment.md,manufacturing_asset,controlled
+MFG-E085,Vulnerability Assessment,TLS/Cryptographic Configuration Assessment,03-Vulnerability-Assessment/MFG-E085-TLS-Cryptographic-Configuration-Assessment.md,manufacturing_asset,controlled
+MFG-E086,Vulnerability Assessment,Backup Security Assessment,03-Vulnerability-Assessment/MFG-E086-Backup-Security-Assessment.md,backup,controlled
+MFG-E087,Vulnerability Assessment,Container & Kubernetes Assessment,03-Vulnerability-Assessment/MFG-E087-Container-Kubernetes-Assessment.md,cloud,controlled
+MFG-E088,Vulnerability Assessment,CI/CD Security Assessment,03-Vulnerability-Assessment/MFG-E088-CI-CD-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E089,Vulnerability Assessment,Software Dependency Assessment,03-Vulnerability-Assessment/MFG-E089-Software-Dependency-Assessment.md,manufacturing_asset,controlled
+MFG-E090,Vulnerability Assessment,Industrial Network Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E090-Industrial-Network-Vulnerability-Assessment.md,ot;network,controlled
+MFG-E091,Vulnerability Assessment,OT Configuration Assessment,03-Vulnerability-Assessment/MFG-E091-OT-Configuration-Assessment.md,ot,controlled
+MFG-E092,Vulnerability Assessment,SCADA/DCS Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E092-SCADA-DCS-Vulnerability-Assessment.md,ot;engineering,restricted
+MFG-E093,Vulnerability Assessment,PLC/HMI Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E093-PLC-HMI-Vulnerability-Assessment.md,ot,restricted
+MFG-E094,Vulnerability Assessment,Historian Security Assessment,03-Vulnerability-Assessment/MFG-E094-Historian-Security-Assessment.md,ot,controlled
+MFG-E095,Vulnerability Assessment,IIoT/Edge Vulnerability Assessment,03-Vulnerability-Assessment/MFG-E095-IIoT-Edge-Vulnerability-Assessment.md,ot;iiot,controlled
+MFG-E096,Vulnerability Assessment,Wireless Security Assessment,03-Vulnerability-Assessment/MFG-E096-Wireless-Security-Assessment.md,network,controlled
+MFG-E097,Identity / Authentication / Authorization,Authentication Assessment,04-Identity-Access/MFG-E097-Authentication-Assessment.md,identity,controlled
+MFG-E098,Identity / Authentication / Authorization,Authorization Assessment,04-Identity-Access/MFG-E098-Authorization-Assessment.md,identity,controlled
+MFG-E099,Identity / Authentication / Authorization,RBAC Assessment,04-Identity-Access/MFG-E099-RBAC-Assessment.md,identity,controlled
+MFG-E100,Identity / Authentication / Authorization,MFA Assessment,04-Identity-Access/MFG-E100-MFA-Assessment.md,identity,controlled
+MFG-E101,Identity / Authentication / Authorization,Session Management Assessment,04-Identity-Access/MFG-E101-Session-Management-Assessment.md,manufacturing_asset,controlled
+MFG-E102,Identity / Authentication / Authorization,Password Policy Assessment,04-Identity-Access/MFG-E102-Password-Policy-Assessment.md,manufacturing_asset,controlled
+MFG-E103,Identity / Authentication / Authorization,Privileged Access Assessment,04-Identity-Access/MFG-E103-Privileged-Access-Assessment.md,identity,controlled
+MFG-E104,Identity / Authentication / Authorization,Active Directory Security Assessment,04-Identity-Access/MFG-E104-Active-Directory-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E105,Identity / Authentication / Authorization,LDAP/Kerberos Assessment,04-Identity-Access/MFG-E105-LDAP-Kerberos-Assessment.md,identity,controlled
+MFG-E106,Identity / Authentication / Authorization,Service Account Assessment,04-Identity-Access/MFG-E106-Service-Account-Assessment.md,identity,controlled
+MFG-E107,Identity / Authentication / Authorization,Machine Account Assessment,04-Identity-Access/MFG-E107-Machine-Account-Assessment.md,identity,controlled
+MFG-E108,Identity / Authentication / Authorization,Cloud IAM Assessment,04-Identity-Access/MFG-E108-Cloud-IAM-Assessment.md,cloud,controlled
+MFG-E109,Identity / Authentication / Authorization,API Authentication Assessment,04-Identity-Access/MFG-E109-API-Authentication-Assessment.md,api;identity,controlled
+MFG-E110,Identity / Authentication / Authorization,ERP Identity & Access Assessment,04-Identity-Access/MFG-E110-ERP-Identity-Access-Assessment.md,identity;erp,controlled
+MFG-E111,Identity / Authentication / Authorization,MES/QMS Identity & Access Assessment,04-Identity-Access/MFG-E111-MES-QMS-Identity-Access-Assessment.md,identity;mes,controlled
+MFG-E112,Identity / Authentication / Authorization,Remote Access Authentication,04-Identity-Access/MFG-E112-Remote-Access-Authentication.md,identity;ot;supply,controlled
+MFG-E113,Identity / Authentication / Authorization,Vendor Access Assessment,04-Identity-Access/MFG-E113-Vendor-Access-Assessment.md,supply,controlled
+MFG-E114,Identity / Authentication / Authorization,Dormant & Excessive Access Review,04-Identity-Access/MFG-E114-Dormant-Excessive-Access-Review.md,manufacturing_asset,controlled
+MFG-E115,Identity / Authentication / Authorization,Break-Glass Account Review,04-Identity-Access/MFG-E115-Break-Glass-Account-Review.md,identity,controlled
+MFG-E116,Identity / Authentication / Authorization,Certificate-Based Identity,04-Identity-Access/MFG-E116-Certificate-Based-Identity.md,identity;data,controlled
+MFG-E117,Web / API / Application / Infrastructure,Web VAPT Methodology,05-Web-API-Application/MFG-E117-Web-VAPT-Methodology.md,web,controlled
+MFG-E118,Web / API / Application / Infrastructure,API VAPT Methodology,05-Web-API-Application/MFG-E118-API-VAPT-Methodology.md,api,controlled
+MFG-E119,Web / API / Application / Infrastructure,Input Validation & Injection Assessment,05-Web-API-Application/MFG-E119-Input-Validation-Injection-Assessment.md,manufacturing_asset,controlled
+MFG-E120,Web / API / Application / Infrastructure,Access Control Assessment,05-Web-API-Application/MFG-E120-Access-Control-Assessment.md,manufacturing_asset,controlled
+MFG-E121,Web / API / Application / Infrastructure,Business Logic Assessment,05-Web-API-Application/MFG-E121-Business-Logic-Assessment.md,manufacturing_asset,controlled
+MFG-E122,Web / API / Application / Infrastructure,Session & Token Security,05-Web-API-Application/MFG-E122-Session-Token-Security.md,manufacturing_asset,controlled
+MFG-E123,Web / API / Application / Infrastructure,File Upload Assessment,05-Web-API-Application/MFG-E123-File-Upload-Assessment.md,web,controlled
+MFG-E124,Web / API / Application / Infrastructure,Sensitive Data Exposure Assessment,05-Web-API-Application/MFG-E124-Sensitive-Data-Exposure-Assessment.md,data,controlled
+MFG-E125,Web / API / Application / Infrastructure,Error Handling & Information Disclosure,05-Web-API-Application/MFG-E125-Error-Handling-Information-Disclosure.md,manufacturing_asset,controlled
+MFG-E126,Web / API / Application / Infrastructure,Security Headers & Configuration,05-Web-API-Application/MFG-E126-Security-Headers-Configuration.md,manufacturing_asset,controlled
+MFG-E127,Web / API / Application / Infrastructure,ERP Security Assessment,05-Web-API-Application/MFG-E127-ERP-Security-Assessment.md,erp,controlled
+MFG-E128,Web / API / Application / Infrastructure,SAP Security Assessment,05-Web-API-Application/MFG-E128-SAP-Security-Assessment.md,erp,controlled
+MFG-E129,Web / API / Application / Infrastructure,MES Security Assessment,05-Web-API-Application/MFG-E129-MES-Security-Assessment.md,mes,controlled
+MFG-E130,Web / API / Application / Infrastructure,QMS Security Assessment,05-Web-API-Application/MFG-E130-QMS-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E131,Web / API / Application / Infrastructure,WMS Security Assessment,05-Web-API-Application/MFG-E131-WMS-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E132,Web / API / Application / Infrastructure,CMMS Security Assessment,05-Web-API-Application/MFG-E132-CMMS-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E133,Web / API / Application / Infrastructure,CRM Security Assessment,05-Web-API-Application/MFG-E133-CRM-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E134,Web / API / Application / Infrastructure,HRMS Security Assessment,05-Web-API-Application/MFG-E134-HRMS-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E135,Web / API / Application / Infrastructure,Supplier Portal Assessment,05-Web-API-Application/MFG-E135-Supplier-Portal-Assessment.md,web;supply,controlled
+MFG-E136,Web / API / Application / Infrastructure,Customer Portal Assessment,05-Web-API-Application/MFG-E136-Customer-Portal-Assessment.md,web,controlled
+MFG-E137,Web / API / Application / Infrastructure,Mobile Application Assessment,05-Web-API-Application/MFG-E137-Mobile-Application-Assessment.md,manufacturing_asset,controlled
+MFG-E138,Web / API / Application / Infrastructure,Database Application Security,05-Web-API-Application/MFG-E138-Database-Application-Security.md,data,controlled
+MFG-E139,Web / API / Application / Infrastructure,Integration & Middleware Security,05-Web-API-Application/MFG-E139-Integration-Middleware-Security.md,api,controlled
+MFG-E140,Web / API / Application / Infrastructure,Message Broker Security,05-Web-API-Application/MFG-E140-Message-Broker-Security.md,api;mes,controlled
+MFG-E141,Web / API / Application / Infrastructure,API Gateway Security,05-Web-API-Application/MFG-E141-API-Gateway-Security.md,api,controlled
+MFG-E142,Web / API / Application / Infrastructure,Webhook Security,05-Web-API-Application/MFG-E142-Webhook-Security.md,web;api,controlled
+MFG-E143,Web / API / Application / Infrastructure,Document Management Security,05-Web-API-Application/MFG-E143-Document-Management-Security.md,manufacturing_asset,controlled
+MFG-E144,Internal / OT / ICS,IT/OT Architecture Assessment,06-Internal-OT-ICS/MFG-E144-IT-OT-Architecture-Assessment.md,ot,restricted
+MFG-E145,Internal / OT / ICS,OT Asset Inventory,06-Internal-OT-ICS/MFG-E145-OT-Asset-Inventory.md,ot,restricted
+MFG-E146,Internal / OT / ICS,OT Network Segmentation Assessment,06-Internal-OT-ICS/MFG-E146-OT-Network-Segmentation-Assessment.md,ot;network,restricted
+MFG-E147,Internal / OT / ICS,Industrial DMZ Assessment,06-Internal-OT-ICS/MFG-E147-Industrial-DMZ-Assessment.md,ot,restricted
+MFG-E148,Internal / OT / ICS,SCADA Security Assessment,06-Internal-OT-ICS/MFG-E148-SCADA-Security-Assessment.md,ot;engineering,restricted
+MFG-E149,Internal / OT / ICS,DCS Security Assessment,06-Internal-OT-ICS/MFG-E149-DCS-Security-Assessment.md,ot,restricted
+MFG-E150,Internal / OT / ICS,PLC Security Assessment,06-Internal-OT-ICS/MFG-E150-PLC-Security-Assessment.md,ot,restricted
+MFG-E151,Internal / OT / ICS,HMI Security Assessment,06-Internal-OT-ICS/MFG-E151-HMI-Security-Assessment.md,ot,restricted
+MFG-E152,Internal / OT / ICS,RTU Security Assessment,06-Internal-OT-ICS/MFG-E152-RTU-Security-Assessment.md,ot,restricted
+MFG-E153,Internal / OT / ICS,Historian Security Assessment,06-Internal-OT-ICS/MFG-E153-Historian-Security-Assessment.md,ot,restricted
+MFG-E154,Internal / OT / ICS,Engineering Workstation Security,06-Internal-OT-ICS/MFG-E154-Engineering-Workstation-Security.md,engineering,restricted
+MFG-E155,Internal / OT / ICS,Industrial Gateway Security,06-Internal-OT-ICS/MFG-E155-Industrial-Gateway-Security.md,api;ot,restricted
+MFG-E156,Internal / OT / ICS,Industrial Firewall Assessment,06-Internal-OT-ICS/MFG-E156-Industrial-Firewall-Assessment.md,ot;network,restricted
+MFG-E157,Internal / OT / ICS,Industrial Switch Assessment,06-Internal-OT-ICS/MFG-E157-Industrial-Switch-Assessment.md,ot;network,restricted
+MFG-E158,Internal / OT / ICS,Industrial Protocol Security Assessment,06-Internal-OT-ICS/MFG-E158-Industrial-Protocol-Security-Assessment.md,ot,restricted
+MFG-E159,Internal / OT / ICS,OPC UA Security Assessment,06-Internal-OT-ICS/MFG-E159-OPC-UA-Security-Assessment.md,ot,restricted
+MFG-E160,Internal / OT / ICS,Modbus Security Assessment,06-Internal-OT-ICS/MFG-E160-Modbus-Security-Assessment.md,ot,restricted
+MFG-E161,Internal / OT / ICS,PROFINET Security Assessment,06-Internal-OT-ICS/MFG-E161-PROFINET-Security-Assessment.md,ot,restricted
+MFG-E162,Internal / OT / ICS,EtherNet/IP Security Assessment,06-Internal-OT-ICS/MFG-E162-EtherNet-IP-Security-Assessment.md,manufacturing_asset,restricted
+MFG-E163,Internal / OT / ICS,MQTT/IIoT Protocol Security,06-Internal-OT-ICS/MFG-E163-MQTT-IIoT-Protocol-Security.md,ot;iiot,restricted
+MFG-E164,Internal / OT / ICS,OT Remote Access Assessment,06-Internal-OT-ICS/MFG-E164-OT-Remote-Access-Assessment.md,ot;supply,restricted
+MFG-E165,Internal / OT / ICS,OT Account & Privilege Assessment,06-Internal-OT-ICS/MFG-E165-OT-Account-Privilege-Assessment.md,identity;ot,restricted
+MFG-E166,Internal / OT / ICS,OT Logging & Monitoring Assessment,06-Internal-OT-ICS/MFG-E166-OT-Logging-Monitoring-Assessment.md,ot;monitoring,restricted
+MFG-E167,Internal / OT / ICS,Safety System Security Assessment,06-Internal-OT-ICS/MFG-E167-Safety-System-Security-Assessment.md,ot,restricted
+MFG-E168,Internal / OT / ICS,OT Backup Assessment,06-Internal-OT-ICS/MFG-E168-OT-Backup-Assessment.md,ot;backup,restricted
+MFG-E169,Internal / OT / ICS,OT Patch Management Assessment,06-Internal-OT-ICS/MFG-E169-OT-Patch-Management-Assessment.md,ot,restricted
+MFG-E170,Internal / OT / ICS,OT Malware/Removable Media Controls,06-Internal-OT-ICS/MFG-E170-OT-Malware-Removable-Media-Controls.md,ot,restricted
+MFG-E171,Internal / OT / ICS,OT Incident Response Readiness,06-Internal-OT-ICS/MFG-E171-OT-Incident-Response-Readiness.md,ot,restricted
+MFG-E172,Engineering / IIoT / Cloud,CAD/CAM Security Assessment,07-Engineering-IIoT-Cloud/MFG-E172-CAD-CAM-Security-Assessment.md,engineering,controlled
+MFG-E173,Engineering / IIoT / Cloud,PLM/PDM Security Assessment,07-Engineering-IIoT-Cloud/MFG-E173-PLM-PDM-Security-Assessment.md,engineering,controlled
+MFG-E174,Engineering / IIoT / Cloud,Engineering IP Protection,07-Engineering-IIoT-Cloud/MFG-E174-Engineering-IP-Protection.md,ot;engineering,controlled
+MFG-E175,Engineering / IIoT / Cloud,Engineering Workstation Assessment,07-Engineering-IIoT-Cloud/MFG-E175-Engineering-Workstation-Assessment.md,engineering,controlled
+MFG-E176,Engineering / IIoT / Cloud,CNC/Robot Environment Assessment,07-Engineering-IIoT-Cloud/MFG-E176-CNC-Robot-Environment-Assessment.md,ot;engineering,restricted
+MFG-E177,Engineering / IIoT / Cloud,Firmware Security Assessment,07-Engineering-IIoT-Cloud/MFG-E177-Firmware-Security-Assessment.md,engineering,controlled
+MFG-E178,Engineering / IIoT / Cloud,Source Code & Repository Assessment,07-Engineering-IIoT-Cloud/MFG-E178-Source-Code-Repository-Assessment.md,engineering,controlled
+MFG-E179,Engineering / IIoT / Cloud,IIoT Security Assessment,07-Engineering-IIoT-Cloud/MFG-E179-IIoT-Security-Assessment.md,ot;iiot,controlled
+MFG-E180,Engineering / IIoT / Cloud,Edge Gateway Security Assessment,07-Engineering-IIoT-Cloud/MFG-E180-Edge-Gateway-Security-Assessment.md,api;iiot,controlled
+MFG-E181,Engineering / IIoT / Cloud,Device Management Security,07-Engineering-IIoT-Cloud/MFG-E181-Device-Management-Security.md,manufacturing_asset,controlled
+MFG-E182,Engineering / IIoT / Cloud,Cloud Security Methodology,07-Engineering-IIoT-Cloud/MFG-E182-Cloud-Security-Methodology.md,cloud,controlled
+MFG-E183,Engineering / IIoT / Cloud,Cloud Network Security,07-Engineering-IIoT-Cloud/MFG-E183-Cloud-Network-Security.md,cloud;network,controlled
+MFG-E184,Engineering / IIoT / Cloud,Cloud IAM Security,07-Engineering-IIoT-Cloud/MFG-E184-Cloud-IAM-Security.md,cloud,controlled
+MFG-E185,Engineering / IIoT / Cloud,Cloud VM Security,07-Engineering-IIoT-Cloud/MFG-E185-Cloud-VM-Security.md,cloud,controlled
+MFG-E186,Engineering / IIoT / Cloud,Container Security,07-Engineering-IIoT-Cloud/MFG-E186-Container-Security.md,cloud,controlled
+MFG-E187,Engineering / IIoT / Cloud,Kubernetes Security,07-Engineering-IIoT-Cloud/MFG-E187-Kubernetes-Security.md,cloud,controlled
+MFG-E188,Engineering / IIoT / Cloud,Serverless Security,07-Engineering-IIoT-Cloud/MFG-E188-Serverless-Security.md,cloud,controlled
+MFG-E189,Engineering / IIoT / Cloud,S3/Object Storage Security,07-Engineering-IIoT-Cloud/MFG-E189-S3-Object-Storage-Security.md,cloud,controlled
+MFG-E190,Engineering / IIoT / Cloud,Cloud Database Security,07-Engineering-IIoT-Cloud/MFG-E190-Cloud-Database-Security.md,cloud;data,controlled
+MFG-E191,Engineering / IIoT / Cloud,Cloud API Security,07-Engineering-IIoT-Cloud/MFG-E191-Cloud-API-Security.md,api;cloud,controlled
+MFG-E192,Engineering / IIoT / Cloud,Cloud Logging,07-Engineering-IIoT-Cloud/MFG-E192-Cloud-Logging.md,cloud;monitoring,controlled
+MFG-E193,Engineering / IIoT / Cloud,Cloud Secrets & Key Management,07-Engineering-IIoT-Cloud/MFG-E193-Cloud-Secrets-Key-Management.md,cloud;data,controlled
+MFG-E194,Engineering / IIoT / Cloud,Digital Twin Security,07-Engineering-IIoT-Cloud/MFG-E194-Digital-Twin-Security.md,iiot,controlled
+MFG-E195,Engineering / IIoT / Cloud,Industrial Analytics Security,07-Engineering-IIoT-Cloud/MFG-E195-Industrial-Analytics-Security.md,ot;iiot,controlled
+MFG-E196,Engineering / IIoT / Cloud,AI/ML Platform Security,07-Engineering-IIoT-Cloud/MFG-E196-AI-ML-Platform-Security.md,iiot,controlled
+MFG-E197,Network / Remote / Supply Chain,Firewall Security Assessment,08-Network-Remote-Supply-Chain/MFG-E197-Firewall-Security-Assessment.md,network,controlled
+MFG-E198,Network / Remote / Supply Chain,Network Segmentation Assessment,08-Network-Remote-Supply-Chain/MFG-E198-Network-Segmentation-Assessment.md,network,controlled
+MFG-E199,Network / Remote / Supply Chain,Routing & ACL Assessment,08-Network-Remote-Supply-Chain/MFG-E199-Routing-ACL-Assessment.md,network,controlled
+MFG-E200,Network / Remote / Supply Chain,VPN Security Assessment,08-Network-Remote-Supply-Chain/MFG-E200-VPN-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E201,Network / Remote / Supply Chain,RDP Security Assessment,08-Network-Remote-Supply-Chain/MFG-E201-RDP-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E202,Network / Remote / Supply Chain,SSH Security Assessment,08-Network-Remote-Supply-Chain/MFG-E202-SSH-Security-Assessment.md,manufacturing_asset,controlled
+MFG-E203,Network / Remote / Supply Chain,Jump Server Assessment,08-Network-Remote-Supply-Chain/MFG-E203-Jump-Server-Assessment.md,manufacturing_asset,controlled
+MFG-E204,Network / Remote / Supply Chain,Remote Support Platform Assessment,08-Network-Remote-Supply-Chain/MFG-E204-Remote-Support-Platform-Assessment.md,ot,controlled
+MFG-E205,Network / Remote / Supply Chain,Vendor Remote Access Assessment,08-Network-Remote-Supply-Chain/MFG-E205-Vendor-Remote-Access-Assessment.md,ot;supply,controlled
+MFG-E206,Network / Remote / Supply Chain,Third-Party Connectivity Assessment,08-Network-Remote-Supply-Chain/MFG-E206-Third-Party-Connectivity-Assessment.md,supply,controlled
+MFG-E207,Network / Remote / Supply Chain,Supplier Portal Security,08-Network-Remote-Supply-Chain/MFG-E207-Supplier-Portal-Security.md,web;supply,controlled
+MFG-E208,Network / Remote / Supply Chain,Supply Chain Risk Assessment,08-Network-Remote-Supply-Chain/MFG-E208-Supply-Chain-Risk-Assessment.md,supply,controlled
+MFG-E209,Network / Remote / Supply Chain,Software Supply Chain Assessment,08-Network-Remote-Supply-Chain/MFG-E209-Software-Supply-Chain-Assessment.md,supply,controlled
+MFG-E210,Network / Remote / Supply Chain,Firmware/Software Update Channel Assessment,08-Network-Remote-Supply-Chain/MFG-E210-Firmware-Software-Update-Channel-Assessment.md,engineering;supply,controlled
+MFG-E211,Network / Remote / Supply Chain,CI/CD Pipeline Security,08-Network-Remote-Supply-Chain/MFG-E211-CI-CD-Pipeline-Security.md,manufacturing_asset,controlled
+MFG-E212,Network / Remote / Supply Chain,Git Repository Security,08-Network-Remote-Supply-Chain/MFG-E212-Git-Repository-Security.md,manufacturing_asset,controlled
+MFG-E213,Network / Remote / Supply Chain,Artifact Repository Security,08-Network-Remote-Supply-Chain/MFG-E213-Artifact-Repository-Security.md,manufacturing_asset,controlled
+MFG-E214,Network / Remote / Supply Chain,Package/Dependency Security,08-Network-Remote-Supply-Chain/MFG-E214-Package-Dependency-Security.md,manufacturing_asset,controlled
+MFG-E215,Network / Remote / Supply Chain,Wireless Network Assessment,08-Network-Remote-Supply-Chain/MFG-E215-Wireless-Network-Assessment.md,network,controlled
+MFG-E216,Network / Remote / Supply Chain,Industrial Wireless Assessment,08-Network-Remote-Supply-Chain/MFG-E216-Industrial-Wireless-Assessment.md,ot;network,controlled
+MFG-E217,Data / Privacy / IP,PII Discovery Methodology,09-Data-Privacy-IP/MFG-E217-PII-Discovery-Methodology.md,data,controlled
+MFG-E218,Data / Privacy / IP,Sensitive Data Exposure Assessment,09-Data-Privacy-IP/MFG-E218-Sensitive-Data-Exposure-Assessment.md,data,controlled
+MFG-E219,Data / Privacy / IP,Employee Data Security,09-Data-Privacy-IP/MFG-E219-Employee-Data-Security.md,data,controlled
+MFG-E220,Data / Privacy / IP,Customer Data Security,09-Data-Privacy-IP/MFG-E220-Customer-Data-Security.md,data,controlled
+MFG-E221,Data / Privacy / IP,Supplier Data Security,09-Data-Privacy-IP/MFG-E221-Supplier-Data-Security.md,supply;data,controlled
+MFG-E222,Data / Privacy / IP,Financial Data Security,09-Data-Privacy-IP/MFG-E222-Financial-Data-Security.md,data,controlled
+MFG-E223,Data / Privacy / IP,Production Data Security,09-Data-Privacy-IP/MFG-E223-Production-Data-Security.md,data,controlled
+MFG-E224,Data / Privacy / IP,Quality Data Security,09-Data-Privacy-IP/MFG-E224-Quality-Data-Security.md,data,controlled
+MFG-E225,Data / Privacy / IP,CAD/IP Data Security,09-Data-Privacy-IP/MFG-E225-CAD-IP-Data-Security.md,engineering;data,controlled
+MFG-E226,Data / Privacy / IP,Technical Drawing Security,09-Data-Privacy-IP/MFG-E226-Technical-Drawing-Security.md,manufacturing_asset,controlled
+MFG-E227,Data / Privacy / IP,Source Code & Firmware Protection,09-Data-Privacy-IP/MFG-E227-Source-Code-Firmware-Protection.md,ot;engineering,controlled
+MFG-E228,Data / Privacy / IP,Database Security Assessment,09-Data-Privacy-IP/MFG-E228-Database-Security-Assessment.md,data,controlled
+MFG-E229,Data / Privacy / IP,File Share Security,09-Data-Privacy-IP/MFG-E229-File-Share-Security.md,manufacturing_asset,controlled
+MFG-E230,Data / Privacy / IP,NAS/SAN Security,09-Data-Privacy-IP/MFG-E230-NAS-SAN-Security.md,manufacturing_asset,controlled
+MFG-E231,Data / Privacy / IP,Backup Data Security,09-Data-Privacy-IP/MFG-E231-Backup-Data-Security.md,data;backup,controlled
+MFG-E232,Data / Privacy / IP,Secrets & Credential Exposure,09-Data-Privacy-IP/MFG-E232-Secrets-Credential-Exposure.md,data,controlled
+MFG-E233,Data / Privacy / IP,API Key Exposure,09-Data-Privacy-IP/MFG-E233-API-Key-Exposure.md,api;data,controlled
+MFG-E234,Data / Privacy / IP,Certificate/Private Key Exposure,09-Data-Privacy-IP/MFG-E234-Certificate-Private-Key-Exposure.md,data,controlled
+MFG-E235,Monitoring / Detection,SIEM Assessment,10-Monitoring-Detection/MFG-E235-SIEM-Assessment.md,monitoring,controlled
+MFG-E236,Monitoring / Detection,SOAR Assessment,10-Monitoring-Detection/MFG-E236-SOAR-Assessment.md,monitoring,controlled
+MFG-E237,Monitoring / Detection,EDR/XDR Assessment,10-Monitoring-Detection/MFG-E237-EDR-XDR-Assessment.md,monitoring,controlled
+MFG-E238,Monitoring / Detection,IDS/IPS Assessment,10-Monitoring-Detection/MFG-E238-IDS-IPS-Assessment.md,monitoring,controlled
+MFG-E239,Monitoring / Detection,NDR Assessment,10-Monitoring-Detection/MFG-E239-NDR-Assessment.md,monitoring,controlled
+MFG-E240,Monitoring / Detection,Vulnerability Management Assessment,10-Monitoring-Detection/MFG-E240-Vulnerability-Management-Assessment.md,manufacturing_asset,controlled
+MFG-E241,Monitoring / Detection,Patch Management Assessment,10-Monitoring-Detection/MFG-E241-Patch-Management-Assessment.md,manufacturing_asset,controlled
+MFG-E242,Monitoring / Detection,OT Monitoring Assessment,10-Monitoring-Detection/MFG-E242-OT-Monitoring-Assessment.md,ot;monitoring,controlled
+MFG-E243,Monitoring / Detection,OT IDS Assessment,10-Monitoring-Detection/MFG-E243-OT-IDS-Assessment.md,ot;monitoring,controlled
+MFG-E244,Monitoring / Detection,Log Management Assessment,10-Monitoring-Detection/MFG-E244-Log-Management-Assessment.md,manufacturing_asset,controlled
+MFG-E245,Monitoring / Detection,Authentication Logging Assessment,10-Monitoring-Detection/MFG-E245-Authentication-Logging-Assessment.md,identity;monitoring,controlled
+MFG-E246,Monitoring / Detection,VPN Logging Assessment,10-Monitoring-Detection/MFG-E246-VPN-Logging-Assessment.md,monitoring,controlled
+MFG-E247,Monitoring / Detection,Application/API Logging Assessment,10-Monitoring-Detection/MFG-E247-Application-API-Logging-Assessment.md,api;monitoring,controlled
+MFG-E248,Monitoring / Detection,Cloud Logging Assessment,10-Monitoring-Detection/MFG-E248-Cloud-Logging-Assessment.md,cloud;monitoring,controlled
+MFG-E249,Monitoring / Detection,SCADA/HMI Logging Assessment,10-Monitoring-Detection/MFG-E249-SCADA-HMI-Logging-Assessment.md,ot;engineering;monitoring,restricted
+MFG-E250,Monitoring / Detection,Detection Use-Case Review,10-Monitoring-Detection/MFG-E250-Detection-Use-Case-Review.md,monitoring,controlled
+MFG-E251,Monitoring / Detection,Incident Response Readiness,10-Monitoring-Detection/MFG-E251-Incident-Response-Readiness.md,manufacturing_asset,controlled
+MFG-E252,Validation / Business Impact,Manual Finding Validation,11-Validation-Business-Impact/MFG-E252-Manual-Finding-Validation.md,manufacturing_asset,controlled
+MFG-E253,Validation / Business Impact,False Positive Reduction,11-Validation-Business-Impact/MFG-E253-False-Positive-Reduction.md,manufacturing_asset,controlled
+MFG-E254,Validation / Business Impact,Controlled Exploit Validation,11-Validation-Business-Impact/MFG-E254-Controlled-Exploit-Validation.md,manufacturing_asset,controlled
+MFG-E255,Validation / Business Impact,Attack Path Analysis,11-Validation-Business-Impact/MFG-E255-Attack-Path-Analysis.md,manufacturing_asset,controlled
+MFG-E256,Validation / Business Impact,Business Impact Analysis,11-Validation-Business-Impact/MFG-E256-Business-Impact-Analysis.md,manufacturing_asset,controlled
+MFG-E257,Validation / Business Impact,Operational Impact Analysis,11-Validation-Business-Impact/MFG-E257-Operational-Impact-Analysis.md,manufacturing_asset,controlled
+MFG-E258,Validation / Business Impact,Production Availability Impact,11-Validation-Business-Impact/MFG-E258-Production-Availability-Impact.md,manufacturing_asset,controlled
+MFG-E259,Validation / Business Impact,Safety Impact Assessment,11-Validation-Business-Impact/MFG-E259-Safety-Impact-Assessment.md,ot,restricted
+MFG-E260,Validation / Business Impact,Engineering IP Impact,11-Validation-Business-Impact/MFG-E260-Engineering-IP-Impact.md,engineering,controlled
+MFG-E261,Validation / Business Impact,Data Protection Impact,11-Validation-Business-Impact/MFG-E261-Data-Protection-Impact.md,ot;data,controlled
+MFG-E262,Validation / Business Impact,Ransomware Impact Analysis,11-Validation-Business-Impact/MFG-E262-Ransomware-Impact-Analysis.md,manufacturing_asset,controlled
+MFG-E263,Validation / Business Impact,Supply Chain Impact,11-Validation-Business-Impact/MFG-E263-Supply-Chain-Impact.md,supply,controlled
+MFG-E264,Validation / Business Impact,Recovery/Resilience Assessment,11-Validation-Business-Impact/MFG-E264-Recovery-Resilience-Assessment.md,backup,controlled
+MFG-E265,Validation / Business Impact,Risk Contextualization,11-Validation-Business-Impact/MFG-E265-Risk-Contextualization.md,manufacturing_asset,controlled
+MFG-E266,Reporting / Remediation / Retest,VAPT Reporting Methodology,12-Reporting-Remediation/MFG-E266-VAPT-Reporting-Methodology.md,manufacturing_asset,controlled
+MFG-E267,Reporting / Remediation / Retest,Executive Summary,12-Reporting-Remediation/MFG-E267-Executive-Summary.md,manufacturing_asset,controlled
+MFG-E268,Reporting / Remediation / Retest,Technical Finding Structure,12-Reporting-Remediation/MFG-E268-Technical-Finding-Structure.md,manufacturing_asset,controlled
+MFG-E269,Reporting / Remediation / Retest,Evidence Standards,12-Reporting-Remediation/MFG-E269-Evidence-Standards.md,manufacturing_asset,controlled
+MFG-E270,Reporting / Remediation / Retest,Severity & Risk Rating,12-Reporting-Remediation/MFG-E270-Severity-Risk-Rating.md,manufacturing_asset,controlled
+MFG-E271,Reporting / Remediation / Retest,CVSS Application,12-Reporting-Remediation/MFG-E271-CVSS-Application.md,manufacturing_asset,controlled
+MFG-E272,Reporting / Remediation / Retest,CWE/OWASP Mapping,12-Reporting-Remediation/MFG-E272-CWE-OWASP-Mapping.md,manufacturing_asset,controlled
+MFG-E273,Reporting / Remediation / Retest,MITRE ATT&CK ICS Mapping,12-Reporting-Remediation/MFG-E273-MITRE-ATT-CK-ICS-Mapping.md,manufacturing_asset,controlled
+MFG-E274,Reporting / Remediation / Retest,Business Impact Writing,12-Reporting-Remediation/MFG-E274-Business-Impact-Writing.md,manufacturing_asset,controlled
+MFG-E275,Reporting / Remediation / Retest,Remediation Recommendation,12-Reporting-Remediation/MFG-E275-Remediation-Recommendation.md,manufacturing_asset,controlled
+MFG-E276,Reporting / Remediation / Retest,Compensating Controls,12-Reporting-Remediation/MFG-E276-Compensating-Controls.md,manufacturing_asset,controlled
+MFG-E277,Reporting / Remediation / Retest,Remediation Tracking,12-Reporting-Remediation/MFG-E277-Remediation-Tracking.md,manufacturing_asset,controlled
+MFG-E278,Reporting / Remediation / Retest,Retest Methodology,12-Reporting-Remediation/MFG-E278-Retest-Methodology.md,manufacturing_asset,controlled
+MFG-E279,Reporting / Remediation / Retest,Residual Risk,12-Reporting-Remediation/MFG-E279-Residual-Risk.md,manufacturing_asset,controlled
+MFG-E280,Reporting / Remediation / Retest,Management Walkthrough,12-Reporting-Remediation/MFG-E280-Management-Walkthrough.md,manufacturing_asset,controlled
+MFG-E281,Reporting / Remediation / Retest,Final Scope & Coverage Matrix,12-Reporting-Remediation/MFG-E281-Final-Scope-Coverage-Matrix.md,manufacturing_asset,controlled
+MFG-X300,Manufacturing Architecture & Safety,ISA-95 Level 0 Physical Process,00-Foundation/MFG-X300-ISA-95-Level-0-Physical-Process.md,cross_cutting,controlled
+MFG-X301,Manufacturing Architecture & Safety,ISA-95 Level 1 Sensing & Actuation,00-Foundation/MFG-X301-ISA-95-Level-1-Sensing-Actuation.md,cross_cutting,controlled
+MFG-X302,Manufacturing Architecture & Safety,ISA-95 Level 2 Supervisory Control,00-Foundation/MFG-X302-ISA-95-Level-2-Supervisory-Control.md,cross_cutting,controlled
+MFG-X303,Manufacturing Architecture & Safety,ISA-95 Level 3 Manufacturing Operations Management,00-Foundation/MFG-X303-ISA-95-Level-3-Manufacturing-Operations-Management.md,cross_cutting,controlled
+MFG-X304,Manufacturing Architecture & Safety,ISA-95 Level 4 Business Planning & Logistics,00-Foundation/MFG-X304-ISA-95-Level-4-Business-Planning-Logistics.md,cross_cutting,controlled
+MFG-X305,Manufacturing Architecture & Safety,Enterprise/Cloud Integration Layer where implemented,00-Foundation/MFG-X305-Enterprise-Cloud-Integration-Layer-where-implemented.md,cross_cutting,controlled
+MFG-X306,Manufacturing Architecture & Safety,Purdue/zone architecture,00-Foundation/MFG-X306-Purdue-zone-architecture.md,cross_cutting,controlled
+MFG-X307,Manufacturing Architecture & Safety,Zones & Conduits,00-Foundation/MFG-X307-Zones-Conduits.md,cross_cutting,controlled
+MFG-X308,Manufacturing Architecture & Safety,Industrial DMZ,00-Foundation/MFG-X308-Industrial-DMZ.md,cross_cutting,controlled
+MFG-X309,Manufacturing Architecture & Safety,Safety Instrumented Systems,00-Foundation/MFG-X309-Safety-Instrumented-Systems.md,cross_cutting,controlled
+MFG-X310,Manufacturing Architecture & Safety,Safety PLC/SIS,00-Foundation/MFG-X310-Safety-PLC-SIS.md,cross_cutting,controlled
+MFG-X311,Manufacturing Architecture & Safety,Safety lifecycle,00-Foundation/MFG-X311-Safety-lifecycle.md,cross_cutting,controlled
+MFG-X312,Manufacturing Architecture & Safety,Process safety vs cybersecurity,00-Foundation/MFG-X312-Process-safety-vs-cybersecurity.md,cross_cutting,controlled
+MFG-X313,Manufacturing Architecture & Safety,Discrete manufacturing,00-Foundation/MFG-X313-Discrete-manufacturing.md,cross_cutting,controlled
+MFG-X314,Manufacturing Architecture & Safety,Continuous/process manufacturing,00-Foundation/MFG-X314-Continuous-process-manufacturing.md,cross_cutting,controlled
+MFG-X315,Manufacturing Architecture & Safety,Batch manufacturing,00-Foundation/MFG-X315-Batch-manufacturing.md,cross_cutting,controlled
+MFG-X316,Manufacturing Architecture & Safety,Hybrid manufacturing,00-Foundation/MFG-X316-Hybrid-manufacturing.md,cross_cutting,controlled
+MFG-X317,Manufacturing Architecture & Safety,Production cell/workcell,00-Foundation/MFG-X317-Production-cell-workcell.md,cross_cutting,controlled
+MFG-X318,Manufacturing Architecture & Safety,Plant/site/enterprise boundaries,00-Foundation/MFG-X318-Plant-site-enterprise-boundaries.md,cross_cutting,controlled
+MFG-X319,Governance / GRC / Compliance,Security governance,00-Foundation/MFG-X319-Security-governance.md,cross_cutting,controlled
+MFG-X320,Governance / GRC / Compliance,Asset ownership,00-Foundation/MFG-X320-Asset-ownership.md,cross_cutting,controlled
+MFG-X321,Governance / GRC / Compliance,Risk management,00-Foundation/MFG-X321-Risk-management.md,cross_cutting,controlled
+MFG-X322,Governance / GRC / Compliance,Cybersecurity policies,00-Foundation/MFG-X322-Cybersecurity-policies.md,cross_cutting,controlled
+MFG-X323,Governance / GRC / Compliance,OT security policy,00-Foundation/MFG-X323-OT-security-policy.md,cross_cutting,controlled
+MFG-X324,Governance / GRC / Compliance,Third-party risk,00-Foundation/MFG-X324-Third-party-risk.md,cross_cutting,controlled
+MFG-X325,Governance / GRC / Compliance,Vendor risk,00-Foundation/MFG-X325-Vendor-risk.md,cross_cutting,controlled
+MFG-X326,Governance / GRC / Compliance,Security requirements in procurement,00-Foundation/MFG-X326-Security-requirements-in-procurement.md,cross_cutting,controlled
+MFG-X327,Governance / GRC / Compliance,Change management,00-Foundation/MFG-X327-Change-management.md,cross_cutting,controlled
+MFG-X328,Governance / GRC / Compliance,Configuration management,00-Foundation/MFG-X328-Configuration-management.md,cross_cutting,controlled
+MFG-X329,Governance / GRC / Compliance,Vulnerability management,00-Foundation/MFG-X329-Vulnerability-management.md,cross_cutting,controlled
+MFG-X330,Governance / GRC / Compliance,Patch management,00-Foundation/MFG-X330-Patch-management.md,cross_cutting,controlled
+MFG-X331,Governance / GRC / Compliance,Exception management,00-Foundation/MFG-X331-Exception-management.md,cross_cutting,controlled
+MFG-X332,Governance / GRC / Compliance,Risk acceptance,00-Foundation/MFG-X332-Risk-acceptance.md,cross_cutting,controlled
+MFG-X333,Governance / GRC / Compliance,Audit evidence,00-Foundation/MFG-X333-Audit-evidence.md,cross_cutting,controlled
+MFG-X334,Governance / GRC / Compliance,Business continuity,00-Foundation/MFG-X334-Business-continuity.md,cross_cutting,controlled
+MFG-X335,Governance / GRC / Compliance,Disaster recovery,00-Foundation/MFG-X335-Disaster-recovery.md,cross_cutting,controlled
+MFG-X336,Governance / GRC / Compliance,Incident response,00-Foundation/MFG-X336-Incident-response.md,cross_cutting,controlled
+MFG-X337,Governance / GRC / Compliance,Crisis management,00-Foundation/MFG-X337-Crisis-management.md,cross_cutting,controlled
+MFG-X338,Governance / GRC / Compliance,Security awareness,00-Foundation/MFG-X338-Security-awareness.md,cross_cutting,controlled
+MFG-X339,Governance / GRC / Compliance,Regulatory obligations,00-Foundation/MFG-X339-Regulatory-obligations.md,cross_cutting,controlled
+MFG-X340,Governance / GRC / Compliance,Contractual requirements,00-Foundation/MFG-X340-Contractual-requirements.md,cross_cutting,controlled
+MFG-X341,Governance / GRC / Compliance,Customer security requirements,00-Foundation/MFG-X341-Customer-security-requirements.md,cross_cutting,controlled
+MFG-X342,Governance / GRC / Compliance,Cyber insurance requirements,00-Foundation/MFG-X342-Cyber-insurance-requirements.md,cross_cutting,controlled
+MFG-X343,Governance / GRC / Compliance,Applicable national/sectoral requirements,00-Foundation/MFG-X343-Applicable-national-sectoral-requirements.md,cross_cutting,controlled
+MFG-X344,Human / Physical / Social Engineering,Security awareness,00-Foundation/MFG-X344-Security-awareness.md,cross_cutting,controlled
+MFG-X345,Human / Physical / Social Engineering,Phishing,00-Foundation/MFG-X345-Phishing.md,cross_cutting,controlled
+MFG-X346,Human / Physical / Social Engineering,Spear phishing,00-Foundation/MFG-X346-Spear-phishing.md,cross_cutting,controlled
+MFG-X347,Human / Physical / Social Engineering,Business email compromise scenarios,00-Foundation/MFG-X347-Business-email-compromise-scenarios.md,cross_cutting,controlled
+MFG-X348,Human / Physical / Social Engineering,Vishing,00-Foundation/MFG-X348-Vishing.md,cross_cutting,controlled
+MFG-X349,Human / Physical / Social Engineering,Smishing,00-Foundation/MFG-X349-Smishing.md,cross_cutting,controlled
+MFG-X350,Human / Physical / Social Engineering,Pretexting,00-Foundation/MFG-X350-Pretexting.md,cross_cutting,controlled
+MFG-X351,Human / Physical / Social Engineering,Physical access assessment,00-Foundation/MFG-X351-Physical-access-assessment.md,cross_cutting,controlled
+MFG-X352,Human / Physical / Social Engineering,Badge/access-control review,00-Foundation/MFG-X352-Badge-access-control-review.md,cross_cutting,controlled
+MFG-X353,Human / Physical / Social Engineering,Tailgating assessment,00-Foundation/MFG-X353-Tailgating-assessment.md,cross_cutting,controlled
+MFG-X354,Human / Physical / Social Engineering,Visitor controls,00-Foundation/MFG-X354-Visitor-controls.md,cross_cutting,controlled
+MFG-X355,Human / Physical / Social Engineering,Clean desk/media handling,00-Foundation/MFG-X355-Clean-desk-media-handling.md,cross_cutting,controlled
+MFG-X356,Human / Physical / Social Engineering,Removable media controls,00-Foundation/MFG-X356-Removable-media-controls.md,cross_cutting,controlled
+MFG-X357,Human / Physical / Social Engineering,Security of engineering areas,00-Foundation/MFG-X357-Security-of-engineering-areas.md,cross_cutting,controlled
+MFG-X358,Human / Physical / Social Engineering,Control-room security,00-Foundation/MFG-X358-Control-room-security.md,cross_cutting,controlled
+MFG-X359,Human / Physical / Social Engineering,Server-room security,00-Foundation/MFG-X359-Server-room-security.md,cross_cutting,controlled
+MFG-X360,Human / Physical / Social Engineering,Social engineering rules of engagement,00-Foundation/MFG-X360-Social-engineering-rules-of-engagement.md,cross_cutting,controlled
+MFG-X361,Resilience / Recovery,Backup architecture,00-Foundation/MFG-X361-Backup-architecture.md,cross_cutting,controlled
+MFG-X362,Resilience / Recovery,Backup immutability,00-Foundation/MFG-X362-Backup-immutability.md,cross_cutting,controlled
+MFG-X363,Resilience / Recovery,Offline backups,00-Foundation/MFG-X363-Offline-backups.md,cross_cutting,controlled
+MFG-X364,Resilience / Recovery,Restore testing,00-Foundation/MFG-X364-Restore-testing.md,cross_cutting,controlled
+MFG-X365,Resilience / Recovery,PLC logic backup,00-Foundation/MFG-X365-PLC-logic-backup.md,cross_cutting,controlled
+MFG-X366,Resilience / Recovery,SCADA backup,00-Foundation/MFG-X366-SCADA-backup.md,cross_cutting,controlled
+MFG-X367,Resilience / Recovery,HMI backup,00-Foundation/MFG-X367-HMI-backup.md,cross_cutting,controlled
+MFG-X368,Resilience / Recovery,Engineering workstation backup,00-Foundation/MFG-X368-Engineering-workstation-backup.md,cross_cutting,controlled
+MFG-X369,Resilience / Recovery,Configuration backup,00-Foundation/MFG-X369-Configuration-backup.md,cross_cutting,controlled
+MFG-X370,Resilience / Recovery,Golden images,00-Foundation/MFG-X370-Golden-images.md,cross_cutting,controlled
+MFG-X371,Resilience / Recovery,Disaster recovery,00-Foundation/MFG-X371-Disaster-recovery.md,cross_cutting,controlled
+MFG-X372,Resilience / Recovery,Business continuity,00-Foundation/MFG-X372-Business-continuity.md,cross_cutting,controlled
+MFG-X373,Resilience / Recovery,RTO/RPO,00-Foundation/MFG-X373-RTO-RPO.md,cross_cutting,controlled
+MFG-X374,Resilience / Recovery,Production recovery,00-Foundation/MFG-X374-Production-recovery.md,cross_cutting,controlled
+MFG-X375,Resilience / Recovery,Failover,00-Foundation/MFG-X375-Failover.md,cross_cutting,controlled
+MFG-X376,Resilience / Recovery,Redundancy,00-Foundation/MFG-X376-Redundancy.md,cross_cutting,controlled
+MFG-X377,Resilience / Recovery,High availability,00-Foundation/MFG-X377-High-availability.md,cross_cutting,controlled
+MFG-X378,Resilience / Recovery,Single points of failure,00-Foundation/MFG-X378-Single-points-of-failure.md,cross_cutting,controlled
+MFG-X379,Resilience / Recovery,Crisis communications,00-Foundation/MFG-X379-Crisis-communications.md,cross_cutting,controlled
+MFG-X380,Resilience / Recovery,Ransomware recovery,00-Foundation/MFG-X380-Ransomware-recovery.md,cross_cutting,controlled
+MFG-X381,Threat Modeling / Attack Paths,Manufacturing threat model,00-Foundation/MFG-X381-Manufacturing-threat-model.md,cross_cutting,controlled
+MFG-X382,Threat Modeling / Attack Paths,Asset-to-process mapping,00-Foundation/MFG-X382-Asset-to-process-mapping.md,cross_cutting,controlled
+MFG-X383,Threat Modeling / Attack Paths,Trust-boundary analysis,00-Foundation/MFG-X383-Trust-boundary-analysis.md,cross_cutting,controlled
+MFG-X384,Threat Modeling / Attack Paths,Attack-path analysis,00-Foundation/MFG-X384-Attack-path-analysis.md,cross_cutting,controlled
+MFG-X385,Threat Modeling / Attack Paths,Initial access paths,00-Foundation/MFG-X385-Initial-access-paths.md,cross_cutting,controlled
+MFG-X386,Threat Modeling / Attack Paths,IT-to-OT pathways,00-Foundation/MFG-X386-IT-to-OT-pathways.md,cross_cutting,controlled
+MFG-X387,Threat Modeling / Attack Paths,OT-to-IT pathways,00-Foundation/MFG-X387-OT-to-IT-pathways.md,cross_cutting,controlled
+MFG-X388,Threat Modeling / Attack Paths,Vendor access paths,00-Foundation/MFG-X388-Vendor-access-paths.md,cross_cutting,controlled
+MFG-X389,Threat Modeling / Attack Paths,Cloud-to-plant paths,00-Foundation/MFG-X389-Cloud-to-plant-paths.md,cross_cutting,controlled
+MFG-X390,Threat Modeling / Attack Paths,Engineering workstation attack paths,00-Foundation/MFG-X390-Engineering-workstation-attack-paths.md,cross_cutting,controlled
+MFG-X391,Threat Modeling / Attack Paths,Identity attack paths,00-Foundation/MFG-X391-Identity-attack-paths.md,cross_cutting,controlled
+MFG-X392,Threat Modeling / Attack Paths,Data exfiltration paths,00-Foundation/MFG-X392-Data-exfiltration-paths.md,cross_cutting,controlled
+MFG-X393,Threat Modeling / Attack Paths,Process manipulation scenarios,00-Foundation/MFG-X393-Process-manipulation-scenarios.md,cross_cutting,controlled
+MFG-X394,Threat Modeling / Attack Paths,Availability disruption scenarios,00-Foundation/MFG-X394-Availability-disruption-scenarios.md,cross_cutting,controlled
+MFG-X395,Threat Modeling / Attack Paths,Safety-impact scenarios,00-Foundation/MFG-X395-Safety-impact-scenarios.md,cross_cutting,controlled
+MFG-X396,Detection / Response Engineering,OT telemetry,00-Foundation/MFG-X396-OT-telemetry.md,cross_cutting,controlled
+MFG-X397,Detection / Response Engineering,Network telemetry,00-Foundation/MFG-X397-Network-telemetry.md,cross_cutting,controlled
+MFG-X398,Detection / Response Engineering,Asset-aware logging,00-Foundation/MFG-X398-Asset-aware-logging.md,cross_cutting,controlled
+MFG-X399,Detection / Response Engineering,SIEM integration,00-Foundation/MFG-X399-SIEM-integration.md,cross_cutting,controlled
+MFG-X400,Detection / Response Engineering,OT IDS,00-Foundation/MFG-X400-OT-IDS.md,cross_cutting,controlled
+MFG-X401,Detection / Response Engineering,Detection use cases,00-Foundation/MFG-X401-Detection-use-cases.md,cross_cutting,controlled
+MFG-X402,Detection / Response Engineering,Alert triage,00-Foundation/MFG-X402-Alert-triage.md,cross_cutting,controlled
+MFG-X403,Detection / Response Engineering,SOC/OT SOC workflow,00-Foundation/MFG-X403-SOC-OT-SOC-workflow.md,cross_cutting,controlled
+MFG-X404,Detection / Response Engineering,Incident escalation,00-Foundation/MFG-X404-Incident-escalation.md,cross_cutting,controlled
+MFG-X405,Detection / Response Engineering,Containment,00-Foundation/MFG-X405-Containment.md,cross_cutting,controlled
+MFG-X406,Detection / Response Engineering,OT-safe incident response,00-Foundation/MFG-X406-OT-safe-incident-response.md,cross_cutting,controlled
+MFG-X407,Detection / Response Engineering,Forensics readiness,00-Foundation/MFG-X407-Forensics-readiness.md,cross_cutting,controlled
+MFG-X408,Detection / Response Engineering,Evidence preservation,00-Foundation/MFG-X408-Evidence-preservation.md,cross_cutting,controlled
+MFG-X409,Detection / Response Engineering,Threat hunting,00-Foundation/MFG-X409-Threat-hunting.md,cross_cutting,controlled
+MFG-X410,Detection / Response Engineering,Recovery validation,00-Foundation/MFG-X410-Recovery-validation.md,cross_cutting,controlled
+MFG-X411,Application / Data Lifecycle,SDLC,00-Foundation/MFG-X411-SDLC.md,cross_cutting,controlled
+MFG-X412,Application / Data Lifecycle,Secure SDLC,00-Foundation/MFG-X412-Secure-SDLC.md,cross_cutting,controlled
+MFG-X413,Application / Data Lifecycle,Requirements security,00-Foundation/MFG-X413-Requirements-security.md,cross_cutting,controlled
+MFG-X414,Application / Data Lifecycle,Architecture review,00-Foundation/MFG-X414-Architecture-review.md,cross_cutting,controlled
+MFG-X415,Application / Data Lifecycle,Code review,00-Foundation/MFG-X415-Code-review.md,cross_cutting,controlled
+MFG-X416,Application / Data Lifecycle,SAST,00-Foundation/MFG-X416-SAST.md,cross_cutting,controlled
+MFG-X417,Application / Data Lifecycle,DAST,00-Foundation/MFG-X417-DAST.md,cross_cutting,controlled
+MFG-X418,Application / Data Lifecycle,Dependency/SBOM review,00-Foundation/MFG-X418-Dependency-SBOM-review.md,cross_cutting,controlled
+MFG-X419,Application / Data Lifecycle,Container image security,00-Foundation/MFG-X419-Container-image-security.md,cross_cutting,controlled
+MFG-X420,Application / Data Lifecycle,CI/CD security,00-Foundation/MFG-X420-CI-CD-security.md,cross_cutting,controlled
+MFG-X421,Application / Data Lifecycle,Artifact integrity,00-Foundation/MFG-X421-Artifact-integrity.md,cross_cutting,controlled
+MFG-X422,Application / Data Lifecycle,Code signing,00-Foundation/MFG-X422-Code-signing.md,cross_cutting,controlled
+MFG-X423,Application / Data Lifecycle,Firmware signing,00-Foundation/MFG-X423-Firmware-signing.md,cross_cutting,controlled
+MFG-X424,Application / Data Lifecycle,Update mechanisms,00-Foundation/MFG-X424-Update-mechanisms.md,cross_cutting,controlled
+MFG-X425,Application / Data Lifecycle,Secrets management,00-Foundation/MFG-X425-Secrets-management.md,cross_cutting,controlled
+MFG-X426,Application / Data Lifecycle,Data classification,00-Foundation/MFG-X426-Data-classification.md,cross_cutting,controlled
+MFG-X427,Application / Data Lifecycle,Data retention,00-Foundation/MFG-X427-Data-retention.md,cross_cutting,controlled
+MFG-X428,Application / Data Lifecycle,Data minimization,00-Foundation/MFG-X428-Data-minimization.md,cross_cutting,controlled
+MFG-X429,Application / Data Lifecycle,DLP,00-Foundation/MFG-X429-DLP.md,cross_cutting,controlled
+MFG-X430,Application / Data Lifecycle,Encryption at rest,00-Foundation/MFG-X430-Encryption-at-rest.md,cross_cutting,controlled
+MFG-X431,Application / Data Lifecycle,Encryption in transit,00-Foundation/MFG-X431-Encryption-in-transit.md,cross_cutting,controlled
+MFG-X432,Application / Data Lifecycle,Key management,00-Foundation/MFG-X432-Key-management.md,cross_cutting,controlled
+MFG-X433,Cloud / Edge / AI,Cloud landing zones,00-Foundation/MFG-X433-Cloud-landing-zones.md,cross_cutting,controlled
+MFG-X434,Cloud / Edge / AI,Cloud governance,00-Foundation/MFG-X434-Cloud-governance.md,cross_cutting,controlled
+MFG-X435,Cloud / Edge / AI,Cloud IAM,00-Foundation/MFG-X435-Cloud-IAM.md,cross_cutting,controlled
+MFG-X436,Cloud / Edge / AI,Cloud network segmentation,00-Foundation/MFG-X436-Cloud-network-segmentation.md,cross_cutting,controlled
+MFG-X437,Cloud / Edge / AI,Cloud logging,00-Foundation/MFG-X437-Cloud-logging.md,cross_cutting,controlled
+MFG-X438,Cloud / Edge / AI,Cloud posture,00-Foundation/MFG-X438-Cloud-posture.md,cross_cutting,controlled
+MFG-X439,Cloud / Edge / AI,Object storage,00-Foundation/MFG-X439-Object-storage.md,cross_cutting,controlled
+MFG-X440,Cloud / Edge / AI,Cloud databases,00-Foundation/MFG-X440-Cloud-databases.md,cross_cutting,controlled
+MFG-X441,Cloud / Edge / AI,Containers,00-Foundation/MFG-X441-Containers.md,cross_cutting,controlled
+MFG-X442,Cloud / Edge / AI,Kubernetes,00-Foundation/MFG-X442-Kubernetes.md,cross_cutting,controlled
+MFG-X443,Cloud / Edge / AI,Serverless,00-Foundation/MFG-X443-Serverless.md,cross_cutting,controlled
+MFG-X444,Cloud / Edge / AI,Edge computing,00-Foundation/MFG-X444-Edge-computing.md,cross_cutting,controlled
+MFG-X445,Cloud / Edge / AI,Edge-to-cloud trust,00-Foundation/MFG-X445-Edge-to-cloud-trust.md,cross_cutting,controlled
+MFG-X446,Cloud / Edge / AI,IoT device identity,00-Foundation/MFG-X446-IoT-device-identity.md,cross_cutting,controlled
+MFG-X447,Cloud / Edge / AI,Device provisioning,00-Foundation/MFG-X447-Device-provisioning.md,cross_cutting,controlled
+MFG-X448,Cloud / Edge / AI,Device decommissioning,00-Foundation/MFG-X448-Device-decommissioning.md,cross_cutting,controlled
+MFG-X449,Cloud / Edge / AI,Digital twins,00-Foundation/MFG-X449-Digital-twins.md,cross_cutting,controlled
+MFG-X450,Cloud / Edge / AI,AI/ML pipelines,00-Foundation/MFG-X450-AI-ML-pipelines.md,cross_cutting,controlled
+MFG-X451,Cloud / Edge / AI,Model security,00-Foundation/MFG-X451-Model-security.md,cross_cutting,controlled
+MFG-X452,Cloud / Edge / AI,AI API security,00-Foundation/MFG-X452-AI-API-security.md,cross_cutting,controlled
+MFG-X453,Cloud / Edge / AI,AI data exposure,00-Foundation/MFG-X453-AI-data-exposure.md,cross_cutting,controlled
+MFG-X454,Cloud / Edge / AI,AI supply chain,00-Foundation/MFG-X454-AI-supply-chain.md,cross_cutting,controlled
+MFG-X455,Specialized Manufacturing Technology,Robotics,00-Foundation/MFG-X455-Robotics.md,cross_cutting,controlled
+MFG-X456,Specialized Manufacturing Technology,CNC,00-Foundation/MFG-X456-CNC.md,cross_cutting,controlled
+MFG-X457,Specialized Manufacturing Technology,Machine vision,00-Foundation/MFG-X457-Machine-vision.md,cross_cutting,controlled
+MFG-X458,Specialized Manufacturing Technology,AGV,00-Foundation/MFG-X458-AGV.md,cross_cutting,controlled
+MFG-X459,Specialized Manufacturing Technology,AMR,00-Foundation/MFG-X459-AMR.md,cross_cutting,controlled
+MFG-X460,Specialized Manufacturing Technology,Barcode systems,00-Foundation/MFG-X460-Barcode-systems.md,cross_cutting,controlled
+MFG-X461,Specialized Manufacturing Technology,RFID,00-Foundation/MFG-X461-RFID.md,cross_cutting,controlled
+MFG-X462,Specialized Manufacturing Technology,Industrial printers,00-Foundation/MFG-X462-Industrial-printers.md,cross_cutting,controlled
+MFG-X463,Specialized Manufacturing Technology,Laboratory systems,00-Foundation/MFG-X463-Laboratory-systems.md,cross_cutting,controlled
+MFG-X464,Specialized Manufacturing Technology,Calibration systems,00-Foundation/MFG-X464-Calibration-systems.md,cross_cutting,controlled
+MFG-X465,Specialized Manufacturing Technology,Test systems,00-Foundation/MFG-X465-Test-systems.md,cross_cutting,controlled
+MFG-X466,Specialized Manufacturing Technology,Electronic work instructions,00-Foundation/MFG-X466-Electronic-work-instructions.md,cross_cutting,controlled
+MFG-X467,Specialized Manufacturing Technology,Track-and-trace,00-Foundation/MFG-X467-Track-and-trace.md,cross_cutting,controlled
+MFG-X468,Specialized Manufacturing Technology,Serialization,00-Foundation/MFG-X468-Serialization.md,cross_cutting,controlled
+MFG-X469,Specialized Manufacturing Technology,Batch records,00-Foundation/MFG-X469-Batch-records.md,cross_cutting,controlled
+MFG-X470,Specialized Manufacturing Technology,Warehouse automation,00-Foundation/MFG-X470-Warehouse-automation.md,cross_cutting,controlled
+MFG-X471,Specialized Manufacturing Technology,Automated storage/retrieval,00-Foundation/MFG-X471-Automated-storage-retrieval.md,cross_cutting,controlled
+MFG-X472,Specialized Manufacturing Technology,Energy management,00-Foundation/MFG-X472-Energy-management.md,cross_cutting,controlled
+MFG-X473,Specialized Manufacturing Technology,Building management,00-Foundation/MFG-X473-Building-management.md,cross_cutting,controlled
+MFG-X474,Specialized Manufacturing Technology,Environmental monitoring,00-Foundation/MFG-X474-Environmental-monitoring.md,cross_cutting,controlled
+MFG-X475,Assessment Management,Rules of engagement,00-Foundation/MFG-X475-Rules-of-engagement.md,cross_cutting,controlled
+MFG-X476,Assessment Management,Asset authorization,00-Foundation/MFG-X476-Asset-authorization.md,cross_cutting,controlled
+MFG-X477,Assessment Management,Test accounts,00-Foundation/MFG-X477-Test-accounts.md,cross_cutting,controlled
+MFG-X478,Assessment Management,Maintenance windows,00-Foundation/MFG-X478-Maintenance-windows.md,cross_cutting,controlled
+MFG-X479,Assessment Management,Safety approvals,00-Foundation/MFG-X479-Safety-approvals.md,cross_cutting,controlled
+MFG-X480,Assessment Management,Emergency stop/stop conditions,00-Foundation/MFG-X480-Emergency-stop-stop-conditions.md,cross_cutting,controlled
+MFG-X481,Assessment Management,Communications plan,00-Foundation/MFG-X481-Communications-plan.md,cross_cutting,controlled
+MFG-X482,Assessment Management,Escalation matrix,00-Foundation/MFG-X482-Escalation-matrix.md,cross_cutting,controlled
+MFG-X483,Assessment Management,Evidence handling,00-Foundation/MFG-X483-Evidence-handling.md,cross_cutting,controlled
+MFG-X484,Assessment Management,Data retention,00-Foundation/MFG-X484-Data-retention.md,cross_cutting,controlled
+MFG-X485,Assessment Management,Tester access control,00-Foundation/MFG-X485-Tester-access-control.md,cross_cutting,controlled
+MFG-X486,Assessment Management,Third-party authorization,00-Foundation/MFG-X486-Third-party-authorization.md,cross_cutting,controlled
+MFG-X487,Assessment Management,Production vs lab testing,00-Foundation/MFG-X487-Production-vs-lab-testing.md,cross_cutting,controlled
+MFG-X488,Assessment Management,Finding validation,00-Foundation/MFG-X488-Finding-validation.md,cross_cutting,controlled
+MFG-X489,Assessment Management,Quality assurance,00-Foundation/MFG-X489-Quality-assurance.md,cross_cutting,controlled
+MFG-X490,Assessment Management,Peer review,00-Foundation/MFG-X490-Peer-review.md,cross_cutting,controlled
+MFG-X491,Assessment Management,Coverage tracking,00-Foundation/MFG-X491-Coverage-tracking.md,cross_cutting,controlled
+MFG-X492,Assessment Management,Retest tracking,00-Foundation/MFG-X492-Retest-tracking.md,cross_cutting,controlled

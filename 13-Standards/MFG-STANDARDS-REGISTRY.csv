@@ -1,0 +1,14 @@
+Standard ID,Standard / Framework,Type,Version / Status,Primary Coverage,Use in Manufacturing VAPT,Official Source
+STD-001,NIST CSF 2.0,Framework,Current,Govern; Identify; Protect; Detect; Respond; Recover,Enterprise and manufacturing cybersecurity risk management,https://www.nist.gov/cyberframework
+STD-002,NIST SP 800-82 Rev.3,OT Security Guidance,Final,OT architecture; risk; security controls; monitoring; remote access; safety/reliability considerations,Manufacturing OT/ICS security baseline,https://csrc.nist.gov/pubs/sp/800/82/r3/final
+STD-003,NIST SP 1800-10,Manufacturing Cybersecurity Practice Guide,Final,Integrity protection; application allowlisting; anomaly detection; file integrity; remote access; authentication/authorization,Manufacturing ICS integrity protection,https://csrc.nist.gov/pubs/sp/1800/10/final
+STD-004,NIST SP 800-115,Security Testing Guide,Final,Planning; conducting; analyzing; reporting technical security tests,VAPT methodology and test governance,https://csrc.nist.gov/pubs/sp/800/115/final
+STD-005,ISA-95 / IEC 62264,Enterprise-Control System Integration,Current standard family,Levels 0-4; manufacturing operations management; enterprise/control interfaces,Manufacturing architecture and system boundaries,https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard
+STD-006,ISA/IEC 62443,Industrial Automation and Control Systems Security,Current standard family,Asset-owner program; zones/conduits; risk assessment; security levels; lifecycle; product/integrator requirements,IACS cybersecurity,https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards
+STD-007,MITRE ATT&CK for ICS,Threat-informed knowledge base,Current,12 ICS tactics and associated techniques,Attack-path and threat mapping,https://attack.mitre.org/matrices/ics/
+STD-008,OWASP Top 10:2021,Web Application Security Awareness,2021,A01-A10 web application risks,Web application assessments,https://owasp.org/www-project-top-ten/
+STD-009,OWASP API Security Top 10:2023,API Security Awareness,2023,API1-API10 API-specific risks,API assessments,https://owasp.org/API-Security/
+STD-010,CWE,Weakness Taxonomy,Current,Software and hardware weakness classification,Root-cause classification,https://cwe.mitre.org/
+STD-011,CVSS v4.0,Vulnerability Severity Framework,Current,Base; Threat; Environmental; Supplemental metrics,Technical severity and contextual scoring,https://www.first.org/cvss/v4.0/
+STD-012,CIS Controls v8.1,Prioritized Safeguards,Current,Asset; vulnerability; access; logging; testing; remediation and other safeguards,Enterprise control baseline,https://www.cisecurity.org/controls
+STD-013,ISO/IEC 27001:2022,Information Security Management System,2022,ISMS requirements and risk management,Enterprise governance and information security,https://www.iso.org/standard/27001

@@ -1,0 +1,30 @@
+evidenceId: MFG-EXXX
+engagementId:
+observationIds: []
+findingIds: []
+collector:
+reviewer:
+collectionTimestamp:
+assetId:
+assetFamily:
+assetTechnology:
+environment: production|test|lab|unknown
+sourceType: scanner|configuration|log|screenshot|document|interview|packet-metadata|application-response|other
+description:
+collectionMethod:
+toolVersion:
+sourceReference:
+storageReference:
+hash:
+chainOfCustody:
+redaction: None|Partial|Full
+classification: Public|Internal|Confidential|Restricted|Client-defined
+containsSecrets: Yes|No
+handlingNote:
+retention:
+sharingRestriction:
+reproducible: Yes|No|Limited
+corroboratingEvidenceIds: []
+reviewerConclusion:
+otCollectionMode: Passive|Read-only|Controlled-active|N/A
+productionImpact:

@@ -1,0 +1,13 @@
+Tactic ID,Tactic,Purpose
+TA0108,Initial Access,Gain entry into the ICS environment.
+TA0104,Execution,"Run code or manipulate system functions, parameters, or data."
+TA0110,Persistence,Maintain a foothold in the ICS environment.
+TA0111,Privilege Escalation,Gain higher-level permissions.
+TA0103,Evasion,Avoid or weaken security defenses and visibility.
+TA0102,Discovery,"Locate information, systems, devices, processes, and paths."
+TA0109,Lateral Movement,"Move between systems, segments, zones, or sites."
+TA0100,Collection,"Gather operational, engineering, business, or process information."
+TA0101,Command and Control,Communicate with and control compromised systems or platforms.
+TA0107,Inhibit Response Function,"Prevent safety, protection, quality, or operator response functions from responding."
+TA0106,Impair Process Control,"Manipulate, disable, or damage physical control processes."
+TA0105,Impact,"Manipulate, interrupt, or destroy ICS systems, data, or surrounding environment."

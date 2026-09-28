@@ -1,0 +1,30 @@
+recordType: rag_knowledge_record
+required:
+  - knowledgeId
+  - canonicalSource
+  - sector
+  - phase
+  - assetFamilies
+  - assets
+  - safety
+  - sourceHash
+optional:
+  - relatedKnowledgeIds
+  - standards
+  - toolIds
+  - testCaseIds
+  - attackPathIds
+  - mitreIcsTechniqueIds
+  - findingTypes
+  - evidenceTypes
+  - businessProcesses
+  - technologyTags
+  - jurisdictionTags
+  - language
+  - version
+metadataRules:
+  knowledgeId: stable MFG-E### or MFG-X### identifier
+  sourceHash: SHA-256 of canonical source
+  safety: controlled|restricted|critical|unknown
+  unknownStates: [unknown, not_applicable, out_of_scope, not_tested]
+  clientData: prohibited

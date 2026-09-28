@@ -1,0 +1,101 @@
+Tool_ID,Tool_or_Tool_Class,Primary_Purpose,VAPT_Use,Safety_or_Usage_Mode,Relevant_Standards
+T001,Nmap,Network/service discovery,"Network discovery, ports, service/version context",IT + controlled OT; prefer approved/passive or tightly scoped OT use,NIST SP 800-115; NIST SP 800-82 Rev.3
+T002,RustScan,Fast port discovery,Initial TCP exposure discovery before controlled validation,IT only unless explicitly approved,NIST SP 800-115
+T003,Masscan,High-speed port discovery,Large-range exposure discovery where explicitly authorized,Avoid production/OT by default; rate-limit and scope,NIST SP 800-115
+T004,Amass,Attack-surface/asset discovery,"Domains, subdomains, DNS and external relationships",External passive-first,NIST SP 800-115
+T005,Subfinder,Subdomain discovery,Passive subdomain enumeration,External passive-first,NIST SP 800-115
+T006,dnsrecon,DNS reconnaissance,"DNS records, nameservers and misconfiguration context",External/passive-first,NIST SP 800-115
+T007,dig/nslookup,DNS validation,Resolve and validate DNS records and service dependencies,Low impact,NIST SP 800-115
+T008,httpx,HTTP service discovery,HTTP/HTTPS endpoint identification and metadata,External/IT; rate-limit,NIST SP 800-115; OWASP WSTG
+T009,WhatWeb/Wappalyzer,Technology fingerprinting,Application/framework/server technology context,Low impact,OWASP WSTG
+T010,Nuclei,Template-based exposure/vulnerability checks,Known misconfiguration and vulnerability indicators with controlled templates,IT/Web; disable intrusive/destructive templates,NIST SP 800-115; OWASP WSTG
+T011,Burp Suite,Web/API security testing,"Manual request/response, auth/session/access-control and input validation testing",Authorized applications only; no destructive production actions,OWASP WSTG; OWASP API Security Top 10
+T012,OWASP ZAP,Web application testing,"DAST, passive analysis and controlled active checks",IT/Web; avoid destructive actions,OWASP WSTG
+T013,testssl.sh,TLS assessment,"TLS versions, ciphers, certificates and configuration",Low impact,NIST SP 800-52; OWASP WSTG
+T014,OpenVAS/Greenbone,Vulnerability scanning,Network vulnerability identification and configuration checks,Credentialed scans only with approval; OT-safe profile,NIST SP 800-115; NIST SP 800-82 Rev.3
+T015,Tenable Nessus,Vulnerability scanning,Host/application vulnerability and configuration assessment,Use safe/OT profiles and approved windows,NIST SP 800-115; NIST SP 800-82 Rev.3
+T016,Qualys VMDR,Vulnerability/asset management,Enterprise asset and vulnerability assessment,Use safe profiles and approved windows,NIST SP 800-115
+T017,Wireshark,Packet analysis,"Protocol, traffic, authentication, segmentation and OT communication analysis",Passive capture preferred in OT,NIST SP 800-82 Rev.3
+T018,tshark,CLI packet analysis,Repeatable packet filtering and evidence extraction,Passive capture preferred,NIST SP 800-82 Rev.3
+T019,tcpdump,Packet capture,Network traffic evidence and troubleshooting,Passive preferred,NIST SP 800-82 Rev.3
+T020,Zeek,Network security monitoring,"Protocol metadata, connection and anomaly evidence",Passive monitoring,NIST SP 800-82 Rev.3
+T021,NetFlow/sFlow collectors,Flow analysis,Network communication baselines and unexpected paths,Passive,NIST SP 800-82 Rev.3
+T022,SNMP utilities,SNMP assessment,"Device inventory, configuration and exposure context",Read-only/community-controlled,NIST SP 800-115
+T023,LDAP tools,Directory assessment,LDAP discovery and directory configuration validation,Authorized/read-only first,NIST SP 800-115
+T024,smbclient,SMB/file-share assessment,Share enumeration and access-control validation,Authorized accounts; no destructive writes,NIST SP 800-115
+T025,enum4linux-ng,Windows/SMB enumeration,Domain/workgroup/share/service context,Authorized internal assessment,NIST SP 800-115
+T026,NetExec,Enterprise protocol assessment,Controlled SMB/LDAP/WinRM and credentialed validation,Internal authorized only; avoid password spraying,NIST SP 800-115
+T027,PowerShell/Windows tooling,Windows validation,"Configuration, local security and logging validation",Use approved scripts; preserve evidence,NIST SP 800-115
+T028,Linux audit/system tools,Linux validation,"Services, permissions, patching, configuration and logging",Read-only where possible,NIST SP 800-115
+T029,CIS-CAT,Configuration assessment,CIS benchmark configuration validation,Credentialed/read-only preferred,CIS Controls; CIS Benchmarks
+T030,Lynis,Linux security audit,Host configuration and hardening review,Read-only audit,CIS Benchmarks
+T031,AD/Entra assessment tools,Identity assessment,"Privileged paths, groups, trusts and identity configuration",Authorized read-only/controlled,NIST CSF 2.0; CIS Controls
+T032,BloodHound/Enterprise identity graph,Attack-path/identity analysis,Relationship and privilege-path analysis,Authorized internal collection; no exploitation required,NIST CSF 2.0; MITRE ATT&CK
+T033,OpenSCAP,Configuration/compliance assessment,System security configuration and policy checks,Read-only,CIS Benchmarks; NIST
+T034,Trivy,Container/image/IaC/SBOM scanning,"Vulnerabilities, secrets and configuration in containers/IaC",Non-destructive scanning,CIS Controls; supply-chain guidance
+T035,Grype,Container/package vulnerability scanning,Package vulnerability identification,Non-destructive,CVE/CWE; supply-chain
+T036,Syft,SBOM generation,Software component inventory for images/filesystems,Non-destructive,SBOM/supply-chain
+T037,Semgrep,SAST/code analysis,Source-code security pattern analysis,Non-destructive,OWASP; CWE
+T038,Gitleaks,Secret scanning,Credential/API key discovery in source/history where authorized,Treat findings as sensitive; do not expose secrets,CWE; secure SDLC
+T039,OWASP Dependency-Check,SCA,Dependency/CVE identification,Non-destructive,OWASP; CWE
+T040,OSV-Scanner,SCA,Open-source dependency vulnerability identification,Non-destructive,CVE/OSV
+T041,SAST/DAST/SCA CI tools,Pipeline assessment,"Build, test and dependency control validation",Review/test pipeline safely; no production releases,Secure SDLC
+T042,GitHub/GitLab/Bitbucket security controls,Repository assessment,"Branch protection, permissions, secrets, CI/CD and audit logs",Read-only/admin review,Secure SDLC; CIS Controls
+T043,Jenkins/GitHub Actions/GitLab CI,CI/CD assessment,"Pipeline permissions, secrets, runners, artifacts and approvals",Review and controlled test pipeline only,Secure SDLC
+T044,Prowler,Cloud security posture,"Cloud IAM, logging, network and configuration posture",Read-only audit role,CIS Controls; cloud security
+T045,ScoutSuite,Cloud posture assessment,Multi-cloud security configuration review,Read-only preferred,Cloud security
+T046,AWS CLI / Azure CLI / gcloud,Cloud configuration validation,"Identity, network, storage, logging and resource inventory",Read-only roles preferred,Cloud security
+T047,Cloud-native IAM/config consoles,Cloud IAM assessment,"Roles, policies, service identities, keys and trust relationships",Read-only/config review,NIST CSF 2.0
+T048,Kube-bench,Kubernetes configuration,CIS Kubernetes benchmark checks,Read-only,CIS Benchmarks
+T049,Kubescape,Kubernetes security,"Cluster posture, RBAC, workloads and misconfiguration",Read-only preferred,Kubernetes security
+T050,Docker/Podman inspection,Container runtime assessment,"Runtime configuration, images, mounts, privileges and secrets",Read-only,Container security
+T051,MobSF,Mobile application security,Static/dynamic mobile application assessment,Use test builds/accounts,OWASP MASVS
+T052,Kismet,Wireless discovery/monitoring,Wireless inventory and configuration context,Passive preferred,Wireless security
+T053,Wi-Fi analyzer/enterprise WLAN controller,Wireless configuration review,"SSID, authentication, segmentation and management-plane review",Read-only/config review,Wireless security
+T054,RFID/NFC/BLE assessment tooling,Short-range wireless assessment,Protocol/configuration/access-control review,Controlled/lab preferred,Wireless/IoT security
+T055,MQTT/AMQP client tooling,Messaging assessment,"Broker authentication, authorization, TLS and topic/queue access",Use test topics/queues where possible,OT/IIoT security
+T056,OPC UA client/diagnostic tools,OPC UA assessment,"Endpoint, certificate, authentication and authorization review",Read-only/test endpoint preferred,ISA/IEC 62443; OPC UA security
+T057,Modbus diagnostic tools,Industrial protocol assessment,Protocol exposure and communication validation,Passive or lab/read-only preferred,NIST SP 800-82 Rev.3
+T058,Industrial protocol analyzers,OT protocol analysis,Industrial protocol traffic and asset communication analysis,Passive preferred,NIST SP 800-82 Rev.3
+T059,OT asset inventory / passive discovery platform,OT asset discovery,"Passive asset, protocol and relationship inventory",Passive,NIST SP 800-82 Rev.3; ISA/IEC 62443
+T060,OT IDS / NDR platform,OT monitoring assessment,"Detection coverage, baselines, alerts and asset context",Passive/controlled test events,NIST SP 800-82 Rev.3
+T061,SIEM,Security monitoring assessment,"Log ingestion, correlation, retention, alerting and response",Controlled synthetic events,NIST CSF 2.0
+T062,SOAR,Response automation assessment,"Playbooks, approvals, integrations and containment controls",Tabletop/sandbox preferred,NIST CSF 2.0
+T063,EDR/XDR,Endpoint detection assessment,"Telemetry, prevention, isolation and alerting",Controlled benign test events,NIST CSF 2.0
+T064,Vulnerability/patch management platform,VM/patch process assessment,"Asset coverage, scan cadence, remediation and exceptions",Configuration review,NIST CSF 2.0
+T065,Backup/DR platform consoles,Backup/recovery assessment,"Coverage, immutability, retention, restore evidence and access control",Review + approved restore test,NIST SP 800-82 Rev.3
+T066,PLC/SCADA/HMI vendor engineering tools,Industrial configuration assessment,"Controller/HMI/SCADA configuration, firmware and backup review","Vendor-approved, read-only first; production change prohibited by default",NIST SP 800-82 Rev.3; ISA/IEC 62443
+T067,PLC/SCADA configuration comparison tools,Logic/config integrity,Compare approved baseline with deployed configuration,Read-only,NIST SP 800-82 Rev.3
+T068,Digital twin/simulation environment,Safe validation,Test disruptive logic/process scenarios away from production,Preferred for hazardous/disruptive validation,ISA/IEC 62443; NIST SP 800-82 Rev.3
+T069,CAD/PLM/PDM security review tooling,Engineering IP assessment,"Permissions, versioning, audit trail, exports and data leakage",Read-only/config review,Engineering IP security
+T070,DLP/data discovery tooling,Sensitive-data assessment,PII/IP/credential discovery and exfiltration-control validation,Use approved datasets and redaction,NIST CSF 2.0
+T071,Database assessment tools,Database security,"Configuration, privileges, encryption, exposure and audit review",Read-only/controlled accounts,NIST CSF 2.0; OWASP
+T072,SFTP/FTP/file-transfer client and logs,File transfer assessment,"Authentication, encryption, access and transfer logging",Test account/data only,NIST CSF 2.0
+T073,Certificate/TLS inventory tooling,PKI/TLS assessment,"Certificate lifecycle, trust chains, expiry and weak protocols",Low impact,NIST SP 800-52
+T074,NTP/PTP/time-sync monitoring,Time synchronization assessment,"Time source, drift, authentication and consistency",Passive/config review,OT monitoring
+T075,Vulnerability intelligence/CVE databases,Vulnerability research,Version-to-vulnerability correlation and advisory validation,Research only; verify locally,NIST SP 800-115
+T076,CVE/CWE/CVSS calculators,Finding classification,Weakness mapping and severity calculation,Analytical,CWE; CVSS v4.0
+T077,MITRE ATT&CK Navigator,Threat mapping,Map findings/paths to ATT&CK techniques,Analytical,MITRE ATT&CK for ICS
+T078,Evidence/hash utilities,Evidence integrity,"Hashing, timestamps and evidence integrity metadata",Non-invasive,Evidence handling
+T079,Spreadsheet/CSV/JSON/YAML processing,Assessment data management,"Normalize asset, test, finding and evidence records",Non-invasive,KB governance
+T080,Browser/devtools,Web/client validation,"Client-side behavior, headers, storage and application evidence",Authorized applications,OWASP WSTG
+T081,Mobile/endpoint MDM consoles,Device management assessment,"Enrollment, policy, compliance, remote management and wipe controls",Read-only/config review,NIST CSF 2.0
+T082,Network firewall/WAF/LB management consoles,Perimeter control review,"Rules, segmentation, exposure, TLS and logging",Read-only/config review,NIST CSF 2.0; ISA/IEC 62443
+T083,Virtualization management consoles,Virtual infrastructure assessment,"Hypervisor access, segmentation, snapshots, management plane and logging",Read-only/config review,CIS Controls
+T084,KMS/HSM/PKI consoles,Key management assessment,"Key lifecycle, access, rotation, HSM/KMS policy and audit",Read-only/config review,NIST CSF 2.0
+T085,Physical security/access-control consoles,Physical security assessment,"Badges, visitor access, privileged areas and audit logs",Authorized physical assessment,NIST CSF 2.0
+T086,CCTV/NVR/DVR management consoles,Physical monitoring assessment,"Access control, network exposure, firmware and retention",Read-only/config review,Physical security
+T087,BMS/HVAC/lighting management consoles,Facility/OT assessment,"Network exposure, remote access, authentication and segmentation",Passive/read-only; safety-aware,NIST SP 800-82 Rev.3
+T088,Energy/utility monitoring platforms,Utility OT assessment,"Metering, gateways, dashboards, access and integrations",Passive/read-only,NIST SP 800-82 Rev.3
+T089,Barcode/serialization/traceability systems,Manufacturing application assessment,"Authentication, integrity, authorization, API/integration and data traceability",Controlled application testing,ISA-95; OWASP
+T090,Robotics/CNC/AGV vendor tools,Cyber-physical assessment,"Configuration, firmware, remote maintenance and safety boundary review",Vendor-approved; lab/digital twin preferred,NIST SP 800-82 Rev.3; ISA/IEC 62443
+T091,Machine-vision/test/calibration platform tools,Specialized manufacturing assessment,"Application, device identity, data flow, remote access and update controls",Read-only/controlled,Manufacturing OT
+T092,AI/ML security assessment tooling,AI/ML assessment,"Model/API access, data exposure, pipeline, model artifact and prompt/interface controls",Controlled test environment,AI security
+T093,SBOM/signing/attestation tooling,Software/firmware integrity,"Component inventory, signing, provenance and release integrity",Non-destructive,Software supply chain
+T094,S3/object-storage/cloud data discovery tools,Cloud data assessment,"Public exposure, policy, encryption, logging and sensitive data discovery",Read-only preferred,Cloud/data security
+T095,API schema/spec tools (OpenAPI/GraphQL tooling),API inventory/testing,"Endpoint inventory, schema validation and authorization test planning",Controlled test accounts,OWASP API Security Top 10
+T096,Email security/admin consoles,Email security assessment,"MFA, forwarding, anti-phishing, DMARC/DKIM/SPF and audit controls",Read-only/config review,NIST CSF 2.0
+T097,OSINT/search engines/public sources,External intelligence,"Public exposure, organizational metadata and attack-surface context",Passive; respect authorization and privacy,NIST SP 800-115
+T098,Password/credential audit tools,Credential control assessment,"Password policy, credential exposure and controlled offline audit",Only approved test hashes/accounts; never dump/use production credentials,NIST CSF 2.0
+T099,Remote-access client/log tooling,VPN/RDP/SSH/VNC assessment,"Authentication, MFA, authorization, exposure and logging",Controlled test accounts,NIST SP 800-115; NIST SP 800-82 Rev.3
+T100,Reporting/GRC/ticketing platform,Finding lifecycle,"Risk, ownership, remediation, evidence and retest tracking",Non-invasive,NIST CSF 2.0

@@ -1,0 +1,348 @@
+Tool_ID,Tool_or_Tool_Class,Test_ID
+T001,Nmap,R02
+T001,Nmap,R03
+T001,Nmap,S01
+T001,Nmap,S04
+T002,RustScan,R02
+T002,RustScan,R03
+T002,RustScan,S01
+T002,RustScan,S04
+T003,Masscan,R02
+T003,Masscan,R03
+T003,Masscan,S01
+T003,Masscan,S04
+T004,Amass,R02
+T004,Amass,R05
+T005,Subfinder,R02
+T005,Subfinder,R05
+T006,dnsrecon,R02
+T006,dnsrecon,R05
+T007,dig/nslookup,R02
+T007,dig/nslookup,R05
+T008,httpx,R03
+T008,httpx,S02
+T008,httpx,A01
+T009,WhatWeb/Wappalyzer,R03
+T009,WhatWeb/Wappalyzer,S02
+T009,WhatWeb/Wappalyzer,A01
+T010,Nuclei,V01
+T010,Nuclei,V04
+T010,Nuclei,V06
+T011,Burp Suite,A01
+T011,Burp Suite,A02
+T011,Burp Suite,A03
+T011,Burp Suite,A04
+T011,Burp Suite,A05
+T011,Burp Suite,A06
+T011,Burp Suite,A07
+T012,OWASP ZAP,A01
+T012,OWASP ZAP,A02
+T012,OWASP ZAP,A03
+T012,OWASP ZAP,A04
+T012,OWASP ZAP,A05
+T012,OWASP ZAP,A06
+T012,OWASP ZAP,A07
+T013,testssl.sh,V03
+T014,OpenVAS/Greenbone,V01
+T014,OpenVAS/Greenbone,V02
+T015,Tenable Nessus,V01
+T015,Tenable Nessus,V02
+T016,Qualys VMDR,V01
+T016,Qualys VMDR,V02
+T017,Wireshark,S01
+T017,Wireshark,S04
+T017,Wireshark,O02
+T017,Wireshark,O05
+T018,tshark,S01
+T018,tshark,S04
+T018,tshark,O02
+T018,tshark,O05
+T019,tcpdump,S01
+T019,tcpdump,S04
+T019,tcpdump,O02
+T019,tcpdump,O05
+T020,Zeek,S01
+T020,Zeek,S04
+T020,Zeek,O02
+T020,Zeek,O05
+T021,NetFlow/sFlow collectors,S01
+T021,NetFlow/sFlow collectors,S04
+T021,NetFlow/sFlow collectors,O02
+T021,NetFlow/sFlow collectors,O05
+T022,SNMP utilities,S01
+T022,SNMP utilities,S04
+T022,SNMP utilities,O02
+T022,SNMP utilities,O05
+T023,LDAP tools,S03
+T023,LDAP tools,I01
+T023,LDAP tools,I02
+T023,LDAP tools,I03
+T023,LDAP tools,I05
+T023,LDAP tools,V02
+T024,smbclient,S03
+T024,smbclient,I01
+T024,smbclient,I02
+T024,smbclient,I03
+T024,smbclient,I05
+T024,smbclient,V02
+T025,enum4linux-ng,S03
+T025,enum4linux-ng,I01
+T025,enum4linux-ng,I02
+T025,enum4linux-ng,I03
+T025,enum4linux-ng,I05
+T025,enum4linux-ng,V02
+T026,NetExec,S03
+T026,NetExec,I01
+T026,NetExec,I02
+T026,NetExec,I03
+T026,NetExec,I05
+T026,NetExec,V02
+T027,PowerShell/Windows tooling,S03
+T027,PowerShell/Windows tooling,I01
+T027,PowerShell/Windows tooling,I02
+T027,PowerShell/Windows tooling,I03
+T027,PowerShell/Windows tooling,I05
+T027,PowerShell/Windows tooling,V02
+T028,Linux audit/system tools,S03
+T028,Linux audit/system tools,I01
+T028,Linux audit/system tools,I02
+T028,Linux audit/system tools,I03
+T028,Linux audit/system tools,I05
+T028,Linux audit/system tools,V02
+T029,CIS-CAT,S03
+T029,CIS-CAT,I01
+T029,CIS-CAT,I02
+T029,CIS-CAT,I03
+T029,CIS-CAT,I05
+T029,CIS-CAT,V02
+T030,Lynis,S03
+T030,Lynis,I01
+T030,Lynis,I02
+T030,Lynis,I03
+T030,Lynis,I05
+T030,Lynis,V02
+T031,AD/Entra assessment tools,P01
+T032,BloodHound/Enterprise identity graph,I02
+T032,BloodHound/Enterprise identity graph,I03
+T032,BloodHound/Enterprise identity graph,B02
+T033,OpenSCAP,S03
+T033,OpenSCAP,I01
+T033,OpenSCAP,I02
+T033,OpenSCAP,I03
+T033,OpenSCAP,I05
+T033,OpenSCAP,V02
+T034,Trivy,V06
+T034,Trivy,A07
+T035,Grype,V06
+T035,Grype,A07
+T036,Syft,V06
+T036,Syft,A07
+T037,Semgrep,V06
+T037,Semgrep,A07
+T038,Gitleaks,V06
+T038,Gitleaks,A07
+T039,OWASP Dependency-Check,V06
+T039,OWASP Dependency-Check,A07
+T040,OSV-Scanner,V06
+T040,OSV-Scanner,A07
+T041,SAST/DAST/SCA CI tools,P01
+T042,GitHub/GitLab/Bitbucket security controls,V06
+T042,GitHub/GitLab/Bitbucket security controls,A07
+T043,Jenkins/GitHub Actions/GitLab CI,V06
+T043,Jenkins/GitHub Actions/GitLab CI,A07
+T044,Prowler,S05
+T044,Prowler,V05
+T044,Prowler,I03
+T045,ScoutSuite,S05
+T045,ScoutSuite,V05
+T045,ScoutSuite,I03
+T046,AWS CLI / Azure CLI / gcloud,S05
+T046,AWS CLI / Azure CLI / gcloud,V05
+T046,AWS CLI / Azure CLI / gcloud,I03
+T047,Cloud-native IAM/config consoles,S05
+T047,Cloud-native IAM/config consoles,V05
+T047,Cloud-native IAM/config consoles,I03
+T048,Kube-bench,S05
+T048,Kube-bench,V02
+T048,Kube-bench,V06
+T049,Kubescape,S05
+T049,Kubescape,V02
+T049,Kubescape,V06
+T050,Docker/Podman inspection,S05
+T050,Docker/Podman inspection,V02
+T050,Docker/Podman inspection,V06
+T051,MobSF,S06
+T051,MobSF,A01
+T051,MobSF,A03
+T051,MobSF,A04
+T051,MobSF,A07
+T052,Kismet,S06
+T052,Kismet,V02
+T053,Wi-Fi analyzer/enterprise WLAN controller,P01
+T054,RFID/NFC/BLE assessment tooling,S06
+T054,RFID/NFC/BLE assessment tooling,V02
+T055,MQTT/AMQP client tooling,S04
+T055,MQTT/AMQP client tooling,O01
+T055,MQTT/AMQP client tooling,O02
+T055,MQTT/AMQP client tooling,O03
+T055,MQTT/AMQP client tooling,O05
+T055,MQTT/AMQP client tooling,O06
+T055,MQTT/AMQP client tooling,O07
+T056,OPC UA client/diagnostic tools,S04
+T056,OPC UA client/diagnostic tools,O01
+T056,OPC UA client/diagnostic tools,O02
+T056,OPC UA client/diagnostic tools,O03
+T056,OPC UA client/diagnostic tools,O05
+T056,OPC UA client/diagnostic tools,O06
+T056,OPC UA client/diagnostic tools,O07
+T057,Modbus diagnostic tools,S04
+T057,Modbus diagnostic tools,O01
+T057,Modbus diagnostic tools,O02
+T057,Modbus diagnostic tools,O03
+T057,Modbus diagnostic tools,O05
+T057,Modbus diagnostic tools,O06
+T057,Modbus diagnostic tools,O07
+T058,Industrial protocol analyzers,S04
+T058,Industrial protocol analyzers,O01
+T058,Industrial protocol analyzers,O02
+T058,Industrial protocol analyzers,O03
+T058,Industrial protocol analyzers,O05
+T058,Industrial protocol analyzers,O06
+T058,Industrial protocol analyzers,O07
+T059,OT asset inventory / passive discovery platform,S04
+T059,OT asset inventory / passive discovery platform,O01
+T059,OT asset inventory / passive discovery platform,O02
+T059,OT asset inventory / passive discovery platform,O03
+T059,OT asset inventory / passive discovery platform,O05
+T059,OT asset inventory / passive discovery platform,O06
+T059,OT asset inventory / passive discovery platform,O07
+T060,OT IDS / NDR platform,S04
+T060,OT IDS / NDR platform,O01
+T060,OT IDS / NDR platform,O02
+T060,OT IDS / NDR platform,O03
+T060,OT IDS / NDR platform,O05
+T060,OT IDS / NDR platform,O06
+T060,OT IDS / NDR platform,O07
+T061,SIEM,O05
+T061,SIEM,B05
+T062,SOAR,O05
+T062,SOAR,B05
+T063,EDR/XDR,O05
+T063,EDR/XDR,B05
+T064,Vulnerability/patch management platform,P01
+T065,Backup/DR platform consoles,B04
+T066,PLC/SCADA/HMI vendor engineering tools,S04
+T066,PLC/SCADA/HMI vendor engineering tools,O01
+T066,PLC/SCADA/HMI vendor engineering tools,O02
+T066,PLC/SCADA/HMI vendor engineering tools,O03
+T066,PLC/SCADA/HMI vendor engineering tools,O05
+T066,PLC/SCADA/HMI vendor engineering tools,O06
+T066,PLC/SCADA/HMI vendor engineering tools,O07
+T067,PLC/SCADA configuration comparison tools,S04
+T067,PLC/SCADA configuration comparison tools,O01
+T067,PLC/SCADA configuration comparison tools,O02
+T067,PLC/SCADA configuration comparison tools,O03
+T067,PLC/SCADA configuration comparison tools,O05
+T067,PLC/SCADA configuration comparison tools,O06
+T067,PLC/SCADA configuration comparison tools,O07
+T068,Digital twin/simulation environment,R02
+T068,Digital twin/simulation environment,R05
+T069,CAD/PLM/PDM security review tooling,V02
+T069,CAD/PLM/PDM security review tooling,A07
+T069,CAD/PLM/PDM security review tooling,I02
+T070,DLP/data discovery tooling,V02
+T070,DLP/data discovery tooling,A07
+T070,DLP/data discovery tooling,I02
+T071,Database assessment tools,V02
+T071,Database assessment tools,A07
+T071,Database assessment tools,I02
+T072,SFTP/FTP/file-transfer client and logs,V02
+T072,SFTP/FTP/file-transfer client and logs,A07
+T072,SFTP/FTP/file-transfer client and logs,I02
+T073,Certificate/TLS inventory tooling,V03
+T074,NTP/PTP/time-sync monitoring,O05
+T074,NTP/PTP/time-sync monitoring,B05
+T075,Vulnerability intelligence/CVE databases,V02
+T075,Vulnerability intelligence/CVE databases,A07
+T075,Vulnerability intelligence/CVE databases,I02
+T076,CVE/CWE/CVSS calculators,P02
+T076,CVE/CWE/CVSS calculators,B02
+T077,MITRE ATT&CK Navigator,P01
+T078,Evidence/hash utilities,P01
+T078,Evidence/hash utilities,P04
+T078,Evidence/hash utilities,P05
+T079,Spreadsheet/CSV/JSON/YAML processing,P01
+T079,Spreadsheet/CSV/JSON/YAML processing,P04
+T079,Spreadsheet/CSV/JSON/YAML processing,P05
+T080,Browser/devtools,A01
+T080,Browser/devtools,A02
+T080,Browser/devtools,A03
+T080,Browser/devtools,A04
+T080,Browser/devtools,A05
+T080,Browser/devtools,A06
+T080,Browser/devtools,A07
+T081,Mobile/endpoint MDM consoles,S06
+T081,Mobile/endpoint MDM consoles,A01
+T081,Mobile/endpoint MDM consoles,A03
+T081,Mobile/endpoint MDM consoles,A04
+T081,Mobile/endpoint MDM consoles,A07
+T082,Network firewall/WAF/LB management consoles,P01
+T083,Virtualization management consoles,P01
+T084,KMS/HSM/PKI consoles,P01
+T085,Physical security/access-control consoles,S01
+T085,Physical security/access-control consoles,O01
+T085,Physical security/access-control consoles,O05
+T085,Physical security/access-control consoles,O06
+T086,CCTV/NVR/DVR management consoles,S01
+T086,CCTV/NVR/DVR management consoles,O01
+T086,CCTV/NVR/DVR management consoles,O05
+T086,CCTV/NVR/DVR management consoles,O06
+T087,BMS/HVAC/lighting management consoles,S01
+T087,BMS/HVAC/lighting management consoles,O01
+T087,BMS/HVAC/lighting management consoles,O05
+T087,BMS/HVAC/lighting management consoles,O06
+T088,Energy/utility monitoring platforms,S04
+T088,Energy/utility monitoring platforms,O01
+T088,Energy/utility monitoring platforms,O02
+T088,Energy/utility monitoring platforms,O03
+T088,Energy/utility monitoring platforms,O05
+T088,Energy/utility monitoring platforms,O06
+T088,Energy/utility monitoring platforms,O07
+T089,Barcode/serialization/traceability systems,P01
+T090,Robotics/CNC/AGV vendor tools,S04
+T090,Robotics/CNC/AGV vendor tools,O01
+T090,Robotics/CNC/AGV vendor tools,O02
+T090,Robotics/CNC/AGV vendor tools,O03
+T090,Robotics/CNC/AGV vendor tools,O05
+T090,Robotics/CNC/AGV vendor tools,O06
+T090,Robotics/CNC/AGV vendor tools,O07
+T091,Machine-vision/test/calibration platform tools,S04
+T091,Machine-vision/test/calibration platform tools,O01
+T091,Machine-vision/test/calibration platform tools,O02
+T091,Machine-vision/test/calibration platform tools,O03
+T091,Machine-vision/test/calibration platform tools,O05
+T091,Machine-vision/test/calibration platform tools,O06
+T091,Machine-vision/test/calibration platform tools,O07
+T092,AI/ML security assessment tooling,P01
+T093,SBOM/signing/attestation tooling,V06
+T093,SBOM/signing/attestation tooling,A07
+T094,S3/object-storage/cloud data discovery tools,V02
+T094,S3/object-storage/cloud data discovery tools,A07
+T094,S3/object-storage/cloud data discovery tools,I02
+T095,API schema/spec tools (OpenAPI/GraphQL tooling),P01
+T096,Email security/admin consoles,I01
+T096,Email security/admin consoles,I02
+T096,Email security/admin consoles,I04
+T096,Email security/admin consoles,I05
+T096,Email security/admin consoles,A06
+T097,OSINT/search engines/public sources,R02
+T097,OSINT/search engines/public sources,R05
+T098,Password/credential audit tools,P01
+T099,Remote-access client/log tooling,I01
+T099,Remote-access client/log tooling,I02
+T099,Remote-access client/log tooling,I04
+T099,Remote-access client/log tooling,I05
+T099,Remote-access client/log tooling,A06
+T100,Reporting/GRC/ticketing platform,P01
+T100,Reporting/GRC/ticketing platform,P04
+T100,Reporting/GRC/ticketing platform,P05

@@ -1,0 +1,16 @@
+# Secrets / client material
+.env
+*.key
+*.pem
+*.p12
+secrets/
+credentials/
+client-data/
+evidence/
+screenshots/
+
+# Local AI/RAG artifacts
+vectorstore/
+embeddings/
+__pycache__/
+*.pyc
