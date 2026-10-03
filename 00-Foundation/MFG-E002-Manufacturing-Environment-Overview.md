@@ -1,141 +1,190 @@
 ---
 docType: knowledge_unit
-answerType: assessment_methodology
 knowledgeId: E002
 sector: manufacturing_industrial
 phase: Foundation
 topic: Manufacturing Environment Overview
-assetTags: []
 safety: controlled
+status: working-rebuild
 ---
 
 # E002: Manufacturing Environment Overview
 
 ## Assessment Question
 
-How should an authorized manufacturing-sector VAPT assessor assess **Manufacturing Environment Overview**?
+**What does the manufacturing environment contain, how does it operate, and which technical systems support the physical production process?**
 
 ## Purpose
 
-This unit provides reusable, engagement-neutral methodology for assessing **Manufacturing Environment Overview** in a manufacturing environment. It is not authorization to test an organization. Execute only under approved scope, ROE, maintenance window and safety controls.
+E002 gives the assessor a usable mental model of the plant before technical testing begins. It prevents a manufacturing environment from being treated as an ordinary corporate network.
 
-## Security Objective
+The objective is not to document every device. The objective is to understand enough of the environment to make safe, technically meaningful assessment decisions.
 
-Establish whether the intended security property exists, is correctly enforced, can be bypassed or misconfigured, is observable when it fails, and creates a meaningful attack or misuse path.
+NIST SP 800-82 Rev. 3 describes OT as systems and devices that interact with or manage the physical environment and emphasizes their performance, reliability and safety requirements.
 
-## Manufacturing Context
+## 1. What the Assessor Must Understand
 
-Treat Manufacturing Environment Overview as a component of a manufacturing system. Trace it to the business process, asset owner, trust boundary, data flow, dependency chain and recovery requirement.
+Establish, where applicable:
 
-## Assessment Objectives
+- what the facility produces;
+- which production areas or lines are included;
+- which processes are continuous, batch or discrete;
+- which systems monitor or control those processes;
+- where engineering and maintenance functions occur;
+- where production data is collected;
+- where business systems exchange information with manufacturing systems;
+- which systems are safety-related;
+- which systems are remotely administered;
+- which dependencies can affect production or recovery.
 
-1. define the security property and assessment hypothesis before selecting tools.
-2. identify ownership, business function, environment, trust boundaries and dependencies.
-3. verify the intended control using the least disruptive technique.
-4. test negative and boundary cases, not only the happy path.
-5. correlate the observation with plausible attack paths and manufacturing consequences.
-6. capture reproducible evidence while minimizing sensitive data.
-7. define remediation and a retest method.
+Do not assume that a system is OT merely because it is physically located in a plant.
 
-## VAPT Thinking Model
+## 2. Manufacturing Technology Model
 
-1. Identify the asset/process and business function.
-2. Identify who should access it and from where.
-3. Map interfaces, zones, conduits, routes, APIs and management planes.
-4. Form an attack-path hypothesis instead of reporting an isolated fact.
-5. Define minimum evidence before testing.
-6. Identify safety, availability, integrity and operational hazards.
-7. Define the retest before writing the finding.
+Use ISA-95 as a common manufacturing vocabulary, not as proof that every plant has the same architecture. ISA-95 describes five logical levels: Level 0 physical production, Level 1 sensing/manipulation, Level 2 monitoring/supervisory control, Level 3 manufacturing operations management, and Level 4 business planning/logistics.
 
-## Assessment Procedure
+| Level | Typical concern | Assessment question |
+|---|---|---|
+| 0 | Physical process | What physical process is affected? |
+| 1 | Sensors/actuators | Which devices sense or manipulate the process? |
+| 2 | PLC/DCS/SCADA/HMI | Which systems supervise or control it? |
+| 3 | MES/MOM/historian/operations | Which systems coordinate manufacturing operations? |
+| 4 | ERP/business systems | Which business functions exchange data with manufacturing? |
 
-### A. Authorization and Preconditions
-- Confirm written authorization and exact in-scope assets.
-- Identify business, technical and operational owners.
-- Record production/test/lab and maintenance status.
-- Confirm prohibited actions, credentials, test accounts and escalation contacts.
-- Identify dependencies that could turn a local test into plant or enterprise impact.
+This model is a logical aid. Modern environments may be distributed, virtualized, cloud-connected or vendor-managed.
 
-### B. Architecture and Trust Boundaries
-- Map upstream/downstream dependencies.
-- Separate management-plane from operational-plane access.
-- Identify enterprise, OT, cloud, vendor and wireless boundaries.
-- For IACS, record relevant zones/conduits and relationship to equipment under control.
+## 3. Environment Discovery
 
-### C. Hypothesis-Driven Testing
+Build the environment model from authoritative sources where possible:
 
-State what you are trying to prove. Examples: unauthorized reachability, privilege bypass, exposed management interface, alternate trust path, sensitive-data disclosure, missing telemetry or excessive supplier access. Select the least disruptive technique capable of proving or disproving it.
+- plant network diagrams;
+- asset inventories;
+- OT architecture diagrams;
+- process descriptions;
+- system-owner interviews;
+- firewall/routing information;
+- remote-access records;
+- CMDB or asset-management records;
+- vendor documentation;
+- cloud architecture;
+- observed technical evidence.
 
-### D. Technical Validation
+Separate documented architecture from observed architecture. A material difference between them is itself useful assessment information.
 
-Progress from observation to controlled proof. Confirm reproducibility, identify the violated boundary, establish practical exploitability under engagement assumptions and use the smallest proof necessary. A scanner alert or version match is not a confirmed vulnerability.
+## 4. Process-to-Technology Mapping
 
-For each result distinguish observed condition, violated security requirement, exploit/misuse path, impact and limitation.
+For important production functions, record:
 
-### E. Evidence Collection
+Production Process → Equipment → Control System → Supervisory System → Operations System → Business Dependency → Recovery Dependency
 
-Record asset, interface, source/identity context, relevant configuration or request/response, timestamp, expected behavior, observed behavior and evidence. Redact credentials, tokens, personal data and proprietary information.
+Example:
 
-## Manufacturing Impact Analysis
+Packaging → Packaging Line → PLC → HMI/SCADA → MES → ERP order → Maintenance/backup dependency
 
-Trace: **Asset → Trust Boundary → Security Control → Attack Capability → Technical Effect → Manufacturing Effect → Recovery Dependency**.
+This is context, not automatically a finding.
 
-Consider production interruption, quality/traceability, engineering/IP exposure, safety-function interference, historian/production-data integrity, supplier propagation, downtime and recovery complexity.
+## 5. IT vs OT Context
 
-## Finding Decision Logic
+### IT-oriented systems
 
-A defensible finding should show **Condition → Requirement → Attack/Misuse Path → Evidence → Impact → Root Cause → Remediation → Retest**. Do not treat a banner, version or scanner result as proof. Record Observation, Confirmed Weakness/Vulnerability, Inconclusive, Not Applicable, Not Tested and Out of Scope distinctly.
+Common objectives include confidentiality, integrity, availability, identity and access control, data protection and application security.
 
-## Safety / Stop Conditions
+### OT-oriented systems
 
-- Stay within scope and testing windows.
-- Prefer non-destructive validation.
-- Stop on unexpected instability, corruption or degradation.
-- Keep client secrets and sensitive evidence outside the reusable repository.
+Assessment must additionally consider deterministic operation, process continuity, equipment behavior, operational availability, safety, maintenance constraints, legacy technology and vendor dependencies.
 
-## Evidence Quality
+Do not copy IT security practices into OT without operational review.
 
-Evidence must be attributable, reproducible or independently understandable, time-stamped, minimized, protected from unauthorized disclosure/modification and linked to the finding and retest condition.
+## 6. Remote and External Dependencies
 
-## Remediation
+Identify:
 
-Correct the underlying architectural, configuration, identity, software, lifecycle or governance cause. Depending on the subject this may include segmentation, least privilege, secure configuration, patching, credential rotation, application allowlisting, access gateways, monitoring, backup/restore, change control or supplier restrictions. For OT, coordinate remediation with operations and never weaken safety functions.
+- vendor remote access;
+- VPN;
+- remote desktop/jump hosts;
+- cloud connectivity;
+- managed services;
+- support gateways;
+- IIoT platforms;
+- external APIs;
+- software-update infrastructure.
 
-## Retest
+CISA maintains ICS recommended practices covering remote access, defense in depth, patch management and control-system incident response.
 
-Reproduce the original security question and verify the original condition is gone, the intended control behaves correctly, relevant alternate paths are addressed, monitoring reflects the correction, and no unacceptable operational or safety side effect was introduced.
+## 7. Assessment Hypotheses
 
-## Common Pitfalls
-- Treating version, banner or scanner output as proof.
-- Testing only the expected path.
-- Reporting reachability without proving authorization or impact.
-- Ignoring the manufacturing process behind the asset.
-- Using invasive validation when safer proof exists.
-- Omitting negative results and limitations.
-- Copying client secrets or proprietary evidence into the public KB.
+Useful hypotheses include:
 
+- a business system may have an unintended path toward manufacturing systems;
+- a vendor access path may provide broader reach than intended;
+- a management interface may cross an expected boundary;
+- cloud integration may create an undocumented path;
+- a critical process may have an undocumented technical dependency;
+- documented architecture may differ materially from observed architecture.
 
-## Tooling Strategy
+Do not test these hypotheses invasively until E001 authorization and E006 safety requirements permit the activity.
 
-Select tools after defining the hypothesis. Relevant categories can include passive capture, protocol-aware OT monitoring, service enumeration, configuration review, authenticated auditing, web/API testing, IAM review, cloud posture assessment, source/dependency/SBOM analysis, SIEM/EDR/NDR/OT-IDS review and controlled vulnerability scanning. Tool output is a lead or evidence source; the assessor validates and interprets it.
+## 8. Evidence
 
-## Related Knowledge
+Useful evidence includes:
 
-Link this unit to the asset taxonomy, adjacent phase methods, identity controls, segmentation, zones/conduits, OT safety gates, evidence/finding procedures, attack paths and retest procedures.
+- architecture diagrams;
+- asset records;
+- system/function mapping;
+- approved network diagrams;
+- sanitized screenshots;
+- configuration references;
+- interview records;
+- observed communication paths;
+- ownership information;
+- dependency records.
 
-## Standards / References
-- NIST SP 800-82 Rev. 3
-- NIST SP 800-115
-- NIST IR 8183 Rev. 1
-- ISA-95
-- ISA/IEC 62443
-- CISA ICS Recommended Practices
-- MITRE ATT&CK for ICS
+Avoid copying unnecessary production information into the reusable KB.
 
-## Source Use and Limitations
+## 9. Finding Logic
 
-These references inform the methodology; they do not replace the engagement ROE, organizational risk model, vendor instructions or plant safety procedures.
+A missing or inaccurate environment model is not automatically a vulnerability.
 
-## Repository Safety
+Possible outcomes:
 
-Reusable methodology only. Never add client credentials, private keys, personal data, production screenshots, internal IP inventories, PLC logic, recipes, proprietary drawings or confidential findings.
+- Documented and verified
+- Documented but not verified
+- Observed but undocumented
+- Conflicting information
+- Unknown
+- Not applicable
+
+A finding becomes appropriate when the discrepancy represents an assessed security or control weakness and sufficient evidence exists.
+
+## 10. Defensive Questions
+
+For important processes ask:
+
+- Would unauthorized access be visible?
+- Are important control-system connections monitored?
+- Are remote sessions attributable?
+- Can operations identify who owns a critical asset?
+- Can the organization detect unexpected communication between IT and OT?
+- Can the organization reconstruct relevant events after an incident?
+
+## 11. Exit Criteria
+
+E002 is complete when the assessor can explain:
+
+1. what the plant produces;
+2. which production processes are relevant;
+3. which technology supports those processes;
+4. where IT and OT interact;
+5. which systems are externally connected;
+6. which systems are safety-relevant;
+7. which dependencies could affect production;
+8. which architecture facts are verified versus assumed.
+
+## Sources
+
+- NIST SP 800-82 Rev. 3 — Guide to Operational Technology Security.
+- ISA-95 — Enterprise-Control System Integration.
+- NIST IR 8183 Rev. 1 — Cybersecurity Framework Version 1.1 Manufacturing Profile.
+- CISA ICS Recommended Practices.
+
+**Boundary:** E002 explains the environment. It does not own asset classification (E003), process mapping detail (E004), trust-boundary analysis (E005), or safety-gate decisions (E006).
