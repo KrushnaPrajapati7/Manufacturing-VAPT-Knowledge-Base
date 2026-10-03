@@ -1,142 +1,201 @@
 ---
 docType: knowledge_unit
-answerType: assessment_methodology
 knowledgeId: E007
 sector: manufacturing_industrial
 phase: Foundation
-topic: Evidence Data Handling
-assetTags: ["data"]
+topic: Evidence and Data Handling
 safety: controlled
+status: working-rebuild
 ---
 
-# E007: Evidence Data Handling
+# E007: Evidence and Data Handling
 
 ## Assessment Question
 
-How should an authorized manufacturing-sector VAPT assessor assess **Evidence Data Handling**?
+**Can every important assessment conclusion be supported by sufficient, attributable and appropriately protected evidence without collecting unnecessary manufacturing data?**
 
 ## Purpose
 
-This unit provides reusable, engagement-neutral methodology for assessing **Evidence Data Handling** in a manufacturing environment. It is not authorization to test an organization. Execute only under approved scope, ROE, maintenance window and safety controls.
+E007 establishes evidence discipline for VAPT.
 
-## Security Objective
+Manufacturing evidence can contain credentials, personal information, engineering drawings, PLC logic, recipes, production data, network architecture and proprietary information. The assessor should collect what is necessary to prove the assessment result—not everything technically available.
 
-Establish whether the intended security property exists, is correctly enforced, can be bypassed or misconfigured, is observable when it fails, and creates a meaningful attack or misuse path.
+## 1. Evidence Chain
 
-## Manufacturing Context
+Use:
 
-Treat Evidence Data Handling as a component of a manufacturing system. Trace it to the business process, asset owner, trust boundary, data flow, dependency chain and recovery requirement.
+Assessment Question → Observation → Evidence → Interpretation → Finding → Remediation → Retest Evidence
 
-## Assessment Objectives
+Evidence must support the claim actually being made.
 
-1. define the security property and assessment hypothesis before selecting tools.
-2. identify ownership, business function, environment, trust boundaries and dependencies.
-3. trace confidentiality, integrity, availability, retention and data lineage.
-4. verify the intended control using the least disruptive technique.
-5. test negative and boundary cases, not only the happy path.
-6. correlate the observation with plausible attack paths and manufacturing consequences.
-7. capture reproducible evidence while minimizing sensitive data.
-8. define remediation and a retest method.
+## 2. Evidence Types
 
-## VAPT Thinking Model
+Examples:
 
-1. Identify the asset/process and business function.
-2. Identify who should access it and from where.
-3. Map interfaces, zones, conduits, routes, APIs and management planes.
-4. Form an attack-path hypothesis instead of reporting an isolated fact.
-5. Define minimum evidence before testing.
-6. Identify safety, availability, integrity and operational hazards.
-7. Define the retest before writing the finding.
+- screenshots;
+- configuration extracts;
+- logs;
+- request/response pairs;
+- packet metadata;
+- firewall rules;
+- authentication records;
+- cloud configuration;
+- vulnerability scanner output;
+- command output;
+- architecture diagrams;
+- interviews;
+- controlled test results.
 
-## Assessment Procedure
+Tool output is evidence only to the extent that it supports the conclusion.
 
-### A. Authorization and Preconditions
-- Confirm written authorization and exact in-scope assets.
-- Identify business, technical and operational owners.
-- Record production/test/lab and maintenance status.
-- Confirm prohibited actions, credentials, test accounts and escalation contacts.
-- Identify dependencies that could turn a local test into plant or enterprise impact.
+## 3. Evidence Quality
 
-### B. Architecture and Trust Boundaries
-- Map upstream/downstream dependencies.
-- Separate management-plane from operational-plane access.
-- Identify enterprise, OT, cloud, vendor and wireless boundaries.
-- For IACS, record relevant zones/conduits and relationship to equipment under control.
+Good evidence should be:
 
-### C. Hypothesis-Driven Testing
+- attributable;
+- time-associated;
+- relevant;
+- understandable;
+- reproducible where practical;
+- minimally collected;
+- protected from unauthorized disclosure or alteration.
 
-State what you are trying to prove. Examples: unauthorized reachability, privilege bypass, exposed management interface, alternate trust path, sensitive-data disclosure, missing telemetry or excessive supplier access. Select the least disruptive technique capable of proving or disproving it.
+## 4. Manufacturing-Sensitive Evidence
 
-### D. Technical Validation
+Treat carefully:
 
-Progress from observation to controlled proof. Confirm reproducibility, identify the violated boundary, establish practical exploitability under engagement assumptions and use the smallest proof necessary. A scanner alert or version match is not a confirmed vulnerability.
+- PLC logic;
+- controller configuration;
+- recipes;
+- CAD/design files;
+- production quantities;
+- quality records;
+- maintenance records;
+- engineering credentials;
+- network diagrams;
+- remote-access configuration;
+- packet captures;
+- personal information;
+- vendor confidential material.
 
-For each result distinguish observed condition, violated security requirement, exploit/misuse path, impact and limitation.
+Never copy client evidence into this reusable public knowledge base.
 
-### E. Evidence Collection
+## 5. Evidence Minimization
 
-Record asset, interface, source/identity context, relevant configuration or request/response, timestamp, expected behavior, observed behavior and evidence. Redact credentials, tokens, personal data and proprietary information.
+Before collecting an item ask:
 
-## Manufacturing Impact Analysis
+**What claim will this evidence prove?**
 
-Trace: **Asset → Trust Boundary → Security Control → Attack Capability → Technical Effect → Manufacturing Effect → Recovery Dependency**.
+If there is no clear answer, collection may not be necessary.
 
-Consider production interruption, quality/traceability, engineering/IP exposure, safety-function interference, historian/production-data integrity, supplier propagation, downtime and recovery complexity.
+Prefer a redacted configuration excerpt over a complete export when the complete export adds no evidentiary value.
 
-## Finding Decision Logic
+## 6. Integrity
 
-A defensible finding should show **Condition → Requirement → Attack/Misuse Path → Evidence → Impact → Root Cause → Remediation → Retest**. Do not treat a banner, version or scanner result as proof. Record Observation, Confirmed Weakness/Vulnerability, Inconclusive, Not Applicable, Not Tested and Out of Scope distinctly.
+The engagement evidence process may define:
 
-## Safety / Stop Conditions
+- hashes;
+- timestamps;
+- access control;
+- chain of custody;
+- versioning;
+- retention;
+- transfer method.
 
-- Stay within scope and testing windows.
-- Prefer non-destructive validation.
-- Stop on unexpected instability, corruption or degradation.
-- Keep client secrets and sensitive evidence outside the reusable repository.
+The KB should explain these concepts but must not prescribe one universal legal chain-of-custody process.
 
-## Evidence Quality
+## 7. Finding Evidence
 
-Evidence must be attributable, reproducible or independently understandable, time-stamped, minimized, protected from unauthorized disclosure/modification and linked to the finding and retest condition.
+A finding should normally connect:
 
-## Remediation
+Condition → Expected Control/Requirement → Evidence → Security Consequence → Manufacturing Relevance
 
-Correct the underlying architectural, configuration, identity, software, lifecycle or governance cause. Depending on the subject this may include segmentation, least privilege, secure configuration, patching, credential rotation, application allowlisting, access gateways, monitoring, backup/restore, change control or supplier restrictions. For OT, coordinate remediation with operations and never weaken safety functions.
+Avoid unsupported statements such as:
 
-## Retest
+“This is critical because it is an OT device.”
 
-Reproduce the original security question and verify the original condition is gone, the intended control behaves correctly, relevant alternate paths are addressed, monitoring reflects the correction, and no unacceptable operational or safety side effect was introduced.
+## 8. Negative Evidence
 
-## Common Pitfalls
-- Treating version, banner or scanner output as proof.
-- Testing only the expected path.
-- Reporting reachability without proving authorization or impact.
-- Ignoring the manufacturing process behind the asset.
-- Using invasive validation when safer proof exists.
-- Omitting negative results and limitations.
-- Copying client secrets or proprietary evidence into the public KB.
+Record important negative results.
 
+Examples:
 
-## Tooling Strategy
+- test did not reproduce;
+- exploit path was blocked;
+- monitoring generated an alert;
+- access was denied;
+- scope prevented validation;
+- evidence was insufficient.
 
-Select tools after defining the hypothesis. Relevant categories can include passive capture, protocol-aware OT monitoring, service enumeration, configuration review, authenticated auditing, web/API testing, IAM review, cloud posture assessment, source/dependency/SBOM analysis, SIEM/EDR/NDR/OT-IDS review and controlled vulnerability scanning. Tool output is a lead or evidence source; the assessor validates and interprets it.
+Negative results prevent the report from overstating risk.
 
-## Related Knowledge
+## 9. Evidence Confidence
 
-Link this unit to the asset taxonomy, adjacent phase methods, identity controls, segmentation, zones/conduits, OT safety gates, evidence/finding procedures, attack paths and retest procedures.
+Use practical labels:
 
-## Standards / References
-- NIST SP 800-82 Rev. 3
-- NIST SP 800-115
-- NIST IR 8183 Rev. 1
-- ISA-95
-- ISA/IEC 62443
-- CISA ICS Recommended Practices
-- MITRE ATT&CK for ICS
+- confirmed;
+- strongly supported;
+- partially supported;
+- inconclusive;
+- not tested.
 
-## Source Use and Limitations
+Do not turn confidence into fake mathematical precision.
 
-These references inform the methodology; they do not replace the engagement ROE, organizational risk model, vendor instructions or plant safety procedures.
+## 10. Offensive Questions
 
-## Repository Safety
+- What minimum evidence proves the attack path?
+- Can the claim be demonstrated without destructive testing?
+- Can the observation be reproduced?
+- Is evidence accidentally exposing a secret?
 
-Reusable methodology only. Never add client credentials, private keys, personal data, production screenshots, internal IP inventories, PLC logic, recipes, proprietary drawings or confidential findings.
+## 11. Defensive Questions
+
+- Would defenders have equivalent evidence?
+- Which logs should contain the event?
+- Was the event actually logged?
+- Can investigators reconstruct the sequence?
+- Are timestamps consistent enough to correlate activity?
+
+## 12. Evidence Handling Procedure
+
+1. Define the assessment question.
+2. Identify minimum evidence.
+3. Collect only authorized evidence.
+4. Record source, time and context.
+5. Redact unnecessary sensitive information.
+6. Store in the controlled engagement location.
+7. Link evidence to the finding.
+8. Preserve required evidence for retest.
+9. Dispose or retain according to engagement requirements.
+
+## Finding Logic
+
+Missing evidence does not prove absence of a control.
+
+Examples:
+
+- no screenshot → not automatically no control;
+- no log found → determine whether logging exists and whether the event should generate a log;
+- scanner output only → may be an indicator, not sufficient proof of vulnerability.
+
+## Exit Criteria
+
+For each material finding, the team can answer:
+
+- What happened?
+- Where?
+- When?
+- How was it observed?
+- Why does it matter?
+- What requirement/control is affected?
+- What evidence supports it?
+- What evidence limitation exists?
+- What evidence will prove remediation?
+
+## Sources
+
+- NIST SP 800-115.
+- NIST SP 800-82 Rev. 3.
+- CISA ICS Recommended Practices, including control-system forensics and incident-response material.
+
+**Boundary:** E007 owns evidence discipline. It does not own the full risk decision (E009) or assessment lifecycle (E010).
