@@ -1,92 +1,199 @@
 ---
-docType: guide
-answerType: guide
-guideType: pentest
-knowledgeId: MFG-E006
+docType: knowledge_unit
+knowledgeId: E006
 sector: manufacturing_industrial
 phase: Foundation
-assetTags: ["ot"]
-safety: restricted
+topic: OT Safety Gates
+safety: controlled
+status: working-rebuild
 ---
 
-# MFG-E006: OT Safety Gates
+# E006: OT Safety Gates
 
-## Question
+## Assessment Question
 
-How should an authorized manufacturing-sector VAPT auditor assess **OT Safety Gates**?
+**Before a cybersecurity test can affect an OT environment, has the activity passed the required operational and safety decision gates?**
 
-## Description
+## Purpose
 
-Standardized manufacturing VAPT guidance for the **Foundation** domain/phase. This unit is reusable methodology, not authorization to test a particular organization.
+E006 is a decision architecture for safe cybersecurity testing. It is not a functional-safety standard and does not replace plant safety procedures, permits, lockout/tagout requirements, emergency procedures or competent safety authority.
 
-## Content
+NIST SP 800-82 Rev. 3 explicitly addresses OT security while considering performance, reliability and safety requirements.
 
-### Overview
+## 1. Safety Is a Gate, Not a Disclaimer
 
-Confirm scope, ownership, business function, environment (production/test/lab), dependencies and safety constraints before assessment. Use the least disruptive technique that can answer the security question.
+For an OT target, determine:
 
-### Assessment Objectives
+1. Is it OT?
+2. Is it connected to production?
+3. Could the planned activity affect a process, controller, equipment, alarm, monitoring function or availability?
+4. Is a safety-related function involved?
+5. Is the activity explicitly authorized?
+6. Has the responsible operational owner approved it?
+7. Has the relevant safety authority reviewed it where required?
+8. Is the testing window appropriate?
+9. Is monitoring available?
+10. Are abort and escalation conditions defined?
 
-1. **Scope And Authorization** — identify the applicable control, observation or test and document the result.
-2. **Asset Ownership** — identify the applicable control, observation or test and document the result.
-3. **Rules Of Engagement** — identify the applicable control, observation or test and document the result.
-4. **Safety Constraints** — identify the applicable control, observation or test and document the result.
-5. **Evidence Handling** — identify the applicable control, observation or test and document the result.
+If a required answer is unknown, do not assume permission to proceed.
 
-### Manufacturing Context
+## 2. Test Modes
 
-Consider relationships among enterprise IT, identity, ERP/business applications, manufacturing operations, engineering/IP, OT/ICS, IIoT/edge, cloud, remote access, suppliers and sensitive data.
+Classify the intended activity:
 
-### Scope & Preconditions
+- documentation-only;
+- passive observation;
+- read-only authenticated review;
+- low-impact active testing;
+- controlled validation;
+- intrusive testing;
+- exploitation;
+- configuration change;
+- process-affecting activity.
 
-| Requirement | Minimum expectation |
-|---|---|
-| Authorization | Written authorization and explicit asset scope |
-| Ownership | Business/technical owner identified |
-| Environment | Production/test/lab status recorded |
-| Accounts | Test accounts preferred where authentication is assessed |
-| Data | Minimize collection and protect evidence |
-| Safety | restricted; OT actions require additional safety controls |
+The higher the potential operational effect, the stronger the approval and control requirements.
 
-### Evidence
+## 3. Preferred Testing Order
 
-- Asset identifier and environment.
-- Relevant URL/IP/hostname/logical identifier where permitted.
-- Observed technology/configuration.
-- Authentication or authorization context where applicable.
-- Screenshot, log, request/response or configuration excerpt when needed.
-- Timestamp and tester action.
-- Business/operational context.
+Where the objective can be achieved without operational interaction, prefer:
 
-### Expected Output
+Documentation → Passive Observation → Configuration Review → Controlled Read-Only Validation → Limited Active Validation → More Intrusive Validation
 
-- Assessment coverage.
-- Observations and findings with evidence.
-- Technical, business and operational impact where supported.
-- Remediation or compensating control.
-- Retest requirement where applicable.
+Do not use intrusive activity merely because it produces stronger evidence if safer evidence is sufficient.
 
-### Safety / Stop Conditions
+## 4. Production Decision
 
-- Stop if an action may affect production availability, safety, physical process control or data integrity.
-- No denial-of-service, destructive exploitation, uncontrolled malware, intentional data deletion or unsafe OT manipulation unless separately authorized and safety-controlled.
-- For OT/ICS, prefer passive/read-only validation and lab/digital-twin validation for disruptive actions.
-- Escalate instability, alarms, process changes or safety concerns.
+Classify the target:
 
-### Common Pitfalls
+- production;
+- production-supporting;
+- pre-production;
+- laboratory;
+- test;
+- development;
+- simulation/digital twin;
+- unknown.
 
-- Treating a software version as proof of a vulnerability.
-- Assuming every manufacturer has the same architecture.
-- Confusing exposure with compromise.
-- Ignoring business/operational context.
-- Testing production OT like ordinary IT.
-- Storing client evidence or secrets in this reusable repository.
+A lab result does not automatically prove that the same technique is safe in production.
 
-### Related Knowledge
+## 5. Safety-Relevant Systems
 
-Use the catalog to retrieve related units by asset, phase, technology and business function.
+If a target participates in a safety function or safety-related process, establish:
 
-### Standards / References
+- system identity;
+- responsible authority;
+- approved test method;
+- required permits/procedures;
+- testing window;
+- monitoring;
+- abort authority;
+- recovery method.
 
-- NIST SP 800-115
-- NIST Cybersecurity Framework / applicable organizational controls
+Cybersecurity testing must not independently modify or disable a safety function unless the engagement and applicable operational/safety process explicitly permit it.
+
+## 6. Abort Conditions
+
+Examples:
+
+- unexpected process behavior;
+- controller instability;
+- loss of monitoring;
+- alarm abnormalities;
+- unexplained communication loss;
+- equipment instability;
+- unexpected production effect;
+- safety concern;
+- inability to communicate with the operational owner;
+- evidence that activity exceeds approved conditions.
+
+Exact thresholds must be engagement-specific.
+
+## 7. Emergency Sequence
+
+STOP TEST → PRESERVE MINIMUM EVIDENCE → NOTIFY DESIGNATED CONTACT → FOLLOW PLANT RESPONSE → WAIT FOR AUTHORIZATION BEFORE RESUMPTION
+
+The assessor should not improvise recovery actions that belong to plant operations or safety personnel.
+
+## 8. Rollback and Recovery
+
+Before controlled changes, establish:
+
+- whether a backup exists;
+- whether restoration has been tested;
+- who performs rollback;
+- expected recovery path;
+- whether vendor support is required;
+- who authorizes restoration;
+- what evidence must be preserved.
+
+“Backup exists” is not equivalent to “recovery is proven.”
+
+## 9. Offensive Questions
+
+- What capability could the test expose?
+- Could the activity change state rather than only observe it?
+- Could authentication attempts affect an operational account?
+- Could scanning load a fragile device?
+- Could exploitation affect timing or availability?
+- Could an engineering action change process behavior?
+
+## 10. Defensive Questions
+
+- Is testing visible to OT monitoring?
+- Can operations identify the assessor?
+- Are test activities distinguishable from hostile activity?
+- Are alarms and events being monitored?
+- Is there a clear stop/escalation path?
+- Can the organization determine what changed during the test?
+
+## 11. Evidence
+
+Record:
+
+- target;
+- test mode;
+- authorization;
+- operational approval;
+- safety review where applicable;
+- window;
+- monitoring;
+- start/stop times;
+- observed effects;
+- abort events;
+- final disposition.
+
+Do not store client safety documentation in the public KB.
+
+## 12. Finding Logic
+
+Failure to have a safety gate is not automatically a cybersecurity vulnerability.
+
+Possible classifications:
+
+- process deficiency;
+- authorization deficiency;
+- operational-control weakness;
+- cybersecurity control weakness;
+- vulnerability;
+- not assessed.
+
+The finding must identify the specific requirement and evidence.
+
+## Exit Criteria
+
+Testing proceeds only when the required safety/operational conditions are satisfied and the assessor knows:
+
+- what is permitted;
+- what is prohibited;
+- what triggers a stop;
+- who can stop the test;
+- who can authorize resumption;
+- how the plant responds to an unexpected condition.
+
+## Sources
+
+- NIST SP 800-82 Rev. 3.
+- Applicable plant safety procedures and competent safety authority.
+- Applicable ISA/IEC functional-safety and industrial cybersecurity requirements as engagement context.
+
+**Boundary:** E006 defines the testing safety gate. It does not define the plant's functional-safety engineering design.

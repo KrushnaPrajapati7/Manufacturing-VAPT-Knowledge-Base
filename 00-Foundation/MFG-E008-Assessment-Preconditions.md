@@ -1,92 +1,167 @@
 ---
-docType: guide
-answerType: guide
-guideType: pentest
-knowledgeId: MFG-E008
+docType: knowledge_unit
+knowledgeId: E008
 sector: manufacturing_industrial
 phase: Foundation
-assetTags: ["manufacturing_asset"]
+topic: Assessment Preconditions and Readiness
 safety: controlled
+status: working-rebuild
 ---
 
-# MFG-E008: Assessment Preconditions
+# E008: Assessment Preconditions and Readiness
 
-## Question
+## Assessment Question
 
-How should an authorized manufacturing-sector VAPT auditor assess **Assessment Preconditions**?
+**Is the environment, engagement team and operational context ready for the planned assessment activity?**
 
-## Description
+## Purpose
 
-Standardized manufacturing VAPT guidance for the **Foundation** domain/phase. This unit is reusable methodology, not authorization to test a particular organization.
+Authorization alone does not make an assessment ready to execute.
 
-## Content
+E008 verifies prerequisites such as scope, contacts, access, monitoring, backups, maintenance windows, test accounts and operational coordination.
 
-### Overview
+## 1. Readiness Categories
 
-Confirm scope, ownership, business function, environment (production/test/lab), dependencies and safety constraints before assessment. Use the least disruptive technique that can answer the security question.
+### Governance
 
-### Assessment Objectives
+- authorization available;
+- ROE approved;
+- scope current;
+- scope-change process defined.
 
-1. **Scope And Authorization** — identify the applicable control, observation or test and document the result.
-2. **Asset Ownership** — identify the applicable control, observation or test and document the result.
-3. **Rules Of Engagement** — identify the applicable control, observation or test and document the result.
-4. **Safety Constraints** — identify the applicable control, observation or test and document the result.
-5. **Evidence Handling** — identify the applicable control, observation or test and document the result.
+### People
 
-### Manufacturing Context
+- engagement lead identified;
+- technical contacts available;
+- operational owner available;
+- safety contact identified where required;
+- emergency escalation available.
 
-Consider relationships among enterprise IT, identity, ERP/business applications, manufacturing operations, engineering/IP, OT/ICS, IIoT/edge, cloud, remote access, suppliers and sensitive data.
+### Technical
 
-### Scope & Preconditions
+- approved test connectivity works;
+- approved test accounts work;
+- required tooling is ready;
+- time synchronization is understood;
+- logging/monitoring contacts are known.
 
-| Requirement | Minimum expectation |
+### Operational
+
+- maintenance window confirmed;
+- production state known;
+- active incidents known;
+- change freeze considered;
+- operational constraints understood.
+
+### Recovery
+
+- backup status known;
+- rollback responsibility known;
+- recovery process identified;
+- vendor support available where required.
+
+## 2. Readiness State
+
+Use:
+
+- READY
+- READY WITH CONDITIONS
+- NOT READY
+- UNKNOWN
+
+Do not start an activity marked NOT READY or UNKNOWN merely because the assessment schedule is tight.
+
+## 3. Readiness Checklist
+
+| Question | Status |
 |---|---|
-| Authorization | Written authorization and explicit asset scope |
-| Ownership | Business/technical owner identified |
-| Environment | Production/test/lab status recorded |
-| Accounts | Test accounts preferred where authentication is assessed |
-| Data | Minimize collection and protect evidence |
-| Safety | controlled; OT actions require additional safety controls |
+| Authorization verified? | |
+| Scope current? | |
+| ROE current? | |
+| Production status known? | |
+| OT relevance known? | |
+| Safety review completed if needed? | |
+| Test accounts available? | |
+| Monitoring contact available? | |
+| Emergency contact available? | |
+| Testing window confirmed? | |
+| Recovery path understood? | |
+| Third-party coordination complete? | |
+| Evidence storage ready? | |
 
-### Evidence
+## 4. Technical Readiness
 
-- Asset identifier and environment.
-- Relevant URL/IP/hostname/logical identifier where permitted.
-- Observed technology/configuration.
-- Authentication or authorization context where applicable.
-- Screenshot, log, request/response or configuration excerpt when needed.
-- Timestamp and tester action.
-- Business/operational context.
+Validate only what is necessary.
 
-### Expected Output
+Examples:
 
-- Assessment coverage.
-- Observations and findings with evidence.
-- Technical, business and operational impact where supported.
-- Remediation or compensating control.
-- Retest requirement where applicable.
+- Can the approved assessment workstation reach the approved target?
+- Does the test identity authenticate as expected?
+- Are required VPN/jump-host controls functioning?
+- Is the test environment the intended environment?
+- Are required logs available?
 
-### Safety / Stop Conditions
+Do not perform broad discovery merely to prove connectivity.
 
-- Stop if an action may affect production availability, safety, physical process control or data integrity.
-- No denial-of-service, destructive exploitation, uncontrolled malware, intentional data deletion or unsafe OT manipulation unless separately authorized and safety-controlled.
-- For OT/ICS, prefer passive/read-only validation and lab/digital-twin validation for disruptive actions.
-- Escalate instability, alarms, process changes or safety concerns.
+## 5. Operational Readiness
 
-### Common Pitfalls
+Ask:
 
-- Treating a software version as proof of a vulnerability.
-- Assuming every manufacturer has the same architecture.
-- Confusing exposure with compromise.
-- Ignoring business/operational context.
-- Testing production OT like ordinary IT.
-- Storing client evidence or secrets in this reusable repository.
+- Is production running?
+- Is maintenance active?
+- Is an unusual production event occurring?
+- Is another assessment already active?
+- Are plant personnel aware of the test?
+- Are there known fragile systems?
+- Is a vendor activity occurring concurrently?
 
-### Related Knowledge
+Unexpected operational conditions can change the safe testing decision.
 
-Use the catalog to retrieve related units by asset, phase, technology and business function.
+## 6. Monitoring Readiness
 
-### Standards / References
+Determine, where required:
 
-- NIST SP 800-115
-- NIST Cybersecurity Framework / applicable organizational controls
+- who watches the environment;
+- which telemetry is available;
+- who receives alerts;
+- how the assessor identifies test traffic;
+- how abnormal behavior is escalated.
+
+A SIEM being installed does not prove that relevant activity will be detected.
+
+## 7. Offensive Questions
+
+- Can the planned test be executed without violating a readiness condition?
+- Is the intended identity authorized?
+- Is the intended target confirmed?
+- Is the environment actually the one approved?
+
+## 8. Defensive Questions
+
+- Can defenders distinguish authorized testing from an incident?
+- Are monitoring teams informed?
+- Are relevant logs available?
+- Can the organization correlate test activity?
+
+## 9. Failure Conditions
+
+Pause when:
+
+- target identity is uncertain;
+- authorization changed;
+- production state changed materially;
+- operational owner is unavailable where required;
+- safety approval is missing;
+- monitoring/recovery prerequisites are missing for the planned activity;
+- test access is broader than approved.
+
+## 10. Exit Criteria
+
+The assessment can proceed when all prerequisites required by the engagement are verified and documented.
+
+## Sources
+
+- NIST SP 800-115.
+- NIST SP 800-82 Rev. 3.
+
+**Boundary:** E008 owns readiness. It does not redefine authorization (E001) or detailed safety controls (E006).

@@ -1,92 +1,213 @@
 ---
-docType: guide
-answerType: guide
-guideType: pentest
-knowledgeId: MFG-E010
+docType: knowledge_unit
+knowledgeId: E010
 sector: manufacturing_industrial
 phase: Foundation
-assetTags: ["data"]
+topic: Assessment Lifecycle and Knowledge Retrieval
 safety: controlled
+status: working-rebuild
 ---
 
-# MFG-E010: KB Metadata & Retrieval Model
+# E010: Assessment Lifecycle and Knowledge Retrieval
 
-## Question
+## Assessment Question
 
-How should an authorized manufacturing-sector VAPT auditor assess **KB Metadata & Retrieval Model**?
+**How should a manufacturing VAPT engagement progress from authorization to final retest, and how should the knowledge base preserve traceability and retrieval context?**
 
-## Description
+## Purpose
 
-Standardized manufacturing VAPT guidance for the **Foundation** domain/phase. This unit is reusable methodology, not authorization to test a particular organization.
+E010 is the Foundation lifecycle and retrieval map. It explains how the assessment modules fit together and what metadata each knowledge unit should expose for human and AI/RAG use.
 
-## Content
+It is not a generic penetration-testing checklist.
 
-### Overview
+## 1. Assessment Lifecycle
 
-Confirm scope, ownership, business function, environment (production/test/lab), dependencies and safety constraints before assessment. Use the least disruptive technique that can answer the security question.
+Authorize → Understand → Prepare → Discover → Enumerate → Assess → Validate → Correlate → Report → Remediate → Retest → Close
 
-### Assessment Objectives
+The lifecycle can branch or stop when authorization, operational readiness or safety conditions are not satisfied.
 
-1. **Scope And Authorization** — identify the applicable control, observation or test and document the result.
-2. **Asset Ownership** — identify the applicable control, observation or test and document the result.
-3. **Rules Of Engagement** — identify the applicable control, observation or test and document the result.
-4. **Safety Constraints** — identify the applicable control, observation or test and document the result.
-5. **Evidence Handling** — identify the applicable control, observation or test and document the result.
+## 2. Gate 1 — Authorization
 
-### Manufacturing Context
+Use E001.
 
-Consider relationships among enterprise IT, identity, ERP/business applications, manufacturing operations, engineering/IP, OT/ICS, IIoT/edge, cloud, remote access, suppliers and sensitive data.
+Confirm:
 
-### Scope & Preconditions
+- authorization;
+- scope;
+- ROE;
+- permitted/restricted/prohibited actions;
+- third-party boundaries;
+- escalation;
+- evidence rules.
 
-| Requirement | Minimum expectation |
-|---|---|
-| Authorization | Written authorization and explicit asset scope |
-| Ownership | Business/technical owner identified |
-| Environment | Production/test/lab status recorded |
-| Accounts | Test accounts preferred where authentication is assessed |
-| Data | Minimize collection and protect evidence |
-| Safety | controlled; OT actions require additional safety controls |
+No authorization means no testing.
 
-### Evidence
+## 3. Gate 2 — Environment Understanding
 
-- Asset identifier and environment.
-- Relevant URL/IP/hostname/logical identifier where permitted.
-- Observed technology/configuration.
-- Authentication or authorization context where applicable.
-- Screenshot, log, request/response or configuration excerpt when needed.
-- Timestamp and tester action.
-- Business/operational context.
+Use E002–E005.
 
-### Expected Output
+Establish:
 
-- Assessment coverage.
-- Observations and findings with evidence.
-- Technical, business and operational impact where supported.
-- Remediation or compensating control.
-- Retest requirement where applicable.
+- manufacturing environment;
+- asset context;
+- business process;
+- trust boundaries;
+- external dependencies.
 
-### Safety / Stop Conditions
+Do not begin with scanner output and work backward into architecture.
 
-- Stop if an action may affect production availability, safety, physical process control or data integrity.
-- No denial-of-service, destructive exploitation, uncontrolled malware, intentional data deletion or unsafe OT manipulation unless separately authorized and safety-controlled.
-- For OT/ICS, prefer passive/read-only validation and lab/digital-twin validation for disruptive actions.
-- Escalate instability, alarms, process changes or safety concerns.
+## 4. Gate 3 — Safety and Readiness
 
-### Common Pitfalls
+Use E006 and E008.
 
-- Treating a software version as proof of a vulnerability.
-- Assuming every manufacturer has the same architecture.
-- Confusing exposure with compromise.
-- Ignoring business/operational context.
-- Testing production OT like ordinary IT.
-- Storing client evidence or secrets in this reusable repository.
+Confirm:
 
-### Related Knowledge
+- OT relevance;
+- production status;
+- safety relevance;
+- operational owner;
+- test window;
+- monitoring;
+- recovery;
+- emergency stop.
 
-Use the catalog to retrieve related units by asset, phase, technology and business function.
+If a required gate fails, stop or change the planned method.
 
-### Standards / References
+## 5. Assessment Phases
 
-- NIST SP 800-115
-- NIST Cybersecurity Framework / applicable organizational controls
+The later repository phases implement the lifecycle:
+
+1. Reconnaissance
+2. Scanning and Enumeration
+3. Vulnerability Assessment
+4. Identity and Access
+5. Web/API/Application
+6. Internal OT/ICS
+7. Engineering, IIoT and Cloud
+8. Network, Remote Access and Supply Chain
+9. Data, Privacy and IP
+10. Monitoring and Detection
+11. Validation and Business Impact
+12. Reporting and Remediation
+
+The phases should be selected according to scope and engagement objectives; not every engagement requires every phase.
+
+## 6. Validation Rule
+
+For each candidate issue:
+
+Detect → Validate → Interpret → Correlate → Decide
+
+A scanner result, open port, banner or version match is not automatically a vulnerability.
+
+## 7. Finding Traceability
+
+Each important finding should connect, as applicable:
+
+E001 Authorization → E002 Environment → E003 Asset → E004 Process → E005 Boundary → E006 Safety → Evidence → E009 Risk Decision → Remediation → Retest
+
+Not every finding requires every link.
+
+## 8. Knowledge-Unit Metadata
+
+Each reusable knowledge unit should expose consistent metadata such as:
+
+- knowledge ID;
+- sector;
+- phase;
+- topic;
+- assessment type;
+- asset tags;
+- safety classification;
+- source references;
+- prerequisites;
+- related knowledge IDs;
+- version/status.
+
+Metadata should improve retrieval. It should not be used as decorative padding.
+
+## 9. RAG Retrieval Requirements
+
+For AI retrieval, a useful unit should answer a clear question and contain enough context to be understandable without copying the entire repository.
+
+Retrieval should be able to distinguish:
+
+- manufacturing context;
+- IT versus OT;
+- assessment phase;
+- asset type;
+- safety relevance;
+- evidence requirement;
+- finding logic;
+- remediation/retest;
+- authoritative sources.
+
+Avoid creating multiple nearly identical files solely to increase document count.
+
+## 10. Offensive and Defensive Retrieval
+
+A useful AI query should be able to retrieve both:
+
+**Offensive:** What path or capability could an attacker obtain?
+
+**Defensive:** What control, telemetry or response capability should detect or prevent it?
+
+The answer should preserve safety and authorization constraints.
+
+## 11. Lifecycle Stop Conditions
+
+Stop or escalate when:
+
+- authorization becomes uncertain;
+- scope changes without approval;
+- production state changes;
+- safety conditions change;
+- unexpected operational effects occur;
+- monitoring/recovery assumptions fail;
+- activity becomes more intrusive than approved;
+- third-party authorization is absent;
+- evidence-handling requirements cannot be satisfied.
+
+## 12. Reporting and Retest
+
+Every material finding should preserve:
+
+- affected asset;
+- condition;
+- evidence;
+- validation;
+- attack path;
+- manufacturing relevance;
+- limitations;
+- remediation;
+- retest method.
+
+A successful retest should answer the original security question and provide evidence of closure.
+
+## 13. Foundation Exit Criteria
+
+The Foundation is ready for the Reconnaissance phase only when:
+
+- E001–E010 have distinct purposes;
+- duplicate generic methodology has been removed;
+- authorization and safety gates are explicit;
+- manufacturing context is established;
+- assets and owners can be represented;
+- process dependencies can be traced;
+- trust boundaries can be described;
+- evidence can be handled safely;
+- findings can be reasoned from evidence;
+- lifecycle and retrieval metadata are usable;
+- sources are traceable;
+- no client information is present.
+
+## Sources
+
+- NIST SP 800-115.
+- NIST SP 800-82 Rev. 3.
+- NIST IR 8183 Rev. 1.
+- ISA-95.
+- CISA ICS Recommended Practices.
+- MITRE ATT&CK for ICS.
+
+**Boundary:** E010 owns the lifecycle and knowledge-retrieval model. Detailed technical procedures belong to later phase documents.

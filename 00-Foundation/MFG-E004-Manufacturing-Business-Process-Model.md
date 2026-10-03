@@ -1,92 +1,177 @@
 ---
-docType: guide
-answerType: guide
-guideType: pentest
-knowledgeId: MFG-E004
+docType: knowledge_unit
+knowledgeId: E004
 sector: manufacturing_industrial
 phase: Foundation
-assetTags: ["manufacturing_asset"]
+topic: Manufacturing Business Process Model
 safety: controlled
+status: working-rebuild
 ---
 
-# MFG-E004: Manufacturing Business Process Model
+# E004: Manufacturing Business Process Model
 
-## Question
+## Assessment Question
 
-How should an authorized manufacturing-sector VAPT auditor assess **Manufacturing Business Process Model**?
+**What manufacturing activity is being supported, what can go wrong if a security control fails, and which business or production outcome is affected?**
 
-## Description
+## Purpose
 
-Standardized manufacturing VAPT guidance for the **Foundation** domain/phase. This unit is reusable methodology, not authorization to test a particular organization.
+A technical vulnerability becomes meaningful only when its role in the manufacturing process is understood.
 
-## Content
+E004 connects technical systems to production activities without pretending that the assessor can independently determine process-engineering or safety consequences.
 
-### Overview
+ISA-95 defines models and terminology for enterprise and manufacturing-control functions and describes Level 3 manufacturing operations management and its interface with Level 4 business functions.
 
-Confirm scope, ownership, business function, environment (production/test/lab), dependencies and safety constraints before assessment. Use the least disruptive technique that can answer the security question.
+## 1. Process Model
 
-### Assessment Objectives
+For each relevant process, use:
 
-1. **Scope And Authorization** — identify the applicable control, observation or test and document the result.
-2. **Asset Ownership** — identify the applicable control, observation or test and document the result.
-3. **Rules Of Engagement** — identify the applicable control, observation or test and document the result.
-4. **Safety Constraints** — identify the applicable control, observation or test and document the result.
-5. **Evidence Handling** — identify the applicable control, observation or test and document the result.
+Business Objective → Manufacturing Operation → Process Step → Equipment → Control/IT System → Data → Human Decision → Output
 
-### Manufacturing Context
+Possible outputs include:
 
-Consider relationships among enterprise IT, identity, ERP/business applications, manufacturing operations, engineering/IP, OT/ICS, IIoT/edge, cloud, remote access, suppliers and sensitive data.
+- product;
+- quality result;
+- production record;
+- inventory movement;
+- maintenance event;
+- shipment;
+- compliance record.
 
-### Scope & Preconditions
+## 2. Process Categories
 
-| Requirement | Minimum expectation |
-|---|---|
-| Authorization | Written authorization and explicit asset scope |
-| Ownership | Business/technical owner identified |
-| Environment | Production/test/lab status recorded |
-| Accounts | Test accounts preferred where authentication is assessed |
-| Data | Minimize collection and protect evidence |
-| Safety | controlled; OT actions require additional safety controls |
+Depending on the facility, map:
 
-### Evidence
+- production planning;
+- material handling;
+- production execution;
+- machine operation;
+- quality control;
+- laboratory testing;
+- maintenance;
+- calibration;
+- packaging;
+- warehouse/logistics;
+- traceability;
+- reporting;
+- engineering change;
+- supplier integration.
 
-- Asset identifier and environment.
-- Relevant URL/IP/hostname/logical identifier where permitted.
-- Observed technology/configuration.
-- Authentication or authorization context where applicable.
-- Screenshot, log, request/response or configuration excerpt when needed.
-- Timestamp and tester action.
-- Business/operational context.
+Do not assume every category exists.
 
-### Expected Output
+## 3. Security-Relevant Properties
 
-- Assessment coverage.
-- Observations and findings with evidence.
-- Technical, business and operational impact where supported.
-- Remediation or compensating control.
-- Retest requirement where applicable.
+### Availability
+Can the process continue if the system is unavailable?
 
-### Safety / Stop Conditions
+### Integrity
+Could incorrect data or commands cause an incorrect manufacturing outcome?
 
-- Stop if an action may affect production availability, safety, physical process control or data integrity.
-- No denial-of-service, destructive exploitation, uncontrolled malware, intentional data deletion or unsafe OT manipulation unless separately authorized and safety-controlled.
-- For OT/ICS, prefer passive/read-only validation and lab/digital-twin validation for disruptive actions.
-- Escalate instability, alarms, process changes or safety concerns.
+### Confidentiality
+Could unauthorized disclosure expose IP, recipes, designs or sensitive production information?
 
-### Common Pitfalls
+### Authenticity
+Can the process distinguish authorized users, devices and commands?
 
-- Treating a software version as proof of a vulnerability.
-- Assuming every manufacturer has the same architecture.
-- Confusing exposure with compromise.
-- Ignoring business/operational context.
-- Testing production OT like ordinary IT.
-- Storing client evidence or secrets in this reusable repository.
+### Traceability
+Can the organization determine who performed an action and when?
 
-### Related Knowledge
+## 4. Attack-Path Thinking
 
-Use the catalog to retrieve related units by asset, phase, technology and business function.
+Map:
 
-### Standards / References
+Initial Access → Compromised Asset → Manufacturing Function → Process Capability → Business/Operational Effect
 
-- NIST SP 800-115
-- NIST Cybersecurity Framework / applicable organizational controls
+Example:
+
+Compromised engineering workstation → engineering access → unauthorized configuration capability → possible process effect.
+
+The example is a threat model, not permission to perform the action.
+
+## 5. Process Dependencies
+
+Record dependencies such as:
+
+- identity services;
+- DNS;
+- time synchronization;
+- databases;
+- historians;
+- MES;
+- ERP;
+- network infrastructure;
+- backup;
+- remote access;
+- vendor support;
+- cloud services.
+
+A dependency is not automatically a vulnerability.
+
+## 6. Offensive Questions
+
+- Which system provides meaningful control over the process?
+- Which credentials provide process capability?
+- Which interfaces can influence process data?
+- Can an attacker move from business systems toward production?
+- Can a compromised engineering system affect a process?
+- Can a supplier pathway influence a process?
+
+## 7. Defensive Questions
+
+- Would unauthorized process changes generate an alert?
+- Are engineering changes logged?
+- Are important operator actions attributable?
+- Are production-data integrity events monitored?
+- Can operations detect abnormal commands?
+- Can affected process state be reconstructed?
+
+MITRE ATT&CK for ICS includes process-oriented objectives such as Impair Process Control and Inhibit Response Function, which can help structure attack hypotheses.
+
+## 8. Evidence
+
+Useful evidence:
+
+- process descriptions;
+- sanitized process-flow diagrams;
+- system dependency maps;
+- approved architecture;
+- configuration records;
+- audit logs;
+- interviews with process/operations owners;
+- controlled observations.
+
+Avoid collecting unnecessary proprietary recipes, production quantities or engineering IP.
+
+## 9. Finding Logic
+
+Do not report:
+
+“System X is connected to MES, therefore it is critical.”
+
+Instead establish:
+
+Condition → Process Dependency → Security Requirement → Attack Capability → Evidence → Potential Effect
+
+A process dependency may be verified, suspected, undocumented or unavailable for assessment.
+
+## 10. Exit Criteria
+
+The assessor can explain:
+
+- what the process does;
+- which systems support it;
+- which systems can influence it;
+- which data matters;
+- which people/roles matter;
+- what dependencies exist;
+- what security failure could affect the process;
+- what the organization can detect and recover.
+
+## Sources
+
+- ISA-95 — Enterprise-Control System Integration.
+- NIST IR 8183 Rev. 1 — Manufacturing Profile.
+- NIST SP 800-82 Rev. 3.
+- MITRE ATT&CK for ICS.
+
+**Boundary:** E004 owns process context. It does not own detailed asset inventory (E003), network trust boundaries (E005), or risk decisions (E009).

@@ -1,92 +1,158 @@
 ---
-docType: guide
-answerType: guide
-guideType: pentest
-knowledgeId: MFG-E005
+docType: knowledge_unit
+knowledgeId: E005
 sector: manufacturing_industrial
 phase: Foundation
-assetTags: ["ot"]
+topic: IT OT Trust Boundaries
 safety: controlled
+status: working-rebuild
 ---
 
-# MFG-E005: IT/OT Trust Boundaries
+# E005: IT–OT Trust Boundaries
 
-## Question
+## Assessment Question
 
-How should an authorized manufacturing-sector VAPT auditor assess **IT/OT Trust Boundaries**?
+**Where can trust, identity, data or network connectivity cross between enterprise IT, manufacturing OT and external environments, and is that crossing intentional and controlled?**
 
-## Description
+## Purpose
 
-Standardized manufacturing VAPT guidance for the **Foundation** domain/phase. This unit is reusable methodology, not authorization to test a particular organization.
+E005 identifies boundaries that control movement between different security and operational domains.
 
-## Content
+A network connection is not automatically a trust relationship. A logical trust relationship may exist even when the connection is indirect.
 
-### Overview
+## 1. Boundary Types
 
-Confirm scope, ownership, business function, environment (production/test/lab), dependencies and safety constraints before assessment. Use the least disruptive technique that can answer the security question.
+Consider:
 
-### Assessment Objectives
+- enterprise IT ↔ industrial environment;
+- Level 4 ↔ Level 3;
+- Level 3 ↔ Level 2;
+- engineering ↔ controller environment;
+- vendor ↔ OT;
+- cloud ↔ plant;
+- wireless ↔ wired;
+- remote-access ↔ OT;
+- safety-related ↔ control environment;
+- production ↔ laboratory/test;
+- user identity ↔ privileged OT function.
 
-1. **Scope And Authorization** — identify the applicable control, observation or test and document the result.
-2. **Asset Ownership** — identify the applicable control, observation or test and document the result.
-3. **Rules Of Engagement** — identify the applicable control, observation or test and document the result.
-4. **Safety Constraints** — identify the applicable control, observation or test and document the result.
-5. **Evidence Handling** — identify the applicable control, observation or test and document the result.
+ISA-95 provides logical levels and boundaries for manufacturing-control/business integration. These levels should be treated as logical reference points, not as proof that every modern architecture is a strict hierarchy.
 
-### Manufacturing Context
+## 2. Trust-Boundary Record
 
-Consider relationships among enterprise IT, identity, ERP/business applications, manufacturing operations, engineering/IP, OT/ICS, IIoT/edge, cloud, remote access, suppliers and sensitive data.
+For each important boundary record:
 
-### Scope & Preconditions
+- source domain;
+- destination domain;
+- communication path;
+- authentication;
+- authorization;
+- protocol/service;
+- direction;
+- allowed purpose;
+- owner;
+- monitoring;
+- logging;
+- remote-access dependency;
+- failure behavior;
+- operational dependency.
 
-| Requirement | Minimum expectation |
-|---|---|
-| Authorization | Written authorization and explicit asset scope |
-| Ownership | Business/technical owner identified |
-| Environment | Production/test/lab status recorded |
-| Accounts | Test accounts preferred where authentication is assessed |
-| Data | Minimize collection and protect evidence |
-| Safety | controlled; OT actions require additional safety controls |
+## 3. Zones and Conduits
 
-### Evidence
+Where ISA/IEC 62443 concepts are used, document the organization's defined zones and conduits.
 
-- Asset identifier and environment.
-- Relevant URL/IP/hostname/logical identifier where permitted.
-- Observed technology/configuration.
-- Authentication or authorization context where applicable.
-- Screenshot, log, request/response or configuration excerpt when needed.
-- Timestamp and tester action.
-- Business/operational context.
+Do not invent zone assignments simply to fit a diagram.
 
-### Expected Output
+A zone should represent a meaningful grouping based on security requirements and operational context. A conduit represents controlled communication between zones.
 
-- Assessment coverage.
-- Observations and findings with evidence.
-- Technical, business and operational impact where supported.
-- Remediation or compensating control.
-- Retest requirement where applicable.
+## 4. Boundary Hypotheses
 
-### Safety / Stop Conditions
+Examples:
 
-- Stop if an action may affect production availability, safety, physical process control or data integrity.
-- No denial-of-service, destructive exploitation, uncontrolled malware, intentional data deletion or unsafe OT manipulation unless separately authorized and safety-controlled.
-- For OT/ICS, prefer passive/read-only validation and lab/digital-twin validation for disruptive actions.
-- Escalate instability, alarms, process changes or safety concerns.
+- enterprise identity may be trusted by OT systems;
+- a vendor gateway may reach more OT assets than intended;
+- a management interface may bypass an expected boundary;
+- cloud integration may create an undocumented path;
+- a firewall rule may permit a service beyond its business purpose;
+- a shared account may cross multiple trust domains.
 
-### Common Pitfalls
+## 5. Offensive Validation
 
-- Treating a software version as proof of a vulnerability.
-- Assuming every manufacturer has the same architecture.
-- Confusing exposure with compromise.
-- Ignoring business/operational context.
-- Testing production OT like ordinary IT.
-- Storing client evidence or secrets in this reusable repository.
+Use the least disruptive method that answers the question.
 
-### Related Knowledge
+Possible validation:
 
-Use the catalog to retrieve related units by asset, phase, technology and business function.
+- review firewall rules;
+- review routing;
+- inspect ACLs;
+- inspect remote-access configuration;
+- validate authorized connectivity;
+- test a specific permitted path;
+- review authentication/authorization;
+- correlate traffic with documented purpose.
 
-### Standards / References
+Do not turn an observed route into permission for unrestricted lateral movement.
 
-- NIST SP 800-115
-- NIST Cybersecurity Framework / applicable organizational controls
+## 6. Defensive Validation
+
+Ask:
+
+- Is crossing logged?
+- Is source identity attributable?
+- Is unusual traffic detected?
+- Are remote sessions monitored?
+- Can operations identify which boundary was crossed?
+- Are denied attempts visible?
+- Can the organization investigate a suspected boundary violation?
+
+## 7. Boundary Failure vs Vulnerability
+
+Examples:
+
+- documented communication path → architecture fact;
+- undocumented path → architecture/governance observation;
+- firewall rule permits unintended traffic → potential security weakness;
+- service is reachable → not automatically a vulnerability;
+- boundary can be bypassed to obtain unauthorized capability → potential vulnerability/control failure.
+
+## 8. Manufacturing Impact
+
+For a validated weakness, trace:
+
+Boundary → Reachable Asset → Capability → Process Dependency → Operational Effect
+
+Do not claim physical consequences without evidence or appropriate process-owner input.
+
+## 9. Evidence
+
+Useful evidence:
+
+- sanitized diagrams;
+- firewall/ACL rules;
+- route information;
+- remote-access configuration;
+- authentication logs;
+- packet metadata where authorized;
+- approved test results;
+- monitoring evidence.
+
+## 10. Exit Criteria
+
+E005 is complete when important IT/OT/external boundaries are:
+
+- identified;
+- owner-associated;
+- purpose-defined;
+- technically characterized;
+- monitoring status known;
+- testing constraints known;
+- potential attack paths documented.
+
+## Sources
+
+- NIST SP 800-82 Rev. 3.
+- ISA-95.
+- Applicable ISA/IEC 62443 zone/conduit concepts.
+- CISA ICS Recommended Practices.
+
+**Boundary:** E005 owns trust and connectivity boundaries. It does not replace E006's safety gate or E009's risk decision.

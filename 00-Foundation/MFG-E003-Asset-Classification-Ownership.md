@@ -1,92 +1,205 @@
 ---
-docType: guide
-answerType: guide
-guideType: pentest
-knowledgeId: MFG-E003
+docType: knowledge_unit
+knowledgeId: E003
 sector: manufacturing_industrial
 phase: Foundation
-assetTags: ["manufacturing_asset"]
+topic: Asset Classification and Ownership
 safety: controlled
+status: working-rebuild
 ---
 
-# MFG-E003: Asset Classification & Ownership
+# E003: Asset Classification and Ownership
 
-## Question
+## Assessment Question
 
-How should an authorized manufacturing-sector VAPT auditor assess **Asset Classification & Ownership**?
+**Can the assessment team identify what each relevant asset is, what it does, who owns it, how important it is, and who can authorize changes to it?**
 
-## Description
+## Purpose
 
-Standardized manufacturing VAPT guidance for the **Foundation** domain/phase. This unit is reusable methodology, not authorization to test a particular organization.
+A manufacturing assessment becomes unreliable when an assessor knows an IP address but cannot establish the asset's function, owner or operational importance.
 
-## Content
+E003 creates an asset context model for VAPT. It does not attempt to replace a complete CMDB.
 
-### Overview
+## 1. Minimum Asset Record
 
-Confirm scope, ownership, business function, environment (production/test/lab), dependencies and safety constraints before assessment. Use the least disruptive technique that can answer the security question.
+For each relevant asset, capture where available:
 
-### Assessment Objectives
+- asset identifier;
+- hostname/IP/resource identifier;
+- asset type;
+- manufacturer/model;
+- function;
+- environment;
+- ISA-95 logical level where useful;
+- zone/network;
+- business/process dependency;
+- operational owner;
+- technical owner;
+- security owner;
+- vendor/support owner;
+- criticality;
+- safety relevance;
+- remote-access status;
+- lifecycle status;
+- evidence source.
 
-1. **Scope And Authorization** — identify the applicable control, observation or test and document the result.
-2. **Asset Ownership** — identify the applicable control, observation or test and document the result.
-3. **Rules Of Engagement** — identify the applicable control, observation or test and document the result.
-4. **Safety Constraints** — identify the applicable control, observation or test and document the result.
-5. **Evidence Handling** — identify the applicable control, observation or test and document the result.
+## 2. Asset Types
 
-### Manufacturing Context
+Use functional categories rather than only device names:
 
-Consider relationships among enterprise IT, identity, ERP/business applications, manufacturing operations, engineering/IP, OT/ICS, IIoT/edge, cloud, remote access, suppliers and sensitive data.
+- enterprise server;
+- workstation;
+- engineering workstation;
+- HMI;
+- PLC;
+- RTU;
+- DCS component;
+- SCADA server;
+- historian;
+- MES/MOM;
+- industrial switch/router;
+- firewall;
+- jump server;
+- remote-access gateway;
+- IIoT gateway;
+- industrial sensor/device;
+- safety-related system;
+- cloud service;
+- API;
+- database;
+- backup/recovery system;
+- engineering repository.
 
-### Scope & Preconditions
+## 3. Ownership Model
 
-| Requirement | Minimum expectation |
+| Owner | Meaning |
 |---|---|
-| Authorization | Written authorization and explicit asset scope |
-| Ownership | Business/technical owner identified |
-| Environment | Production/test/lab status recorded |
-| Accounts | Test accounts preferred where authentication is assessed |
-| Data | Minimize collection and protect evidence |
-| Safety | controlled; OT actions require additional safety controls |
+| Operational owner | Accountable for how the asset supports plant operations |
+| Technical owner | Responsible for technical administration |
+| Security owner | Responsible for cybersecurity requirements |
+| Vendor/support owner | External party responsible for support where applicable |
+| Safety owner | Relevant authority for safety-related concerns |
 
-### Evidence
+One person or team may hold multiple roles, but technical administration must not automatically be treated as operational authority.
 
-- Asset identifier and environment.
-- Relevant URL/IP/hostname/logical identifier where permitted.
-- Observed technology/configuration.
-- Authentication or authorization context where applicable.
-- Screenshot, log, request/response or configuration excerpt when needed.
-- Timestamp and tester action.
-- Business/operational context.
+## 4. Criticality
 
-### Expected Output
+Do not assign criticality from asset type alone.
 
-- Assessment coverage.
-- Observations and findings with evidence.
-- Technical, business and operational impact where supported.
-- Remediation or compensating control.
-- Retest requirement where applicable.
+Consider:
 
-### Safety / Stop Conditions
+- production dependency;
+- process dependency;
+- safety dependency;
+- quality dependency;
+- recovery dependency;
+- data integrity dependency;
+- engineering dependency;
+- external/customer dependency;
+- single-point-of-failure characteristics.
 
-- Stop if an action may affect production availability, safety, physical process control or data integrity.
-- No denial-of-service, destructive exploitation, uncontrolled malware, intentional data deletion or unsafe OT manipulation unless separately authorized and safety-controlled.
-- For OT/ICS, prefer passive/read-only validation and lab/digital-twin validation for disruptive actions.
-- Escalate instability, alarms, process changes or safety concerns.
+An asset's importance depends on its role in the specific environment.
 
-### Common Pitfalls
+## 5. Asset State
 
-- Treating a software version as proof of a vulnerability.
-- Assuming every manufacturer has the same architecture.
-- Confusing exposure with compromise.
-- Ignoring business/operational context.
-- Testing production OT like ordinary IT.
-- Storing client evidence or secrets in this reusable repository.
+Use explicit states:
 
-### Related Knowledge
+- confirmed;
+- partially verified;
+- suspected;
+- duplicate;
+- retired;
+- unknown;
+- out-of-scope.
 
-Use the catalog to retrieve related units by asset, phase, technology and business function.
+Unknown remains unknown until evidence supports classification.
 
-### Standards / References
+## 6. Assessment Hypotheses
 
-- NIST SP 800-115
-- NIST Cybersecurity Framework / applicable organizational controls
+Examples:
+
+- critical assets may lack accountable ownership;
+- technical ownership may not match operational ownership;
+- remote-support assets may have unclear responsibility;
+- obsolete assets may remain reachable;
+- asset inventories may omit OT or IIoT devices;
+- cloud-connected assets may not have a clear plant owner.
+
+## 7. Offensive Interpretation
+
+Ask:
+
+**If an attacker compromises this asset, what capability does the asset provide?**
+
+Examples:
+
+- access to engineering functions;
+- credential exposure;
+- network pivoting;
+- process visibility;
+- control-system access;
+- production-data manipulation;
+- access to vendor infrastructure.
+
+## 8. Defensive Interpretation
+
+Ask:
+
+**Would the organization know which asset was affected and who is responsible for it?**
+
+Check for:
+
+- asset inventory;
+- owner mapping;
+- monitoring coverage;
+- alert ownership;
+- incident escalation;
+- lifecycle status;
+- backup responsibility.
+
+## 9. Evidence
+
+Prefer:
+
+- approved asset inventory;
+- sanitized architecture records;
+- management-system records;
+- configuration evidence;
+- owner confirmation;
+- technical observation;
+- vendor documentation.
+
+Record the source of classification. Do not silently convert an interview statement into verified technical fact.
+
+## 10. Finding Logic
+
+Examples:
+
+- Unknown owner alone → governance/asset-management observation.
+- Unmanaged critical asset with security exposure → potential finding if validated.
+- Duplicate inventory entry → data-quality issue unless it causes a security/control weakness.
+- Old asset version → not automatically a vulnerability.
+- Asset reachable from an unauthorized zone → potentially significant security weakness, subject to safe validation.
+
+## 11. Exit Criteria
+
+The assessor should be able to answer:
+
+- What is the asset?
+- What does it do?
+- Where does it operate?
+- Who owns it?
+- Who administers it?
+- What process depends on it?
+- Is it safety-relevant?
+- How is it monitored?
+- How is it recovered?
+- Is it actually in scope?
+
+## Sources
+
+- NIST SP 800-82 Rev. 3.
+- CISA Cross-Sector Cybersecurity Performance Goals, including asset inventory guidance.
+- ISA-95 where manufacturing hierarchy/context is relevant.
+
+**Boundary:** E003 owns asset identity, classification and ownership. It does not own the business-process model (E004) or detailed risk decisions (E009).
