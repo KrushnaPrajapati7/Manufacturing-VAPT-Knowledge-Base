@@ -1,92 +1,142 @@
 ---
-docType: guide
-answerType: guide
-guideType: pentest
-knowledgeId: MFG-E005
+docType: knowledge_unit
+answerType: assessment_methodology
+knowledgeId: E005
 sector: manufacturing_industrial
 phase: Foundation
+topic: IT OT Trust Boundaries
 assetTags: ["ot"]
-safety: controlled
+safety: restricted
 ---
 
-# MFG-E005: IT/OT Trust Boundaries
+# E005: IT OT Trust Boundaries
 
-## Question
+## Assessment Question
 
-How should an authorized manufacturing-sector VAPT auditor assess **IT/OT Trust Boundaries**?
+How should an authorized manufacturing-sector VAPT assessor assess **IT OT Trust Boundaries**?
 
-## Description
+## Purpose
 
-Standardized manufacturing VAPT guidance for the **Foundation** domain/phase. This unit is reusable methodology, not authorization to test a particular organization.
+This unit provides reusable, engagement-neutral methodology for assessing **IT OT Trust Boundaries** in a manufacturing environment. It is not authorization to test an organization. Execute only under approved scope, ROE, maintenance window and safety controls.
 
-## Content
+## Security Objective
 
-### Overview
+Establish whether the intended security property exists, is correctly enforced, can be bypassed or misconfigured, is observable when it fails, and creates a meaningful attack or misuse path.
 
-Confirm scope, ownership, business function, environment (production/test/lab), dependencies and safety constraints before assessment. Use the least disruptive technique that can answer the security question.
+## Manufacturing Context
 
-### Assessment Objectives
+Treat IT OT Trust Boundaries as part of a cyber-physical environment. Map its relationship to equipment under control, controllers, operator interfaces, engineering assets, industrial networks, safety functions and plant operations. NIST SP 800-82 Rev. 3 emphasizes OT performance, reliability and safety requirements.
 
-1. **Scope And Authorization** — identify the applicable control, observation or test and document the result.
-2. **Asset Ownership** — identify the applicable control, observation or test and document the result.
-3. **Rules Of Engagement** — identify the applicable control, observation or test and document the result.
-4. **Safety Constraints** — identify the applicable control, observation or test and document the result.
-5. **Evidence Handling** — identify the applicable control, observation or test and document the result.
+## Assessment Objectives
 
-### Manufacturing Context
+1. define the security property and assessment hypothesis before selecting tools.
+2. identify ownership, business function, environment, trust boundaries and dependencies.
+3. account for OT protocol behavior, maintenance windows, deterministic operation and safety constraints.
+4. verify the intended control using the least disruptive technique.
+5. test negative and boundary cases, not only the happy path.
+6. correlate the observation with plausible attack paths and manufacturing consequences.
+7. capture reproducible evidence while minimizing sensitive data.
+8. define remediation and a retest method.
 
-Consider relationships among enterprise IT, identity, ERP/business applications, manufacturing operations, engineering/IP, OT/ICS, IIoT/edge, cloud, remote access, suppliers and sensitive data.
+## VAPT Thinking Model
 
-### Scope & Preconditions
+1. Identify the asset/process and business function.
+2. Identify who should access it and from where.
+3. Map interfaces, zones, conduits, routes, APIs and management planes.
+4. Form an attack-path hypothesis instead of reporting an isolated fact.
+5. Define minimum evidence before testing.
+6. Identify safety, availability, integrity and operational hazards.
+7. Define the retest before writing the finding.
 
-| Requirement | Minimum expectation |
-|---|---|
-| Authorization | Written authorization and explicit asset scope |
-| Ownership | Business/technical owner identified |
-| Environment | Production/test/lab status recorded |
-| Accounts | Test accounts preferred where authentication is assessed |
-| Data | Minimize collection and protect evidence |
-| Safety | controlled; OT actions require additional safety controls |
+## Assessment Procedure
 
-### Evidence
+### A. Authorization and Preconditions
+- Confirm written authorization and exact in-scope assets.
+- Identify business, technical and operational owners.
+- Record production/test/lab and maintenance status.
+- Confirm prohibited actions, credentials, test accounts and escalation contacts.
+- Identify dependencies that could turn a local test into plant or enterprise impact.
 
-- Asset identifier and environment.
-- Relevant URL/IP/hostname/logical identifier where permitted.
-- Observed technology/configuration.
-- Authentication or authorization context where applicable.
-- Screenshot, log, request/response or configuration excerpt when needed.
-- Timestamp and tester action.
-- Business/operational context.
+### B. Architecture and Trust Boundaries
+- Map upstream/downstream dependencies.
+- Separate management-plane from operational-plane access.
+- Identify enterprise, OT, cloud, vendor and wireless boundaries.
+- For IACS, record relevant zones/conduits and relationship to equipment under control.
 
-### Expected Output
+### C. Hypothesis-Driven Testing
 
-- Assessment coverage.
-- Observations and findings with evidence.
-- Technical, business and operational impact where supported.
-- Remediation or compensating control.
-- Retest requirement where applicable.
+State what you are trying to prove. Examples: unauthorized reachability, privilege bypass, exposed management interface, alternate trust path, sensitive-data disclosure, missing telemetry or excessive supplier access. Select the least disruptive technique capable of proving or disproving it.
 
-### Safety / Stop Conditions
+### D. Technical Validation
 
-- Stop if an action may affect production availability, safety, physical process control or data integrity.
-- No denial-of-service, destructive exploitation, uncontrolled malware, intentional data deletion or unsafe OT manipulation unless separately authorized and safety-controlled.
-- For OT/ICS, prefer passive/read-only validation and lab/digital-twin validation for disruptive actions.
-- Escalate instability, alarms, process changes or safety concerns.
+Prefer passive observation, configuration review and read-only queries. If proof would change controller state, alarms, motion, process parameters, recipes, interlocks or production data, use a representative lab/digital twin or an explicitly approved safety-controlled procedure.
 
-### Common Pitfalls
+For each result distinguish observed condition, violated security requirement, exploit/misuse path, impact and limitation.
 
-- Treating a software version as proof of a vulnerability.
-- Assuming every manufacturer has the same architecture.
-- Confusing exposure with compromise.
-- Ignoring business/operational context.
-- Testing production OT like ordinary IT.
-- Storing client evidence or secrets in this reusable repository.
+### E. Evidence Collection
 
-### Related Knowledge
+Record asset, zone/conduit, role, interface/protocol, source/destination, identity, version/configuration, timestamp, maintenance window, pre-test and post-test state. Avoid controller logic, recipes, credentials or proprietary engineering data unless explicitly required.
 
-Use the catalog to retrieve related units by asset, phase, technology and business function.
+## Manufacturing Impact Analysis
 
-### Standards / References
+Trace: **Asset → Trust Boundary → Security Control → Attack Capability → Technical Effect → Manufacturing Effect → Recovery Dependency**.
 
+Consider production interruption, quality/traceability, engineering/IP exposure, safety-function interference, historian/production-data integrity, supplier propagation, downtime and recovery complexity.
+
+## Finding Decision Logic
+
+A defensible finding should show **Condition → Requirement → Attack/Misuse Path → Evidence → Impact → Root Cause → Remediation → Retest**. Do not treat a banner, version or scanner result as proof. Record Observation, Confirmed Weakness/Vulnerability, Inconclusive, Not Applicable, Not Tested and Out of Scope distinctly.
+
+## Safety / Stop Conditions
+
+- Stop if the action could affect process stability, equipment state, safety functions, production availability or data integrity.
+- Do not perform destructive exploitation, denial-of-service, uncontrolled malware, arbitrary PLC logic changes or process manipulation in production without explicit authorization and safety controls.
+- Coordinate with operations for alarms, lockouts, failover, restarts or resource exhaustion.
+- Preserve rollback and pre-test state.
+
+## Evidence Quality
+
+Evidence must be attributable, reproducible or independently understandable, time-stamped, minimized, protected from unauthorized disclosure/modification and linked to the finding and retest condition.
+
+## Remediation
+
+Correct the underlying architectural, configuration, identity, software, lifecycle or governance cause. Depending on the subject this may include segmentation, least privilege, secure configuration, patching, credential rotation, application allowlisting, access gateways, monitoring, backup/restore, change control or supplier restrictions. For OT, coordinate remediation with operations and never weaken safety functions.
+
+## Retest
+
+Reproduce the original security question and verify the original condition is gone, the intended control behaves correctly, relevant alternate paths are addressed, monitoring reflects the correction, and no unacceptable operational or safety side effect was introduced.
+
+## Common Pitfalls
+- Treating version, banner or scanner output as proof.
+- Testing only the expected path.
+- Reporting reachability without proving authorization or impact.
+- Ignoring the manufacturing process behind the asset.
+- Using invasive validation when safer proof exists.
+- Omitting negative results and limitations.
+- Copying client secrets or proprietary evidence into the public KB.
+- Applying enterprise-IT assumptions to production OT without operational and safety review.
+
+## Tooling Strategy
+
+Select tools after defining the hypothesis. Relevant categories can include passive capture, protocol-aware OT monitoring, service enumeration, configuration review, authenticated auditing, web/API testing, IAM review, cloud posture assessment, source/dependency/SBOM analysis, SIEM/EDR/NDR/OT-IDS review and controlled vulnerability scanning. Tool output is a lead or evidence source; the assessor validates and interprets it.
+
+## Related Knowledge
+
+Link this unit to the asset taxonomy, adjacent phase methods, identity controls, segmentation, zones/conduits, OT safety gates, evidence/finding procedures, attack paths and retest procedures.
+
+## Standards / References
+- NIST SP 800-82 Rev. 3
 - NIST SP 800-115
-- NIST Cybersecurity Framework / applicable organizational controls
+- NIST IR 8183 Rev. 1
+- ISA-95
+- ISA/IEC 62443
+- CISA ICS Recommended Practices
+- MITRE ATT&CK for ICS
+
+## Source Use and Limitations
+
+These references inform the methodology; they do not replace the engagement ROE, organizational risk model, vendor instructions or plant safety procedures.
+
+## Repository Safety
+
+Reusable methodology only. Never add client credentials, private keys, personal data, production screenshots, internal IP inventories, PLC logic, recipes, proprietary drawings or confidential findings.
