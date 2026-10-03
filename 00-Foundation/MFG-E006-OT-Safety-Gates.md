@@ -1,142 +1,199 @@
 ---
 docType: knowledge_unit
-answerType: assessment_methodology
 knowledgeId: E006
 sector: manufacturing_industrial
 phase: Foundation
 topic: OT Safety Gates
-assetTags: ["safety", "ot"]
-safety: restricted
+safety: controlled
+status: working-rebuild
 ---
 
 # E006: OT Safety Gates
 
 ## Assessment Question
 
-How should an authorized manufacturing-sector VAPT assessor assess **OT Safety Gates**?
+**Before a cybersecurity test can affect an OT environment, has the activity passed the required operational and safety decision gates?**
 
 ## Purpose
 
-This unit provides reusable, engagement-neutral methodology for assessing **OT Safety Gates** in a manufacturing environment. It is not authorization to test an organization. Execute only under approved scope, ROE, maintenance window and safety controls.
+E006 is a decision architecture for safe cybersecurity testing. It is not a functional-safety standard and does not replace plant safety procedures, permits, lockout/tagout requirements, emergency procedures or competent safety authority.
 
-## Security Objective
+NIST SP 800-82 Rev. 3 explicitly addresses OT security while considering performance, reliability and safety requirements.
 
-Establish whether the intended security property exists, is correctly enforced, can be bypassed or misconfigured, is observable when it fails, and creates a meaningful attack or misuse path.
+## 1. Safety Is a Gate, Not a Disclaimer
 
-## Manufacturing Context
+For an OT target, determine:
 
-Treat OT Safety Gates as part of a cyber-physical environment. Map its relationship to equipment under control, controllers, operator interfaces, engineering assets, industrial networks, safety functions and plant operations. NIST SP 800-82 Rev. 3 emphasizes OT performance, reliability and safety requirements.
+1. Is it OT?
+2. Is it connected to production?
+3. Could the planned activity affect a process, controller, equipment, alarm, monitoring function or availability?
+4. Is a safety-related function involved?
+5. Is the activity explicitly authorized?
+6. Has the responsible operational owner approved it?
+7. Has the relevant safety authority reviewed it where required?
+8. Is the testing window appropriate?
+9. Is monitoring available?
+10. Are abort and escalation conditions defined?
 
-## Assessment Objectives
+If a required answer is unknown, do not assume permission to proceed.
 
-1. define the security property and assessment hypothesis before selecting tools.
-2. identify ownership, business function, environment, trust boundaries and dependencies.
-3. account for OT protocol behavior, maintenance windows, deterministic operation and safety constraints.
-4. verify the intended control using the least disruptive technique.
-5. test negative and boundary cases, not only the happy path.
-6. correlate the observation with plausible attack paths and manufacturing consequences.
-7. capture reproducible evidence while minimizing sensitive data.
-8. define remediation and a retest method.
+## 2. Test Modes
 
-## VAPT Thinking Model
+Classify the intended activity:
 
-1. Identify the asset/process and business function.
-2. Identify who should access it and from where.
-3. Map interfaces, zones, conduits, routes, APIs and management planes.
-4. Form an attack-path hypothesis instead of reporting an isolated fact.
-5. Define minimum evidence before testing.
-6. Identify safety, availability, integrity and operational hazards.
-7. Define the retest before writing the finding.
+- documentation-only;
+- passive observation;
+- read-only authenticated review;
+- low-impact active testing;
+- controlled validation;
+- intrusive testing;
+- exploitation;
+- configuration change;
+- process-affecting activity.
 
-## Assessment Procedure
+The higher the potential operational effect, the stronger the approval and control requirements.
 
-### A. Authorization and Preconditions
-- Confirm written authorization and exact in-scope assets.
-- Identify business, technical and operational owners.
-- Record production/test/lab and maintenance status.
-- Confirm prohibited actions, credentials, test accounts and escalation contacts.
-- Identify dependencies that could turn a local test into plant or enterprise impact.
+## 3. Preferred Testing Order
 
-### B. Architecture and Trust Boundaries
-- Map upstream/downstream dependencies.
-- Separate management-plane from operational-plane access.
-- Identify enterprise, OT, cloud, vendor and wireless boundaries.
-- For IACS, record relevant zones/conduits and relationship to equipment under control.
+Where the objective can be achieved without operational interaction, prefer:
 
-### C. Hypothesis-Driven Testing
+Documentation → Passive Observation → Configuration Review → Controlled Read-Only Validation → Limited Active Validation → More Intrusive Validation
 
-State what you are trying to prove. Examples: unauthorized reachability, privilege bypass, exposed management interface, alternate trust path, sensitive-data disclosure, missing telemetry or excessive supplier access. Select the least disruptive technique capable of proving or disproving it.
+Do not use intrusive activity merely because it produces stronger evidence if safer evidence is sufficient.
 
-### D. Technical Validation
+## 4. Production Decision
 
-Prefer passive observation, configuration review and read-only queries. If proof would change controller state, alarms, motion, process parameters, recipes, interlocks or production data, use a representative lab/digital twin or an explicitly approved safety-controlled procedure.
+Classify the target:
 
-For each result distinguish observed condition, violated security requirement, exploit/misuse path, impact and limitation.
+- production;
+- production-supporting;
+- pre-production;
+- laboratory;
+- test;
+- development;
+- simulation/digital twin;
+- unknown.
 
-### E. Evidence Collection
+A lab result does not automatically prove that the same technique is safe in production.
 
-Record asset, zone/conduit, role, interface/protocol, source/destination, identity, version/configuration, timestamp, maintenance window, pre-test and post-test state. Avoid controller logic, recipes, credentials or proprietary engineering data unless explicitly required.
+## 5. Safety-Relevant Systems
 
-## Manufacturing Impact Analysis
+If a target participates in a safety function or safety-related process, establish:
 
-Trace: **Asset → Trust Boundary → Security Control → Attack Capability → Technical Effect → Manufacturing Effect → Recovery Dependency**.
+- system identity;
+- responsible authority;
+- approved test method;
+- required permits/procedures;
+- testing window;
+- monitoring;
+- abort authority;
+- recovery method.
 
-Consider production interruption, quality/traceability, engineering/IP exposure, safety-function interference, historian/production-data integrity, supplier propagation, downtime and recovery complexity.
+Cybersecurity testing must not independently modify or disable a safety function unless the engagement and applicable operational/safety process explicitly permit it.
 
-## Finding Decision Logic
+## 6. Abort Conditions
 
-A defensible finding should show **Condition → Requirement → Attack/Misuse Path → Evidence → Impact → Root Cause → Remediation → Retest**. Do not treat a banner, version or scanner result as proof. Record Observation, Confirmed Weakness/Vulnerability, Inconclusive, Not Applicable, Not Tested and Out of Scope distinctly.
+Examples:
 
-## Safety / Stop Conditions
+- unexpected process behavior;
+- controller instability;
+- loss of monitoring;
+- alarm abnormalities;
+- unexplained communication loss;
+- equipment instability;
+- unexpected production effect;
+- safety concern;
+- inability to communicate with the operational owner;
+- evidence that activity exceeds approved conditions.
 
-- Stop if the action could affect process stability, equipment state, safety functions, production availability or data integrity.
-- Do not perform destructive exploitation, denial-of-service, uncontrolled malware, arbitrary PLC logic changes or process manipulation in production without explicit authorization and safety controls.
-- Coordinate with operations for alarms, lockouts, failover, restarts or resource exhaustion.
-- Preserve rollback and pre-test state.
+Exact thresholds must be engagement-specific.
 
-## Evidence Quality
+## 7. Emergency Sequence
 
-Evidence must be attributable, reproducible or independently understandable, time-stamped, minimized, protected from unauthorized disclosure/modification and linked to the finding and retest condition.
+STOP TEST → PRESERVE MINIMUM EVIDENCE → NOTIFY DESIGNATED CONTACT → FOLLOW PLANT RESPONSE → WAIT FOR AUTHORIZATION BEFORE RESUMPTION
 
-## Remediation
+The assessor should not improvise recovery actions that belong to plant operations or safety personnel.
 
-Correct the underlying architectural, configuration, identity, software, lifecycle or governance cause. Depending on the subject this may include segmentation, least privilege, secure configuration, patching, credential rotation, application allowlisting, access gateways, monitoring, backup/restore, change control or supplier restrictions. For OT, coordinate remediation with operations and never weaken safety functions.
+## 8. Rollback and Recovery
 
-## Retest
+Before controlled changes, establish:
 
-Reproduce the original security question and verify the original condition is gone, the intended control behaves correctly, relevant alternate paths are addressed, monitoring reflects the correction, and no unacceptable operational or safety side effect was introduced.
+- whether a backup exists;
+- whether restoration has been tested;
+- who performs rollback;
+- expected recovery path;
+- whether vendor support is required;
+- who authorizes restoration;
+- what evidence must be preserved.
 
-## Common Pitfalls
-- Treating version, banner or scanner output as proof.
-- Testing only the expected path.
-- Reporting reachability without proving authorization or impact.
-- Ignoring the manufacturing process behind the asset.
-- Using invasive validation when safer proof exists.
-- Omitting negative results and limitations.
-- Copying client secrets or proprietary evidence into the public KB.
-- Applying enterprise-IT assumptions to production OT without operational and safety review.
+“Backup exists” is not equivalent to “recovery is proven.”
 
-## Tooling Strategy
+## 9. Offensive Questions
 
-Select tools after defining the hypothesis. Relevant categories can include passive capture, protocol-aware OT monitoring, service enumeration, configuration review, authenticated auditing, web/API testing, IAM review, cloud posture assessment, source/dependency/SBOM analysis, SIEM/EDR/NDR/OT-IDS review and controlled vulnerability scanning. Tool output is a lead or evidence source; the assessor validates and interprets it.
+- What capability could the test expose?
+- Could the activity change state rather than only observe it?
+- Could authentication attempts affect an operational account?
+- Could scanning load a fragile device?
+- Could exploitation affect timing or availability?
+- Could an engineering action change process behavior?
 
-## Related Knowledge
+## 10. Defensive Questions
 
-Link this unit to the asset taxonomy, adjacent phase methods, identity controls, segmentation, zones/conduits, OT safety gates, evidence/finding procedures, attack paths and retest procedures.
+- Is testing visible to OT monitoring?
+- Can operations identify the assessor?
+- Are test activities distinguishable from hostile activity?
+- Are alarms and events being monitored?
+- Is there a clear stop/escalation path?
+- Can the organization determine what changed during the test?
 
-## Standards / References
-- NIST SP 800-82 Rev. 3
-- NIST SP 800-115
-- NIST IR 8183 Rev. 1
-- ISA-95
-- ISA/IEC 62443
-- CISA ICS Recommended Practices
-- MITRE ATT&CK for ICS
+## 11. Evidence
 
-## Source Use and Limitations
+Record:
 
-These references inform the methodology; they do not replace the engagement ROE, organizational risk model, vendor instructions or plant safety procedures.
+- target;
+- test mode;
+- authorization;
+- operational approval;
+- safety review where applicable;
+- window;
+- monitoring;
+- start/stop times;
+- observed effects;
+- abort events;
+- final disposition.
 
-## Repository Safety
+Do not store client safety documentation in the public KB.
 
-Reusable methodology only. Never add client credentials, private keys, personal data, production screenshots, internal IP inventories, PLC logic, recipes, proprietary drawings or confidential findings.
+## 12. Finding Logic
+
+Failure to have a safety gate is not automatically a cybersecurity vulnerability.
+
+Possible classifications:
+
+- process deficiency;
+- authorization deficiency;
+- operational-control weakness;
+- cybersecurity control weakness;
+- vulnerability;
+- not assessed.
+
+The finding must identify the specific requirement and evidence.
+
+## Exit Criteria
+
+Testing proceeds only when the required safety/operational conditions are satisfied and the assessor knows:
+
+- what is permitted;
+- what is prohibited;
+- what triggers a stop;
+- who can stop the test;
+- who can authorize resumption;
+- how the plant responds to an unexpected condition.
+
+## Sources
+
+- NIST SP 800-82 Rev. 3.
+- Applicable plant safety procedures and competent safety authority.
+- Applicable ISA/IEC functional-safety and industrial cybersecurity requirements as engagement context.
+
+**Boundary:** E006 defines the testing safety gate. It does not define the plant's functional-safety engineering design.
