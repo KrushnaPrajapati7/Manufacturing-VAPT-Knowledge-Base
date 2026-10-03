@@ -1,141 +1,177 @@
 ---
 docType: knowledge_unit
-answerType: assessment_methodology
 knowledgeId: E004
 sector: manufacturing_industrial
 phase: Foundation
 topic: Manufacturing Business Process Model
-assetTags: []
 safety: controlled
+status: working-rebuild
 ---
 
 # E004: Manufacturing Business Process Model
 
 ## Assessment Question
 
-How should an authorized manufacturing-sector VAPT assessor assess **Manufacturing Business Process Model**?
+**What manufacturing activity is being supported, what can go wrong if a security control fails, and which business or production outcome is affected?**
 
 ## Purpose
 
-This unit provides reusable, engagement-neutral methodology for assessing **Manufacturing Business Process Model** in a manufacturing environment. It is not authorization to test an organization. Execute only under approved scope, ROE, maintenance window and safety controls.
+A technical vulnerability becomes meaningful only when its role in the manufacturing process is understood.
 
-## Security Objective
+E004 connects technical systems to production activities without pretending that the assessor can independently determine process-engineering or safety consequences.
 
-Establish whether the intended security property exists, is correctly enforced, can be bypassed or misconfigured, is observable when it fails, and creates a meaningful attack or misuse path.
+ISA-95 defines models and terminology for enterprise and manufacturing-control functions and describes Level 3 manufacturing operations management and its interface with Level 4 business functions.
 
-## Manufacturing Context
+## 1. Process Model
 
-Treat Manufacturing Business Process Model as a component of a manufacturing system. Trace it to the business process, asset owner, trust boundary, data flow, dependency chain and recovery requirement.
+For each relevant process, use:
 
-## Assessment Objectives
+Business Objective → Manufacturing Operation → Process Step → Equipment → Control/IT System → Data → Human Decision → Output
 
-1. define the security property and assessment hypothesis before selecting tools.
-2. identify ownership, business function, environment, trust boundaries and dependencies.
-3. verify the intended control using the least disruptive technique.
-4. test negative and boundary cases, not only the happy path.
-5. correlate the observation with plausible attack paths and manufacturing consequences.
-6. capture reproducible evidence while minimizing sensitive data.
-7. define remediation and a retest method.
+Possible outputs include:
 
-## VAPT Thinking Model
+- product;
+- quality result;
+- production record;
+- inventory movement;
+- maintenance event;
+- shipment;
+- compliance record.
 
-1. Identify the asset/process and business function.
-2. Identify who should access it and from where.
-3. Map interfaces, zones, conduits, routes, APIs and management planes.
-4. Form an attack-path hypothesis instead of reporting an isolated fact.
-5. Define minimum evidence before testing.
-6. Identify safety, availability, integrity and operational hazards.
-7. Define the retest before writing the finding.
+## 2. Process Categories
 
-## Assessment Procedure
+Depending on the facility, map:
 
-### A. Authorization and Preconditions
-- Confirm written authorization and exact in-scope assets.
-- Identify business, technical and operational owners.
-- Record production/test/lab and maintenance status.
-- Confirm prohibited actions, credentials, test accounts and escalation contacts.
-- Identify dependencies that could turn a local test into plant or enterprise impact.
+- production planning;
+- material handling;
+- production execution;
+- machine operation;
+- quality control;
+- laboratory testing;
+- maintenance;
+- calibration;
+- packaging;
+- warehouse/logistics;
+- traceability;
+- reporting;
+- engineering change;
+- supplier integration.
 
-### B. Architecture and Trust Boundaries
-- Map upstream/downstream dependencies.
-- Separate management-plane from operational-plane access.
-- Identify enterprise, OT, cloud, vendor and wireless boundaries.
-- For IACS, record relevant zones/conduits and relationship to equipment under control.
+Do not assume every category exists.
 
-### C. Hypothesis-Driven Testing
+## 3. Security-Relevant Properties
 
-State what you are trying to prove. Examples: unauthorized reachability, privilege bypass, exposed management interface, alternate trust path, sensitive-data disclosure, missing telemetry or excessive supplier access. Select the least disruptive technique capable of proving or disproving it.
+### Availability
+Can the process continue if the system is unavailable?
 
-### D. Technical Validation
+### Integrity
+Could incorrect data or commands cause an incorrect manufacturing outcome?
 
-Progress from observation to controlled proof. Confirm reproducibility, identify the violated boundary, establish practical exploitability under engagement assumptions and use the smallest proof necessary. A scanner alert or version match is not a confirmed vulnerability.
+### Confidentiality
+Could unauthorized disclosure expose IP, recipes, designs or sensitive production information?
 
-For each result distinguish observed condition, violated security requirement, exploit/misuse path, impact and limitation.
+### Authenticity
+Can the process distinguish authorized users, devices and commands?
 
-### E. Evidence Collection
+### Traceability
+Can the organization determine who performed an action and when?
 
-Record asset, interface, source/identity context, relevant configuration or request/response, timestamp, expected behavior, observed behavior and evidence. Redact credentials, tokens, personal data and proprietary information.
+## 4. Attack-Path Thinking
 
-## Manufacturing Impact Analysis
+Map:
 
-Trace: **Asset → Trust Boundary → Security Control → Attack Capability → Technical Effect → Manufacturing Effect → Recovery Dependency**.
+Initial Access → Compromised Asset → Manufacturing Function → Process Capability → Business/Operational Effect
 
-Consider production interruption, quality/traceability, engineering/IP exposure, safety-function interference, historian/production-data integrity, supplier propagation, downtime and recovery complexity.
+Example:
 
-## Finding Decision Logic
+Compromised engineering workstation → engineering access → unauthorized configuration capability → possible process effect.
 
-A defensible finding should show **Condition → Requirement → Attack/Misuse Path → Evidence → Impact → Root Cause → Remediation → Retest**. Do not treat a banner, version or scanner result as proof. Record Observation, Confirmed Weakness/Vulnerability, Inconclusive, Not Applicable, Not Tested and Out of Scope distinctly.
+The example is a threat model, not permission to perform the action.
 
-## Safety / Stop Conditions
+## 5. Process Dependencies
 
-- Stay within scope and testing windows.
-- Prefer non-destructive validation.
-- Stop on unexpected instability, corruption or degradation.
-- Keep client secrets and sensitive evidence outside the reusable repository.
+Record dependencies such as:
 
-## Evidence Quality
+- identity services;
+- DNS;
+- time synchronization;
+- databases;
+- historians;
+- MES;
+- ERP;
+- network infrastructure;
+- backup;
+- remote access;
+- vendor support;
+- cloud services.
 
-Evidence must be attributable, reproducible or independently understandable, time-stamped, minimized, protected from unauthorized disclosure/modification and linked to the finding and retest condition.
+A dependency is not automatically a vulnerability.
 
-## Remediation
+## 6. Offensive Questions
 
-Correct the underlying architectural, configuration, identity, software, lifecycle or governance cause. Depending on the subject this may include segmentation, least privilege, secure configuration, patching, credential rotation, application allowlisting, access gateways, monitoring, backup/restore, change control or supplier restrictions. For OT, coordinate remediation with operations and never weaken safety functions.
+- Which system provides meaningful control over the process?
+- Which credentials provide process capability?
+- Which interfaces can influence process data?
+- Can an attacker move from business systems toward production?
+- Can a compromised engineering system affect a process?
+- Can a supplier pathway influence a process?
 
-## Retest
+## 7. Defensive Questions
 
-Reproduce the original security question and verify the original condition is gone, the intended control behaves correctly, relevant alternate paths are addressed, monitoring reflects the correction, and no unacceptable operational or safety side effect was introduced.
+- Would unauthorized process changes generate an alert?
+- Are engineering changes logged?
+- Are important operator actions attributable?
+- Are production-data integrity events monitored?
+- Can operations detect abnormal commands?
+- Can affected process state be reconstructed?
 
-## Common Pitfalls
-- Treating version, banner or scanner output as proof.
-- Testing only the expected path.
-- Reporting reachability without proving authorization or impact.
-- Ignoring the manufacturing process behind the asset.
-- Using invasive validation when safer proof exists.
-- Omitting negative results and limitations.
-- Copying client secrets or proprietary evidence into the public KB.
+MITRE ATT&CK for ICS includes process-oriented objectives such as Impair Process Control and Inhibit Response Function, which can help structure attack hypotheses.
 
+## 8. Evidence
 
-## Tooling Strategy
+Useful evidence:
 
-Select tools after defining the hypothesis. Relevant categories can include passive capture, protocol-aware OT monitoring, service enumeration, configuration review, authenticated auditing, web/API testing, IAM review, cloud posture assessment, source/dependency/SBOM analysis, SIEM/EDR/NDR/OT-IDS review and controlled vulnerability scanning. Tool output is a lead or evidence source; the assessor validates and interprets it.
+- process descriptions;
+- sanitized process-flow diagrams;
+- system dependency maps;
+- approved architecture;
+- configuration records;
+- audit logs;
+- interviews with process/operations owners;
+- controlled observations.
 
-## Related Knowledge
+Avoid collecting unnecessary proprietary recipes, production quantities or engineering IP.
 
-Link this unit to the asset taxonomy, adjacent phase methods, identity controls, segmentation, zones/conduits, OT safety gates, evidence/finding procedures, attack paths and retest procedures.
+## 9. Finding Logic
 
-## Standards / References
-- NIST SP 800-82 Rev. 3
-- NIST SP 800-115
-- NIST IR 8183 Rev. 1
-- ISA-95
-- ISA/IEC 62443
-- CISA ICS Recommended Practices
-- MITRE ATT&CK for ICS
+Do not report:
 
-## Source Use and Limitations
+“System X is connected to MES, therefore it is critical.”
 
-These references inform the methodology; they do not replace the engagement ROE, organizational risk model, vendor instructions or plant safety procedures.
+Instead establish:
 
-## Repository Safety
+Condition → Process Dependency → Security Requirement → Attack Capability → Evidence → Potential Effect
 
-Reusable methodology only. Never add client credentials, private keys, personal data, production screenshots, internal IP inventories, PLC logic, recipes, proprietary drawings or confidential findings.
+A process dependency may be verified, suspected, undocumented or unavailable for assessment.
+
+## 10. Exit Criteria
+
+The assessor can explain:
+
+- what the process does;
+- which systems support it;
+- which systems can influence it;
+- which data matters;
+- which people/roles matter;
+- what dependencies exist;
+- what security failure could affect the process;
+- what the organization can detect and recover.
+
+## Sources
+
+- ISA-95 — Enterprise-Control System Integration.
+- NIST IR 8183 Rev. 1 — Manufacturing Profile.
+- NIST SP 800-82 Rev. 3.
+- MITRE ATT&CK for ICS.
+
+**Boundary:** E004 owns process context. It does not own detailed asset inventory (E003), network trust boundaries (E005), or risk decisions (E009).
