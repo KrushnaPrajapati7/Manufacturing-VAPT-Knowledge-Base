@@ -1,141 +1,167 @@
 ---
 docType: knowledge_unit
-answerType: assessment_methodology
 knowledgeId: E008
 sector: manufacturing_industrial
 phase: Foundation
-topic: Assessment Preconditions
-assetTags: ["governance"]
+topic: Assessment Preconditions and Readiness
 safety: controlled
+status: working-rebuild
 ---
 
-# E008: Assessment Preconditions
+# E008: Assessment Preconditions and Readiness
 
 ## Assessment Question
 
-How should an authorized manufacturing-sector VAPT assessor assess **Assessment Preconditions**?
+**Is the environment, engagement team and operational context ready for the planned assessment activity?**
 
 ## Purpose
 
-This unit provides reusable, engagement-neutral methodology for assessing **Assessment Preconditions** in a manufacturing environment. It is not authorization to test an organization. Execute only under approved scope, ROE, maintenance window and safety controls.
+Authorization alone does not make an assessment ready to execute.
 
-## Security Objective
+E008 verifies prerequisites such as scope, contacts, access, monitoring, backups, maintenance windows, test accounts and operational coordination.
 
-Establish whether the intended security property exists, is correctly enforced, can be bypassed or misconfigured, is observable when it fails, and creates a meaningful attack or misuse path.
+## 1. Readiness Categories
 
-## Manufacturing Context
+### Governance
 
-Treat Assessment Preconditions as a component of a manufacturing system. Trace it to the business process, asset owner, trust boundary, data flow, dependency chain and recovery requirement.
+- authorization available;
+- ROE approved;
+- scope current;
+- scope-change process defined.
 
-## Assessment Objectives
+### People
 
-1. define the security property and assessment hypothesis before selecting tools.
-2. identify ownership, business function, environment, trust boundaries and dependencies.
-3. verify the intended control using the least disruptive technique.
-4. test negative and boundary cases, not only the happy path.
-5. correlate the observation with plausible attack paths and manufacturing consequences.
-6. capture reproducible evidence while minimizing sensitive data.
-7. define remediation and a retest method.
+- engagement lead identified;
+- technical contacts available;
+- operational owner available;
+- safety contact identified where required;
+- emergency escalation available.
 
-## VAPT Thinking Model
+### Technical
 
-1. Identify the asset/process and business function.
-2. Identify who should access it and from where.
-3. Map interfaces, zones, conduits, routes, APIs and management planes.
-4. Form an attack-path hypothesis instead of reporting an isolated fact.
-5. Define minimum evidence before testing.
-6. Identify safety, availability, integrity and operational hazards.
-7. Define the retest before writing the finding.
+- approved test connectivity works;
+- approved test accounts work;
+- required tooling is ready;
+- time synchronization is understood;
+- logging/monitoring contacts are known.
 
-## Assessment Procedure
+### Operational
 
-### A. Authorization and Preconditions
-- Confirm written authorization and exact in-scope assets.
-- Identify business, technical and operational owners.
-- Record production/test/lab and maintenance status.
-- Confirm prohibited actions, credentials, test accounts and escalation contacts.
-- Identify dependencies that could turn a local test into plant or enterprise impact.
+- maintenance window confirmed;
+- production state known;
+- active incidents known;
+- change freeze considered;
+- operational constraints understood.
 
-### B. Architecture and Trust Boundaries
-- Map upstream/downstream dependencies.
-- Separate management-plane from operational-plane access.
-- Identify enterprise, OT, cloud, vendor and wireless boundaries.
-- For IACS, record relevant zones/conduits and relationship to equipment under control.
+### Recovery
 
-### C. Hypothesis-Driven Testing
+- backup status known;
+- rollback responsibility known;
+- recovery process identified;
+- vendor support available where required.
 
-State what you are trying to prove. Examples: unauthorized reachability, privilege bypass, exposed management interface, alternate trust path, sensitive-data disclosure, missing telemetry or excessive supplier access. Select the least disruptive technique capable of proving or disproving it.
+## 2. Readiness State
 
-### D. Technical Validation
+Use:
 
-Progress from observation to controlled proof. Confirm reproducibility, identify the violated boundary, establish practical exploitability under engagement assumptions and use the smallest proof necessary. A scanner alert or version match is not a confirmed vulnerability.
+- READY
+- READY WITH CONDITIONS
+- NOT READY
+- UNKNOWN
 
-For each result distinguish observed condition, violated security requirement, exploit/misuse path, impact and limitation.
+Do not start an activity marked NOT READY or UNKNOWN merely because the assessment schedule is tight.
 
-### E. Evidence Collection
+## 3. Readiness Checklist
 
-Record asset, interface, source/identity context, relevant configuration or request/response, timestamp, expected behavior, observed behavior and evidence. Redact credentials, tokens, personal data and proprietary information.
+| Question | Status |
+|---|---|
+| Authorization verified? | |
+| Scope current? | |
+| ROE current? | |
+| Production status known? | |
+| OT relevance known? | |
+| Safety review completed if needed? | |
+| Test accounts available? | |
+| Monitoring contact available? | |
+| Emergency contact available? | |
+| Testing window confirmed? | |
+| Recovery path understood? | |
+| Third-party coordination complete? | |
+| Evidence storage ready? | |
 
-## Manufacturing Impact Analysis
+## 4. Technical Readiness
 
-Trace: **Asset → Trust Boundary → Security Control → Attack Capability → Technical Effect → Manufacturing Effect → Recovery Dependency**.
+Validate only what is necessary.
 
-Consider production interruption, quality/traceability, engineering/IP exposure, safety-function interference, historian/production-data integrity, supplier propagation, downtime and recovery complexity.
+Examples:
 
-## Finding Decision Logic
+- Can the approved assessment workstation reach the approved target?
+- Does the test identity authenticate as expected?
+- Are required VPN/jump-host controls functioning?
+- Is the test environment the intended environment?
+- Are required logs available?
 
-A defensible finding should show **Condition → Requirement → Attack/Misuse Path → Evidence → Impact → Root Cause → Remediation → Retest**. Do not treat a banner, version or scanner result as proof. Record Observation, Confirmed Weakness/Vulnerability, Inconclusive, Not Applicable, Not Tested and Out of Scope distinctly.
+Do not perform broad discovery merely to prove connectivity.
 
-## Safety / Stop Conditions
+## 5. Operational Readiness
 
-- Stay within scope and testing windows.
-- Prefer non-destructive validation.
-- Stop on unexpected instability, corruption or degradation.
-- Keep client secrets and sensitive evidence outside the reusable repository.
+Ask:
 
-## Evidence Quality
+- Is production running?
+- Is maintenance active?
+- Is an unusual production event occurring?
+- Is another assessment already active?
+- Are plant personnel aware of the test?
+- Are there known fragile systems?
+- Is a vendor activity occurring concurrently?
 
-Evidence must be attributable, reproducible or independently understandable, time-stamped, minimized, protected from unauthorized disclosure/modification and linked to the finding and retest condition.
+Unexpected operational conditions can change the safe testing decision.
 
-## Remediation
+## 6. Monitoring Readiness
 
-Correct the underlying architectural, configuration, identity, software, lifecycle or governance cause. Depending on the subject this may include segmentation, least privilege, secure configuration, patching, credential rotation, application allowlisting, access gateways, monitoring, backup/restore, change control or supplier restrictions. For OT, coordinate remediation with operations and never weaken safety functions.
+Determine, where required:
 
-## Retest
+- who watches the environment;
+- which telemetry is available;
+- who receives alerts;
+- how the assessor identifies test traffic;
+- how abnormal behavior is escalated.
 
-Reproduce the original security question and verify the original condition is gone, the intended control behaves correctly, relevant alternate paths are addressed, monitoring reflects the correction, and no unacceptable operational or safety side effect was introduced.
+A SIEM being installed does not prove that relevant activity will be detected.
 
-## Common Pitfalls
-- Treating version, banner or scanner output as proof.
-- Testing only the expected path.
-- Reporting reachability without proving authorization or impact.
-- Ignoring the manufacturing process behind the asset.
-- Using invasive validation when safer proof exists.
-- Omitting negative results and limitations.
-- Copying client secrets or proprietary evidence into the public KB.
+## 7. Offensive Questions
 
+- Can the planned test be executed without violating a readiness condition?
+- Is the intended identity authorized?
+- Is the intended target confirmed?
+- Is the environment actually the one approved?
 
-## Tooling Strategy
+## 8. Defensive Questions
 
-Select tools after defining the hypothesis. Relevant categories can include passive capture, protocol-aware OT monitoring, service enumeration, configuration review, authenticated auditing, web/API testing, IAM review, cloud posture assessment, source/dependency/SBOM analysis, SIEM/EDR/NDR/OT-IDS review and controlled vulnerability scanning. Tool output is a lead or evidence source; the assessor validates and interprets it.
+- Can defenders distinguish authorized testing from an incident?
+- Are monitoring teams informed?
+- Are relevant logs available?
+- Can the organization correlate test activity?
 
-## Related Knowledge
+## 9. Failure Conditions
 
-Link this unit to the asset taxonomy, adjacent phase methods, identity controls, segmentation, zones/conduits, OT safety gates, evidence/finding procedures, attack paths and retest procedures.
+Pause when:
 
-## Standards / References
-- NIST SP 800-82 Rev. 3
-- NIST SP 800-115
-- NIST IR 8183 Rev. 1
-- ISA-95
-- ISA/IEC 62443
-- CISA ICS Recommended Practices
-- MITRE ATT&CK for ICS
+- target identity is uncertain;
+- authorization changed;
+- production state changed materially;
+- operational owner is unavailable where required;
+- safety approval is missing;
+- monitoring/recovery prerequisites are missing for the planned activity;
+- test access is broader than approved.
 
-## Source Use and Limitations
+## 10. Exit Criteria
 
-These references inform the methodology; they do not replace the engagement ROE, organizational risk model, vendor instructions or plant safety procedures.
+The assessment can proceed when all prerequisites required by the engagement are verified and documented.
 
-## Repository Safety
+## Sources
 
-Reusable methodology only. Never add client credentials, private keys, personal data, production screenshots, internal IP inventories, PLC logic, recipes, proprietary drawings or confidential findings.
+- NIST SP 800-115.
+- NIST SP 800-82 Rev. 3.
+
+**Boundary:** E008 owns readiness. It does not redefine authorization (E001) or detailed safety controls (E006).
