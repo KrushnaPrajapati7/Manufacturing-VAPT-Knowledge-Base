@@ -1,142 +1,203 @@
 ---
 docType: knowledge_unit
-answerType: assessment_methodology
 knowledgeId: E009
 sector: manufacturing_industrial
 phase: Foundation
-topic: Finding Lifecycle
-assetTags: []
+topic: VAPT Risk and Finding Decision Model
 safety: controlled
+status: working-rebuild
 ---
 
-# E009: Finding Lifecycle
+# E009: VAPT Risk and Finding Decision Model
 
 ## Assessment Question
 
-How should an authorized manufacturing-sector VAPT assessor assess **Finding Lifecycle**?
+**How does the assessor convert technical evidence into a defensible manufacturing risk decision without overstating severity or confusing technical weakness with business impact?**
 
 ## Purpose
 
-This unit provides reusable, engagement-neutral methodology for assessing **Finding Lifecycle** in a manufacturing environment. It is not authorization to test an organization. Execute only under approved scope, ROE, maintenance window and safety controls.
+E009 provides the reasoning model used after technical observation.
 
-## Security Objective
+It deliberately avoids a universal scoring formula. CVSS or another organizational model may be used when required, but manufacturing impact must still be interpreted in context.
 
-Establish whether the intended security property exists, is correctly enforced, can be bypassed or misconfigured, is observable when it fails, and creates a meaningful attack or misuse path.
+NIST IR 8183 Rev. 1 provides a manufacturing-specific, voluntary, risk-based cybersecurity framework profile.
 
-## Manufacturing Context
+## 1. Finding Chain
 
-Treat Finding Lifecycle as a component of a manufacturing system. Trace it to the business process, asset owner, trust boundary, data flow, dependency chain and recovery requirement.
+Observation → Validation → Security Requirement → Exploit/Misuse Capability → Affected Asset → Manufacturing Dependency → Impact → Exposure → Finding → Remediation → Retest
 
-## Assessment Objectives
+Each link should be supported by evidence or clearly marked as an assumption or limitation.
 
-1. define the security property and assessment hypothesis before selecting tools.
-2. identify ownership, business function, environment, trust boundaries and dependencies.
-3. verify the intended control using the least disruptive technique.
-4. test negative and boundary cases, not only the happy path.
-5. correlate the observation with plausible attack paths and manufacturing consequences.
-6. capture reproducible evidence while minimizing sensitive data.
-7. define remediation and a retest method.
+## 2. Observation Is Not Automatically a Finding
 
-## VAPT Thinking Model
+Examples:
 
-1. Identify the asset/process and business function.
-2. Identify who should access it and from where.
-3. Map interfaces, zones, conduits, routes, APIs and management planes.
-4. Form an attack-path hypothesis instead of reporting an isolated fact.
-5. Define minimum evidence before testing.
-6. Identify safety, availability, integrity and operational hazards.
-7. Define the retest before writing the finding.
+- open port → observation;
+- detected version → observation;
+- weak configuration → potential weakness;
+- confirmed exploitable condition → vulnerability evidence;
+- vulnerability affecting a critical production dependency → manufacturing relevance;
+- vulnerability with no meaningful path or exposure → may require different treatment.
 
-## Assessment Procedure
+## 3. Impact Dimensions
 
-### A. Authorization and Preconditions
-- Confirm written authorization and exact in-scope assets.
-- Identify business, technical and operational owners.
-- Record production/test/lab and maintenance status.
-- Confirm prohibited actions, credentials, test accounts and escalation contacts.
-- Identify dependencies that could turn a local test into plant or enterprise impact.
+Consider separately:
 
-### B. Architecture and Trust Boundaries
-- Map upstream/downstream dependencies.
-- Separate management-plane from operational-plane access.
-- Identify enterprise, OT, cloud, vendor and wireless boundaries.
-- For IACS, record relevant zones/conduits and relationship to equipment under control.
+- confidentiality;
+- integrity;
+- availability;
+- safety relevance;
+- production continuity;
+- product quality;
+- traceability;
+- engineering/IP;
+- recovery effort;
+- regulatory/customer dependency;
+- propagation potential.
 
-### C. Hypothesis-Driven Testing
+Do not claim safety impact without evidence and appropriate domain input.
 
-State what you are trying to prove. Examples: unauthorized reachability, privilege bypass, exposed management interface, alternate trust path, sensitive-data disclosure, missing telemetry or excessive supplier access. Select the least disruptive technique capable of proving or disproving it.
+## 4. Exposure Dimensions
 
-### D. Technical Validation
+Consider:
 
-Progress from observation to controlled proof. Confirm reproducibility, identify the violated boundary, establish practical exploitability under engagement assumptions and use the smallest proof necessary. A scanner alert or version match is not a confirmed vulnerability.
+- internet exposure;
+- enterprise exposure;
+- OT-zone exposure;
+- remote-access exposure;
+- authentication requirement;
+- privilege required;
+- reachable assets;
+- attack-path dependencies;
+- monitoring/detection;
+- compensating controls.
 
-For each result distinguish observed condition, violated security requirement, exploit/misuse path, impact and limitation.
+## 5. Manufacturing Risk Statement
 
-### E. Evidence Collection
+A useful statement has the form:
 
-Record asset, interface, source/identity context, relevant configuration or request/response, timestamp, expected behavior, observed behavior and evidence. Redact credentials, tokens, personal data and proprietary information.
+A validated condition on [asset/function] allows [capability], which can affect [process/dependency] under [conditions]. Evidence is [confidence] and limitations are [limitations].
 
-## Manufacturing Impact Analysis
+This is stronger than assigning a number without context.
 
-Trace: **Asset → Trust Boundary → Security Control → Attack Capability → Technical Effect → Manufacturing Effect → Recovery Dependency**.
+## 6. Offensive Questions
 
-Consider production interruption, quality/traceability, engineering/IP exposure, safety-function interference, historian/production-data integrity, supplier propagation, downtime and recovery complexity.
+- What can an attacker actually achieve?
+- What prerequisite access is required?
+- What trust boundary must be crossed?
+- What privilege is needed?
+- Can the capability persist?
+- Can it reach another asset?
+- Can it influence production or sensitive information?
 
-## Finding Decision Logic
+MITRE ATT&CK for ICS can help describe adversary objectives such as Initial Access, Lateral Movement, Impair Process Control and Impact.
 
-A defensible finding should show **Condition → Requirement → Attack/Misuse Path → Evidence → Impact → Root Cause → Remediation → Retest**. Do not treat a banner, version or scanner result as proof. Record Observation, Confirmed Weakness/Vulnerability, Inconclusive, Not Applicable, Not Tested and Out of Scope distinctly.
+## 7. Defensive Questions
 
-## Safety / Stop Conditions
+- Would the activity be detected?
+- What control would stop it?
+- What telemetry exists?
+- Is the affected asset monitored?
+- Can the organization contain the path?
+- Can the process recover?
 
-- Stay within scope and testing windows.
-- Prefer non-destructive validation.
-- Stop on unexpected instability, corruption or degradation.
-- Keep client secrets and sensitive evidence outside the reusable repository.
+## 8. Decision States
 
-## Evidence Quality
+Use explicit states:
 
-Evidence must be attributable, reproducible or independently understandable, time-stamped, minimized, protected from unauthorized disclosure/modification and linked to the finding and retest condition.
+- Confirmed finding;
+- Validated weakness;
+- Observation;
+- Inconclusive;
+- Not tested;
+- Not applicable;
+- Out of scope.
 
-## Remediation
+Do not force every observation into a vulnerability category.
 
-Correct the underlying architectural, configuration, identity, software, lifecycle or governance cause. Depending on the subject this may include segmentation, least privilege, secure configuration, patching, credential rotation, application allowlisting, access gateways, monitoring, backup/restore, change control or supplier restrictions. For OT, coordinate remediation with operations and never weaken safety functions.
+## 9. Severity
 
-## Retest
+If an engagement requires CVSS, use the applicable CVSS version and document the vector and assumptions.
 
-Reproduce the original security question and verify the original condition is gone, the intended control behaves correctly, relevant alternate paths are addressed, monitoring reflects the correction, and no unacceptable operational or safety side effect was introduced.
+Do not modify a standard score simply to make it represent manufacturing impact.
 
-## Common Pitfalls
-- Treating version, banner or scanner output as proof.
-- Testing only the expected path.
-- Reporting reachability without proving authorization or impact.
-- Ignoring the manufacturing process behind the asset.
-- Using invasive validation when safer proof exists.
-- Omitting negative results and limitations.
-- Copying client secrets or proprietary evidence into the public KB.
+Instead provide a separate manufacturing impact statement or the organization's defined risk rating.
 
+## 10. Root Cause
 
-## Tooling Strategy
+Where evidence permits, distinguish:
 
-Select tools after defining the hypothesis. Relevant categories can include passive capture, protocol-aware OT monitoring, service enumeration, configuration review, authenticated auditing, web/API testing, IAM review, cloud posture assessment, source/dependency/SBOM analysis, SIEM/EDR/NDR/OT-IDS review and controlled vulnerability scanning. Tool output is a lead or evidence source; the assessor validates and interprets it.
+- configuration error;
+- architecture/design issue;
+- identity/access-control weakness;
+- lifecycle issue;
+- unsupported/obsolete technology;
+- monitoring gap;
+- governance/process deficiency;
+- supplier dependency;
+- implementation defect.
 
-## Related Knowledge
+Do not claim root cause if the assessment did not establish it.
 
-Link this unit to the asset taxonomy, adjacent phase methods, identity controls, segmentation, zones/conduits, OT safety gates, evidence/finding procedures, attack paths and retest procedures.
+## 11. Remediation
 
-## Standards / References
-- NIST SP 800-82 Rev. 3
-- NIST SP 800-115
-- NIST IR 8183 Rev. 1
-- ISA-95
-- ISA/IEC 62443
-- CISA ICS Recommended Practices
-- MITRE ATT&CK for ICS
-- FIRST CVSS v4.0
+Remediation should address the underlying control or design issue.
 
-## Source Use and Limitations
+Possible classes:
 
-These references inform the methodology; they do not replace the engagement ROE, organizational risk model, vendor instructions or plant safety procedures.
+- remove unnecessary exposure;
+- restrict access;
+- segment;
+- strengthen authentication;
+- reduce privilege;
+- update/patch where operationally appropriate;
+- compensate where patching is unsafe;
+- improve monitoring;
+- improve backup/recovery;
+- change supplier access;
+- improve lifecycle management.
 
-## Repository Safety
+OT remediation must consider operational constraints.
 
-Reusable methodology only. Never add client credentials, private keys, personal data, production screenshots, internal IP inventories, PLC logic, recipes, proprietary drawings or confidential findings.
+## 12. Retest Logic
+
+A retest should answer the original security question.
+
+Verify:
+
+- original condition;
+- relevant alternate path;
+- intended control;
+- monitoring behavior where relevant;
+- no unacceptable operational side effect.
+
+A screenshot of a changed setting is not automatically proof that the attack path is closed.
+
+## 13. Finding Evidence Template
+
+| Field | Required question |
+|---|---|
+| Asset | What is affected? |
+| Condition | What was observed? |
+| Requirement | What should happen? |
+| Validation | How was it confirmed? |
+| Capability | What can an unauthorized party do? |
+| Dependency | What process relies on it? |
+| Impact | What can reasonably result? |
+| Exposure | Who can reach it and how? |
+| Detection | Would the organization detect it? |
+| Root cause | What caused the weakness? |
+| Remediation | What should change? |
+| Retest | How will closure be verified? |
+
+## Exit Criteria
+
+The finding is decision-ready when a reviewer can independently understand the evidence, attack path, manufacturing relevance, limitations and remediation.
+
+## Sources
+
+- NIST IR 8183 Rev. 1.
+- NIST SP 800-82 Rev. 3.
+- MITRE ATT&CK for ICS.
+
+**Boundary:** E009 owns the finding/risk decision model. It does not own authorization, safety approval or evidence storage.
